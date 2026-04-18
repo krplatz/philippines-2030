@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Philippines 2030 — A Scenario</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
+<style>
+  /* Narrative-only overrides */
+  .narr-hero {
+    min-height: calc(100vh - 44px);
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .narr-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 30% 40%, rgba(180,69,44,0.06), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 75% 70%, rgba(44,62,92,0.06), transparent 60%);
+    pointer-events: none;
+  }
+  .narr-hero .col-wide { position: relative; z-index: 2; }
+  .narr-hero h1 {
+    font-size: clamp(56px, 8vw, 104px);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    margin-bottom: 40px;
+  }
+  .narr-hero h1 em { color: var(--accent); font-style: italic; }
+  .narr-hero .dek {
+    font-size: 26px;
+    line-height: 1.4;
+    max-width: 680px;
+    color: var(--ink-2);
+    font-style: italic;
+  }
+  .narr-hero .scroll-cue {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--ink-faded);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+  }
+  .scroll-cue .line {
+    width: 1px;
+    height: 40px;
+    background: var(--ink-faded);
+    animation: scroll-cue 2s ease-in-out infinite;
+  }
+  @keyframes scroll-cue {
+    0%, 100% { transform: scaleY(0.4); transform-origin: top; opacity: 0.4; }
+    50% { transform: scaleY(1); opacity: 1; }
+  }
+
+  /* Year chapter marker */
+  .year-marker {
+    padding: 120px 0 60px;
+    text-align: left;
+    position: relative;
+  }
+  .year-marker .year-big {
+    font-family: var(--serif);
+    font-size: clamp(120px, 18vw, 220px);
+    line-height: 0.9;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .year-marker .year-big em {
+    color: var(--accent);
+    font-style: italic;
+  }
+  .year-marker .year-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .year-marker .year-tag::before {
+    content: "";
+    width: 40px; height: 1px; background: var(--accent);
+  }
+  .year-marker .year-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1.3;
+    color: var(--ink-2);
+    margin: 24px 0 0;
+    max-width: 640px;
+  }
+
+  /* Scene text block */
+  .scene {
+    padding: 40px 0;
+  }
+  .scene p { font-size: 20px; line-height: 1.6; }
+  .scene .scene-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .scene .scene-meta::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* Placeholder blocks */
+  .placeholder {
+    background: repeating-linear-gradient(
+      135deg,
+      var(--paper-2),
+      var(--paper-2) 8px,
+      var(--paper) 8px,
+      var(--paper) 16px
+    );
+    border: 1px solid var(--rule);
+    padding: 40px 32px;
+    margin: 32px 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+  }
+  .placeholder .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .placeholder strong {
+    color: var(--ink);
+    font-family: var(--mono);
+  }
+
+  /* Inline research link */
+  .research-link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 6px 10px;
+    border: 1px solid var(--accent);
+    margin: 4px 4px 4px 0;
+    border-radius: 0;
+    transition: background 0.15s;
+  }
+  .research-link:hover {
+    background: var(--accent);
+    color: var(--paper);
+  }
+  .research-link::after { content: "↗"; }
+
+  .research-links-row {
+    margin: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  /* Year sidebar */
+  .year-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-family: var(--mono);
+    font-size: 11px;
+    border-top: 1px solid var(--rule);
+  }
+  .year-nav li a {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 0;
+    color: var(--ink-muted);
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.15s, padding-left 0.2s;
+  }
+  .year-nav li a:hover {
+    color: var(--ink);
+    padding-left: 4px;
+  }
+  .year-nav li a.active {
+    color: var(--accent);
+    padding-left: 4px;
+  }
+  .year-nav li a .y {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    letter-spacing: 0;
+  }
+  .year-nav li a.active .y { color: var(--accent); }
+  .year-nav li a .what {
+    flex: 1;
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  /* Branching moment */
+  .branch {
+    margin: 80px auto;
+    padding: 48px 32px;
+    max-width: var(--col-wide);
+    border: 1px solid var(--ink);
+    background: var(--paper-2);
+  }
+  .branch .branch-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .branch h3 {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-style: italic;
+    margin: 0 0 24px;
+    color: var(--ink);
+    font-weight: 500;
+    max-width: 680px;
+  }
+  .branch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 16px;
+  }
+  .branch-grid > div {
+    background: var(--paper);
+    padding: 24px 20px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .branch-grid .b-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .branch-grid .b-base   .b-label { color: var(--s-base); }
+  .branch-grid .b-accel  .b-label { color: var(--s-accel); }
+  .branch-grid .b-crisis .b-label { color: var(--s-crisis); }
+  .branch-grid .b-text {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.45;
+    font-style: italic;
+    color: var(--ink-2);
+  }
+  @media (max-width: 820px) {
+    .branch-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Character / detail card */
+  .detail-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    max-width: var(--col);
+    margin: 48px auto;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .detail-card .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+  }
+  .detail-card .tag .who {
+    display: block;
+    margin-top: 6px;
+    color: var(--ink);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  .detail-card .body {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    font-style: italic;
+  }
+  @media (max-width: 720px) {
+    .detail-card { grid-template-columns: 1fr; gap: 12px; }
+  }
+
+  /* Outro */
+  .outro {
+    padding: 140px 0 160px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    margin-top: 80px;
+  }
+  .outro .mark {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--accent);
+    letter-spacing: 0.3em;
+  }
+  .outro h2 {
+    font-size: 44px;
+    margin: 32px auto 24px;
+    max-width: 720px;
+    text-align: center;
+    font-style: italic;
+  }
+  .outro p {
+    max-width: 580px;
+    margin: 0 auto 32px;
+    font-size: 18px;
+    color: var(--ink-muted);
+    text-align: center;
+  }
+  .outro .cta {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    background: var(--paper);
+    transition: all 0.15s;
+  }
+  .outro .cta:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  /* ============================================================
+     CRISIS DRIFT — paper tone, ink, rule, and accent shift as the
+     reader descends through the chapters. Body gets data-crisis
+     (0–5) set from JS based on the section in view.
+     Transitions are long (1.2s) so the effect feels atmospheric
+     rather than mechanical.
+     ============================================================ */
+  html, body {
+    transition: background-color 1.2s ease, color 1.2s ease;
+  }
+  body {
+    transition: background-color 1.2s ease, color 1.2s ease;
+  }
+  /* CSS variables themselves can't transition, but background-color
+     on body and on chapter wrappers can. We layer the drift by
+     re-declaring variables per data-crisis bucket. Anything that
+     uses var(--paper) inside transitioning containers will update. */
+
+  body[data-crisis="0"] {
+    --paper: #F5F1E8;
+    --paper-2: #EFE9DC;
+    --paper-3: #E6DFCE;
+    --rule: #D8CEB6;
+    --ink-muted: #5A5F6E;
+    background-color: #F5F1E8;
+  }
+  body[data-crisis="1"] {
+    --paper: #F2EDE2;
+    --paper-2: #ECE5D4;
+    --paper-3: #E2DAC4;
+    --rule: #D2C7AD;
+    --ink-muted: #585D6B;
+    background-color: #F2EDE2;
+  }
+  body[data-crisis="2"] {
+    --paper: #EDE6D8;
+    --paper-2: #E5DDC9;
+    --paper-3: #DCD2BA;
+    --rule: #C9BE9F;
+    --ink-muted: #575B67;
+    background-color: #EDE6D8;
+  }
+  body[data-crisis="3"] {
+    --paper: #E6DDCC;
+    --paper-2: #DED3BE;
+    --paper-3: #D3C6AE;
+    --rule: #BDB08E;
+    --ink-muted: #53565E;
+    background-color: #E6DDCC;
+  }
+  body[data-crisis="4"] {
+    --paper: #DCD1BB;
+    --paper-2: #D1C4AB;
+    --paper-3: #C5B79B;
+    --rule: #AB9D7B;
+    --ink: #181B26;
+    --ink-muted: #4A4C53;
+    background-color: #DCD1BB;
+  }
+  body[data-crisis="5"] {
+    --paper: #CFC2A7;
+    --paper-2: #C3B494;
+    --paper-3: #B5A57F;
+    --rule: #988970;
+    --ink: #15171F;
+    --ink-muted: #42444A;
+    --accent: #A13620;
+    --accent-deep: #7D2915;
+    background-color: #CFC2A7;
+  }
+
+  /* Scene-meta rust → crisis red as we descend. */
+  body[data-crisis="3"] .scene .scene-meta,
+  body[data-crisis="3"] .year-marker .year-tag,
+  body[data-crisis="3"] .placeholder .tag,
+  body[data-crisis="3"] .callout-label {
+    color: var(--s-crisis);
+  }
+  body[data-crisis="4"] .scene .scene-meta,
+  body[data-crisis="4"] .year-marker .year-tag,
+  body[data-crisis="4"] .placeholder .tag,
+  body[data-crisis="4"] .callout-label {
+    color: var(--s-crisis);
+  }
+  body[data-crisis="5"] .scene .scene-meta,
+  body[data-crisis="5"] .year-marker .year-tag,
+  body[data-crisis="5"] .placeholder .tag,
+  body[data-crisis="5"] .callout-label {
+    color: var(--s-crisis);
+  }
+  .scene .scene-meta,
+  .year-marker .year-tag {
+    transition: color 1.2s ease;
+  }
+
+  /* Year-big numerals pick up a faint crisis tint at peak. */
+  body[data-crisis="5"] .year-marker .year-big em {
+    color: var(--s-crisis);
+  }
+  .year-marker .year-big em {
+    transition: color 1.2s ease;
+  }
+
+  /* Progress bar thickens and reddens as we descend. */
+  .progress-bar .fill {
+    transition: background-color 1.2s ease, height 0.6s ease;
+  }
+  body[data-crisis="3"] .progress-bar .fill { background: #B4452C; }
+  body[data-crisis="4"] .progress-bar .fill { background: #9B3620; height: 3px; }
+  body[data-crisis="5"] .progress-bar .fill { background: var(--s-crisis); height: 4px; }
+
+  /* ============================================================
+     SCENARIO PANEL — the sidebar becomes the live scenario HUD.
+     Year header, status, four indicator sparklines, crisis-severity
+     dots, and a character-status line. All update on scroll.
+     ============================================================ */
+  .scen-panel {
+    border-top: 1px solid var(--rule);
+    margin-top: 18px;
+    padding-top: 16px;
+    font-family: var(--mono);
+  }
+  .scen-panel .sp-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  .scen-panel .sp-year {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    transition: color 0.6s ease;
+  }
+  body[data-crisis="3"] .scen-panel .sp-year,
+  body[data-crisis="4"] .scen-panel .sp-year,
+  body[data-crisis="5"] .scen-panel .sp-year { color: var(--s-crisis); }
+  .scen-panel .sp-chapter {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .scen-panel .sp-status {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.6s ease;
+  }
+  body[data-crisis="3"] .scen-panel .sp-status,
+  body[data-crisis="4"] .scen-panel .sp-status,
+  body[data-crisis="5"] .scen-panel .sp-status { color: var(--s-crisis); }
+
+  /* Severity track — seven dots, one per year. */
+  .scen-panel .sp-severity {
+    margin-bottom: 16px;
+  }
+  .scen-panel .sp-severity .sp-label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .scen-panel .sp-sev-track {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    align-items: end;
+    height: 28px;
+  }
+  .scen-panel .sp-sev-bar {
+    background: var(--rule);
+    border-radius: 1px;
+    transition: background-color 0.5s ease, height 0.5s ease;
+    height: 100%;
+    opacity: 0.35;
+  }
+  .scen-panel .sp-sev-bar.past { opacity: 0.75; background: var(--s-crisis); }
+  .scen-panel .sp-sev-bar.current { opacity: 1; background: var(--s-crisis); box-shadow: 0 0 0 2px var(--s-crisis-soft); }
+
+  /* Indicator rows with inline bar. */
+  .scen-panel .sp-indicators {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .scen-panel .sp-ind {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 4px;
+    align-items: baseline;
+  }
+  .scen-panel .sp-ind .sp-k {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .scen-panel .sp-ind .sp-v {
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    font-weight: 500;
+    transition: color 0.6s ease;
+  }
+  .scen-panel .sp-ind .sp-v.worsening { color: var(--s-crisis); }
+  .scen-panel .sp-ind .sp-track {
+    grid-column: 1 / -1;
+    height: 3px;
+    background: var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .scen-panel .sp-ind .sp-track .sp-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--ink);
+    width: 0%;
+    transition: width 0.8s cubic-bezier(.4,.1,.3,1), background-color 0.6s ease;
+  }
+  .scen-panel .sp-ind .sp-track .sp-fill.worsening { background: var(--s-crisis); }
+
+  /* Character status: the Villanuevas line. */
+  .scen-panel .sp-family {
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+  }
+  .scen-panel .sp-family .sp-fam-label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  .scen-panel .sp-family .sp-fam-who {
+    font-family: var(--serif);
+    font-size: 12px;
+    font-style: italic;
+    color: var(--ink-2);
+    line-height: 1.45;
+  }
+  .scen-panel .sp-family .sp-fam-who strong {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* Keep the sidebar, top nav, and chart surfaces drifting with the body. */
+  aside.sidebar, .topnav, figure.chart {
+    transition: background-color 1.2s ease, border-color 1.2s ease, color 1.2s ease;
+  }
+  aside.sidebar { background-color: var(--paper); border-right-color: var(--rule); }
+  .topnav { background-color: var(--paper); border-bottom-color: var(--rule); }
+
+  /* Subtle vignette that deepens at peak crisis. */
+  .crisis-vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 40;
+    opacity: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 40%,
+      rgba(20, 18, 14, 0.18) 100%
+    );
+    transition: opacity 1.4s ease;
+  }
+  body[data-crisis="4"] .crisis-vignette { opacity: 0.5; }
+  body[data-crisis="5"] .crisis-vignette { opacity: 0.85; }
+
+  /* ============================================================
+     TYPEWRITER DATELINE HERO — full-viewport cream canvas.
+     Opens with a single date typing itself out at enormous scale,
+     then the street/time line drops below, then title + dek fade in.
+     Non-scrolling animation — runs once on load, then holds still.
+     ============================================================ */
+  .arch-hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 80px 64px;
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--paper);
+  }
+  .arch-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 30% 40%, rgba(180,69,44,0.05), transparent 65%),
+      radial-gradient(ellipse 55% 50% at 80% 75%, rgba(44,62,92,0.04), transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .arch-hero > * { position: relative; z-index: 1; }
+
+  .typ-stamp {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: typ-fade 0.7s ease 0.1s forwards;
+  }
+  .typ-stamp::before {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+    vertical-align: middle;
+    margin-right: 14px;
+    transform: translateY(-2px);
+  }
+
+  @keyframes typ-fade {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes typ-rule-draw {
+    from { width: 0; }
+    to   { width: 420px; }
+  }
+
+  .typ-title-main {
+    font-family: var(--serif);
+    font-size: clamp(84px, 13vw, 180px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    font-weight: 500;
+    margin: 0;
+    opacity: 0;
+    animation: typ-fade 1.1s cubic-bezier(.2,.8,.3,1) 0.3s forwards;
+  }
+  .typ-title-main em {
+    color: var(--accent);
+    font-style: italic;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .typ-subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 34px);
+    line-height: 1.25;
+    color: var(--ink-2);
+    max-width: 720px;
+    margin: 32px 0 0;
+    opacity: 0;
+    animation: typ-fade 1.0s ease 1.1s forwards;
+  }
+
+  .typ-rule {
+    width: 0;
+    height: 1px;
+    background: var(--rule);
+    margin: 56px 0 40px;
+    animation: typ-rule-draw 1.0s cubic-bezier(.4,.1,.3,1) 1.7s forwards;
+  }
+
+  .typ-dek {
+    font-family: var(--serif);
+    font-size: clamp(16px, 1.35vw, 19px);
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: 680px;
+    margin: 0 0 32px;
+    opacity: 0;
+    animation: typ-fade 1.0s ease 2.2s forwards;
+  }
+  .typ-dek a { color: var(--accent); }
+
+  .typ-how {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    max-width: 680px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    opacity: 0;
+    animation: typ-fade 1.0s ease 2.7s forwards;
+  }
+  .typ-how strong { color: var(--accent); font-weight: 500; }
+
+  .typ-cue {
+    position: absolute;
+    bottom: 32px;
+    right: 40px;
+    z-index: 2;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    animation: typ-fade 0.8s ease 3.2s forwards;
+  }
+  .typ-cue .line {
+    width: 1px;
+    height: 36px;
+    background: var(--ink-faded);
+    animation: scroll-cue 2s ease-in-out infinite;
+  }
+
+  .typ-filenote {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--s-crisis);
+    opacity: 0;
+    animation: typ-fade 0.7s ease 2.4s forwards;
+  }
+
+  @media (max-width: 720px) {
+    .arch-hero { padding: 56px 24px; }
+    .typ-stamp { font-size: 10px; margin-bottom: 32px; }
+    .typ-rule { margin: 40px 0 28px; }
+    @keyframes typ-rule-draw { from { width: 0; } to { width: 180px; } }
+    .typ-filenote { display: none; }
+  }
+
+  /* Legacy archipelago-hero rules below are unused but left intact
+     so other sections don't inherit unintended styles. */
+  .arch-hero-legacy {
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(420px, 520px);
+    gap: 0;
+    align-items: stretch;
+  }
+  .arch-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 35% 45%, rgba(180,69,44,0.05), transparent 65%),
+      radial-gradient(ellipse 55% 45% at 80% 75%, rgba(44,62,92,0.05), transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .arch-map-wrap {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .arch-map {
+    width: 100%;
+    height: 100vh;
+    max-height: 860px;
+    display: block;
+  }
+  .arch-map circle {
+    fill: var(--ink);
+    opacity: 0.55;
+    transition: fill 1.2s ease, opacity 1.2s ease, r 1.2s ease;
+  }
+  .arch-map circle.lit {
+    fill: var(--s-crisis);
+    opacity: 0.92;
+  }
+  .arch-map circle.dim {
+    opacity: 0.12;
+  }
+  .arch-map .arch-pulse {
+    fill: none;
+    stroke: var(--s-crisis);
+    stroke-width: 0.7;
+    opacity: 0;
+    transform-origin: center;
+  }
+  .arch-map .arch-pulse.go {
+    animation: arch-pulse 2.6s ease-out forwards;
+  }
+  @keyframes arch-pulse {
+    0%   { r: 6;   opacity: 0.55; }
+    100% { r: 190; opacity: 0;    }
+  }
+  .arch-manila-pin {
+    fill: var(--accent);
+    opacity: 0.95;
+  }
+  .arch-manila-ring {
+    stroke: var(--accent);
+  }
+  .arch-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    fill: var(--ink-faded);
+  }
+  .arch-label.hit {
+    fill: var(--s-crisis);
+  }
+
+  .arch-copy {
+    position: relative;
+    z-index: 2;
+    padding: 88px 56px 72px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid var(--rule);
+    background: linear-gradient(90deg, transparent 0%, var(--paper) 14%);
+  }
+  .arch-copy .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .arch-copy h1 {
+    font-family: var(--serif);
+    font-size: clamp(44px, 5.6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px;
+    font-weight: 500;
+  }
+  .arch-copy h1 em {
+    color: var(--accent);
+    font-style: italic;
+  }
+  .arch-copy .dek {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-2);
+    font-style: italic;
+    max-width: 460px;
+    margin: 0;
+  }
+  .arch-copy .how {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 10.5px;
+    line-height: 1.55;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+    max-width: 460px;
+  }
+  .arch-copy .how strong { color: var(--accent); font-weight: 500; }
+
+  .arch-legend {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+  }
+  .arch-legend .lg-row { display: flex; align-items: center; gap: 10px; }
+  .arch-legend .lg-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--ink); opacity: 0.55;
+  }
+  .arch-legend .lg-dot.red { background: var(--s-crisis); opacity: 0.92; }
+  .arch-legend .lg-dot.faint { opacity: 0.18; }
+
+  .arch-counter {
+    position: absolute;
+    top: 88px;
+    left: 28px;
+    z-index: 3;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .arch-counter .n {
+    display: block;
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: 500;
+    color: var(--s-crisis);
+    line-height: 1;
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.4s ease;
+  }
+  .arch-counter .n-sub {
+    display: block;
+    margin-top: 6px;
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .arch-scroll-cue {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    z-index: 3;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .arch-scroll-cue .line {
+    width: 1px; height: 36px; background: var(--ink-faded);
+    animation: scroll-cue 2s ease-in-out infinite;
+  }
+
+  @media (max-width: 1000px) {
+    .arch-hero { grid-template-columns: 1fr; }
+    .arch-copy { border-left: none; border-top: 1px solid var(--rule); padding: 40px 24px; background: var(--paper); }
+    .arch-map { height: 70vh; }
+  }
+</style>
+</head>
+<body class="has-topnav" data-scenario="crisis">
+
+<nav class="topnav">
+  <a href="index.html" class="brand">Philippines <span class="yr">2030</span></a>
+  <div class="links">
+    <a href="index.html" class="current">Narrative</a>
+    <a href="Research.html">Research</a>
+  </div>
+</nav>
+
+<div class="progress-bar"><div class="fill"></div></div>
+
+<div class="crisis-vignette" aria-hidden="true"></div>
+
+<div class="page">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div>
+      <h1 class="site-title">A <span class="year">scenario</span></h1>
+      <div class="site-sub">2026 → 2032 · One possible path</div>
+    </div>
+
+    <nav>
+      <ul class="year-nav">
+        <li><a href="#prologue"><span class="y">—</span><span class="what">Prologue</span></a></li>
+        <li><a href="#y2026"><span class="y">2026</span><span class="what">First tremors</span></a></li>
+        <li><a href="#y2027"><span class="y">2027</span><span class="what">The first wave</span></a></li>
+        <li><a href="#y2028"><span class="y">2028</span><span class="what">Political inflection</span></a></li>
+        <li><a href="#y2029"><span class="y">2029</span><span class="what">Gulf crossover</span></a></li>
+        <li><a href="#y2030"><span class="y">2030</span><span class="what">The peso breaks</span></a></li>
+        <li><a href="#y2031"><span class="y">2031</span><span class="what">Reckoning</span></a></li>
+        <li><a href="#y2032"><span class="y">2032</span><span class="what">What holds</span></a></li>
+        <li><a href="#epilogue"><span class="y">—</span><span class="what">Epilogue</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="scenario-toggle" style="opacity:0.85;">
+      <div class="label">Scenario path</div>
+      <div style="font-family:var(--mono);font-size:11px;color:var(--s-crisis);letter-spacing:0.14em;text-transform:uppercase;padding:10px 12px;border:1px solid var(--s-crisis);background:var(--s-crisis-soft);">
+        <span style="display:inline-block;width:8px;height:8px;background:var(--s-crisis);border-radius:50%;margin-right:8px;vertical-align:middle;"></span>Crisis &middot; 15%
+      </div>
+    </div>
+
+    <!-- ============ LIVE SCENARIO PANEL ============ -->
+    <div class="scen-panel" id="scen-panel" aria-live="polite">
+      <div class="sp-head">
+        <span class="sp-year" id="sp-year">2026</span>
+        <span class="sp-chapter" id="sp-chapter">Ch. 01</span>
+      </div>
+      <div class="sp-status" id="sp-status">Pre&ndash;shock</div>
+
+      <div class="sp-severity">
+        <div class="sp-label"><span>Crisis severity</span><span id="sp-sev-num">0 / 5</span></div>
+        <div class="sp-sev-track" id="sp-sev-track">
+          <div class="sp-sev-bar" data-year="2026" style="height:20%;"></div>
+          <div class="sp-sev-bar" data-year="2027" style="height:40%;"></div>
+          <div class="sp-sev-bar" data-year="2028" style="height:60%;"></div>
+          <div class="sp-sev-bar" data-year="2029" style="height:80%;"></div>
+          <div class="sp-sev-bar" data-year="2030" style="height:100%;"></div>
+          <div class="sp-sev-bar" data-year="2031" style="height:100%;"></div>
+          <div class="sp-sev-bar" data-year="2032" style="height:100%;"></div>
+        </div>
+      </div>
+
+      <div class="sp-indicators">
+        <div class="sp-ind">
+          <span class="sp-k">Peso / USD</span>
+          <span class="sp-v" id="sp-peso">&#8369;59.10</span>
+          <div class="sp-track"><div class="sp-fill" id="sp-peso-fill" style="width:0%;"></div></div>
+        </div>
+        <div class="sp-ind">
+          <span class="sp-k">BPO headcount</span>
+          <span class="sp-v" id="sp-bpo">1.90M</span>
+          <div class="sp-track"><div class="sp-fill" id="sp-bpo-fill" style="width:100%;"></div></div>
+        </div>
+        <div class="sp-ind">
+          <span class="sp-k">Remit &sdot; % GDP</span>
+          <span class="sp-v" id="sp-remit">7.3%</span>
+          <div class="sp-track"><div class="sp-fill" id="sp-remit-fill" style="width:100%;"></div></div>
+        </div>
+        <div class="sp-ind">
+          <span class="sp-k">Debt / GDP</span>
+          <span class="sp-v" id="sp-debt">63.2%</span>
+          <div class="sp-track"><div class="sp-fill" id="sp-debt-fill" style="width:0%;"></div></div>
+        </div>
+      </div>
+
+      <div class="sp-family">
+        <div class="sp-fam-label">The Villanuevas</div>
+        <div class="sp-fam-who" id="sp-fam"><strong>Maria</strong>, 29. Ortigas team lead. Two children. Condo plan on track.</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ CONTENT ============ -->
+  <main class="content">
+
+    <!-- HERO · title page -->
+    <section class="arch-hero" id="prologue" data-year="2026" data-crisis="0">
+      <div class="typ-filenote">Crisis path &middot; 15% tail</div>
+
+      <div class="typ-stamp">A scenario in seven chapters &middot; 2026&ndash;2032</div>
+
+      <h1 class="typ-title-main">
+        Philippines<br><em>2030</em>
+      </h1>
+
+      <div class="typ-subtitle">The decade the archipelago didn&rsquo;t see coming.</div>
+
+      <div class="typ-rule" aria-hidden="true"></div>
+
+      <p class="typ-dek">An AI-era scenario of Philippine economic collapse &mdash; how the BPO sector, the remittance base, and the peso fail together between 2026 and 2032, and what a country of 110 million looks like at the end of it. Every number inside is drawn from the <a href="Research.html">research dossier</a>. Every scene is composite fiction anchored to a dated fact.</p>
+
+      <div class="typ-how">
+        <strong>How to read this.</strong> Each chapter is a year. Each year is one scene, one family, one set of numbers. The sidebar tracks the scenario as it unfolds. This path is the 15% tail &mdash; not because it is unlikely, but because it is the worst case compatible with the official trajectory of 2025.
+      </div>
+
+      <div class="typ-cue">Scroll<div class="line"></div></div>
+    </section>
+
+    <!-- 2026 -->
+    <section id="y2026" data-year="2026" data-crisis="1">
+      <div class="year-marker col-wide reveal-root">
+        <div class="year-tag">Chapter 01 &middot; Late 2026</div>
+        <h2 class="year-big">20<em>26</em></h2>
+        <p class="year-sub">The first tremors arrive in a single quarterly earnings call &mdash; and almost no one in Manila notices, because almost no one in Manila is listening to a Concentrix earnings call at 5:30 in the morning. The country is already in a declared national energy emergency. The jeepney fare to Ortigas has risen 34% since February. Nobody has bandwidth for a Concentrix earnings call.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <div class="scene">
+          <div class="scene-meta">Opening scene · Ortigas · Tuesday, 29 September 2026, 6:14 a.m.</div>
+
+          <p class="lede dropcap">Maria Villanueva is finishing her graveyard shift on the 23rd floor of Robinsons Cyberscape Gamma when the phone at her workstation chirps twice &mdash; an internal Teams notification, not a customer call &mdash; and the floor goes very quiet in the particular way floors go quiet when 340 people all read the same message at the same second.</p>
+
+          <p>She is twenty-nine years old. She is team lead for the St.&nbsp;Louis-based healthcare account they all call, for reasons no one remembers, &ldquo;Bluebird.&rdquo; She has been at the same desk, with minor promotions, since 2019. She has two kids &mdash; Elijah is seven, Sophia is four &mdash; and a one-bedroom at SMDC Light Residences in Mandaluyong she is paying off on a five-year plan at ₱31,400 a month. Her English sounds, to an American ear, vaguely Midwestern. She learned it at a call center, from the calls themselves.</p>
+
+          <p>The message from Bluebird&rsquo;s vendor-management office is three sentences. Effective 1&nbsp;January 2027, all tier-1 inbound voice support for the member-services line will transition to an AI-native provider. Concentrix will retain tier-2 escalations, complex claims, and Spanish-language work. A transition plan will be shared by the account leadership in the coming week.</p>
+
+          <p>Her supervisor, Joseph, stands up at his desk two rows away. He does not say anything. He just looks at her, and then at the ceiling, and then sits back down. On the whiteboard behind him, last week&rsquo;s <span class="gloss" data-gloss="csat">CSAT</span> target &mdash; <span class="mono">88%</span> &mdash; is still written in blue dry-erase marker. They had hit 91.<sup class="fn" data-fn="1">1</sup></p>
+        </div>
+
+        <div class="stats reveal-root" style="margin:40px 0;">
+          <div class="stat"><div class="value neg">&minus;4.2<span class="unit">%</span></div><div class="label">PH services exports, Q2 2025 YoY</div></div>
+          <div class="stat"><div class="value">$1.52<span class="unit">B</span></div><div class="label">Concentrix goodwill impairment, Q4 2025</div></div>
+          <div class="stat"><div class="value neg">&minus;76<span class="unit">%</span></div><div class="label">Teleperformance drawdown from 2021 peak</div></div>
+          <div class="stat"><div class="value">340</div><div class="label">Seats on Maria&rsquo;s floor</div></div>
+          <div class="stat"><div class="value">&#8369;130<span class="unit">/L</span></div><div class="label">Diesel price, March 2026 — up from &#8369;67 in Jan</div></div>
+          <div class="stat"><div class="value">3.9<span class="unit">%</span></div><div class="label">Inflation forecast 2026, revised up from 1.7%</div></div>
+        </div>
+
+        <div class="callout reveal-root">
+          <span class="callout-label">Two shocks, one country</span>
+          <p>On 25 March 2026, six months before Maria&rsquo;s floor went quiet, President Marcos signed Executive Order 110 &mdash; a state of national energy emergency, the first such declaration in the world following the Iranian war and the Strait of Hormuz closure. The Philippines imports 98% of its oil from the Middle East. Diesel crossed &#8369;130 a liter. Four hundred and twenty-five filling stations closed. The jeepney operators got a provisional fare increase. The peso, already under pressure from oil-import costs, traded at &#8369;57.40 by the end of March. The BSP was already stretched before the BPO wave arrived. The country entered the AI displacement shock not from a position of macroeconomic stability but from a declared emergency. This is the condition in which the Bluebird message lands.</p>
+        </div>
+
+        <div class="col reveal-root">
+          <p>The contraction had been visible in the data for fifteen months. Philippine services exports fell 4.2% year-on-year in Q2 2025 &mdash; the first non-COVID contraction since 2012 &mdash; before anyone on Maria&rsquo;s floor had heard the phrase &ldquo;agentic deployment.&rdquo; By the time Concentrix took a $1.52&nbsp;billion goodwill impairment on the Webhelp book in the fourth quarter, <span class="gloss" data-gloss="ibpap">IBPAP</span> had already issued a statement reassuring members that the sector remained on track for its <em>$59 billion, 2.5 million workers by 2028</em> target. No one at IBPAP explained how the arithmetic closed. No one in the Senate asked.</p>
+
+          <p>On the jeepney home &mdash; the fare is ₱18 now, up from ₱13 in January, since diesel crossed ₱130 a liter in March and the LTFRB allowed operators a provisional increase &mdash; Maria scrolls past a Rappler push alert: <em>TaskUs taken private by Blackstone and founders in all-cash $2.1B deal.</em> She swipes it away without opening it. She is thinking about the ₱31,400. She is thinking about her brother Benjie&rsquo;s contract in Riyadh, which is up for renewal in March, in a city that is six months into a war that has made the Strait of Hormuz impassable and made Benjie&rsquo;s employer very, very quiet about the renewal. She is thinking about whether she can skip buying Elijah the school shoes until payday after next.</p>
+        </div>
+
+        <div class="callout reveal-root">
+          <span class="callout-label">The arithmetic problem, stated plainly</span>
+          <p>IBPAP&rsquo;s 2028 target assumes $59B revenue on 2.5M workers with rising revenue per employee. You cannot have all three. The industry&rsquo;s own AI strategy &mdash; deflection, outcome-based pricing, revenue-per-employee growth &mdash; makes rising headcount arithmetically incompatible with the stated target. Two of the three numbers have to give. In late 2026, no one in Philippine public life is saying which two.</p>
+        </div>
+
+        <div class="detail-card reveal-root">
+          <div class="tag">Family<span class="who">The Villanuevas</span></div>
+          <div class="body">Maria &mdash; 29, Ortigas <span class="gloss" data-gloss="bpo">BPO</span> team lead. Benjie, her younger brother &mdash; 26, two years into a three-year domestic-driver contract in Riyadh, sending ₱22,000 home a month. Nanay Tess, their mother &mdash; 58, a retired public-school teacher in Bayambang, Pangasinan. Sophia (4) and Elijah (7), Maria&rsquo;s children. One household, three income streams, two of them about to be tested by the same technology. The scenes that follow come back to them.</div>
+        </div>
+
+        <div class="col reveal-root">
+          <p>That evening, the Bluebird account manager in St.&nbsp;Louis &mdash; a woman named Diane who Maria has spoken to twice on video &mdash; sends a personal note. It is kind. It uses the word <em>difficult</em> twice. It explains that the decision was made at the parent company level, over the objection of the operational team, because the vendor&rsquo;s pilot had come back at 73% deflection on tier-1 queries with a CSAT of 4.4 against Concentrix&rsquo;s 4.2. &ldquo;It isn&rsquo;t about you,&rdquo; Diane writes, and Maria believes her, and it doesn&rsquo;t matter.</p>
+
+          <p>On the group chat with the other team leads, someone posts a screenshot of a Klarna press release from 2024 &mdash; the one where the CEO had walked back full AI deployment and rehired human agents. <em>See</em>, the message reads, <em>it doesn&rsquo;t actually work</em>. One of the senior leads, Marvin, replies within the minute. <em>Read it again. They replaced 700 of their 850 FTEs and kept the rest. That&rsquo;s not a reversal. That&rsquo;s the equilibrium.</em> No one responds. The chat goes quiet for eleven minutes and then someone changes the subject to Sunday&rsquo;s PBA game.</p>
+        </div>
+
+        <div class="pullquote reveal-root">
+          <blockquote>By the close of 2026, roughly 42,000 tier-1 voice seats have been quietly moved off Philippine rosters. The figure will not appear in any official release until the 2027 IBPAP annual report, by which time the number will be larger by an order of magnitude.</blockquote>
+          <cite>Chapter 01 &middot; The first tremors</cite>
+        </div>
+
+        <div class="col reveal-root">
+          <p>In the research dossier, this year is a single downward tick on a chart that does not yet look alarming. <a href="Research.html#bpo">Figure&nbsp;01</a> shows all three scenario paths still clustered within a few percentage points of each other through the end of 2026. The divergence begins in 2027. The chart is, in this sense, a polite chart. The floors it represents are not polite.</p>
+
+          <p>Maria gets home at 7:40 a.m. Her mother is already on the jeep to drop Sophia at daycare. Elijah is at the table, in uniform, eating pan de sal with his hands and watching a tablet. Maria kisses the top of his head, tells him she loves him, goes to the bedroom, closes the door, and does not cry. She sleeps until 2:30. When she wakes up, she opens her banking app and looks at the condo loan balance. ₱1,394,200 remaining. Thirty-seven months.</p>
+
+          <p>The first tremor has arrived. It is one account, on one floor, on one Tuesday. There are 1.9 million BPO workers in the country. The ground has moved under perhaps 340 of them. The news cycle will not pick this up for another fourteen weeks.</p>
+        </div>
+
+        <div class="research-links-row">
+          <a href="Research.html#bpo" class="research-link">Fig. 01 · Headcount</a>
+          <a href="Research.html#exposure" class="research-link">Exposure data</a>
+          <a href="Research.html#bpo" class="research-link">The arithmetic problem</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2027 -->
+    <section id="y2027" data-year="2027" data-crisis="2">
+      <div class="year-marker col-wide reveal-root">
+        <div class="year-tag">Chapter 02 &middot; 2027</div>
+        <h2 class="year-big">20<em>27</em></h2>
+        <p class="year-sub">The gradient becomes a cliff. By December, 280,000 seats are gone, office vacancies crack 30%, and the phrase &ldquo;AI dividend&rdquo; enters the vocabulary of every procurement officer in North America.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <div class="scene">
+          <div class="scene-meta">Scene · Dallas, 11 March 2027, 2:40 p.m. CST</div>
+
+          <p class="dropcap">The slide is number 23 of 47 in an internal deck at a Fortune&nbsp;50 healthcare insurer whose name, for legal reasons, cannot be used here. The title reads: <em>Q1 pilot outcomes &mdash; member services transformation.</em> The numbers, against a green checkmark: 74% deflection at tier-1, CSAT 4.41 (baseline 4.19), <span class="gloss" data-gloss="aht">AHT</span> down 62%, cost per resolved contact $0.063 against the Concentrix contract rate of $5.80. The room is seven people. One of them is a VP of procurement named Andrea, who is forty-six, who has spent nineteen years managing BPO vendor relationships, and who understands on this slide that her job description is about to change and that several hundred thousand jobs in a country she has never visited are going to change with it.</p>
+
+          <p>Within ninety days, a version of this deck will circulate, under NDA, through the procurement offices of seventeen Fortune&nbsp;500 firms. By September, eleven of them will have issued RFPs with outcome-based pricing floors in the <span class="mono">$0.05&ndash;0.20 per resolved contact</span> band. Every one of those RFPs will quietly ask vendors to certify an AI-to-human ratio by Q2 2028. The second wave of enterprise buyers stops waiting for conclusive evidence. The evidence has arrived.</p>
+        </div>
+
+        <div class="scene">
+          <div class="scene-meta">Scene · Ayala Triangle, 14 May 2027, 9:20 p.m.</div>
+
+          <p>Maria and Joseph and two other team leads are at a 24-hour Jollibee on Julia Vargas, eating late because they had all been in the same eight-hour retrenchment meeting, and because no one wants to go home yet. Maria&rsquo;s separation package is 1.5 months&rsquo; pay per year of service, plus accrued leave, plus a ₱50,000 &ldquo;transition allowance&rdquo; that the HR deck had described as generous and the lawyer they consulted had described as the legal minimum. It comes to ₱612,000. The condo balance is ₱1,244,000. She is doing arithmetic in her head that does not close.</p>
+
+          <p>Joseph is reading aloud from the IBPAP press release that had come out that morning. <em>The sector remains resilient. Displacement is localized. Headcount targets for 2028 are under review but remain on-track directionally.</em> Marvin, the senior lead from the 2026 group chat, says without looking up from his beer: <em>Directionally.</em> Nobody laughs. A GrabFood rider queue has formed on the sidewalk outside, longer than it used to be. Maria notices that three of the riders in the queue are wearing Concentrix lanyards they have forgotten to take off.</p>
+        </div>
+
+        <figure class="chart reveal-root" style="margin:56px 0;">
+          <div class="figure-head">
+            <span class="figure-num">Fig. 01</span>
+            <span class="figure-title">BPO headcount under the crisis scenario</span>
+          </div>
+          <div id="chart-bpo"></div>
+          <div class="figure-note">The figure on the research page. The crisis path is the solid line: 1.90M in 2025, 1.68M by 2027, 1.15M by 2030.</div>
+        </figure>
+
+        <div class="col reveal-root">
+          <p>The aggregate number for 2027, released later, is 280,000 seats lost &mdash; just inside the 150&ndash;300K first-wave band the research had forecast. The composition is what mattered. Tier-1 voice (US accounts): &minus;41%. Entry-level content moderation: &minus;58%. Basic AP/invoice matching: &minus;67%. Outbound telesales: effectively zero. The growth segments &mdash; global capability centers, analytics consulting, regulatory-mandated trust &amp; safety &mdash; added 34,000 roles. The net was a hole the size of Iloilo&rsquo;s entire BPO workforce, concentrated in Metro Manila and Cebu, realized over forty-one weeks.</p>
+
+          <p>The property market moves first, because the property market always moves first. Colliers&rsquo; Q3 2027 vacancy print lands at 31.4% in the Bay Area, 28.9% in Alabang, 24.1% overall Metro Manila. One hundred and ninety thousand square meters of new supply delivers into a market shrinking by seat count. Peripheral condo asking rents in Parañaque and Pasig fall 18% against 2025. Three of the largest developer-landlords issue covenant waivers to their anchor BPO tenants. The two smallest ones do not, and the quiet restructurings begin.</p>
+        </div>
+
+        <div class="callout reveal-root">
+          <span class="callout-label">The second-order wave</span>
+          <p>For every BPO seat lost, roughly 0.8 indirect jobs vanish with it &mdash; drivers, canteen staff, security, the mall tenants who sold them lunch. The 280,000 direct seats of 2027 produce ~224,000 additional informal-sector losses. None of these workers qualify for the <span class="gloss" data-gloss="sss">SSS</span> one-time unemployment benefit. None of them appear in the IBPAP headline number.</p>
+        </div>
+
+        <div class="col reveal-root">
+          <p>In September, at a Senate committee hearing on the services-export contraction, the IBPAP representative is asked whether the 2028 target of 2.5 million jobs is still realistic. He pauses for four seconds &mdash; the clip will be shared 1.4 million times &mdash; and says: <em>The target is aspirational.</em> He is corrected within the hour by an IBPAP press office clarification stating that the target remains operative. By that point it no longer matters. The word <em>aspirational</em> is already in the evening news chyron.</p>
+
+          <p>Maria files for the SSS unemployment benefit in late May. It pays ₱22,000, once, and then nothing. Her mother sends ₱8,000 from Pangasinan out of the teacher&rsquo;s-pension savings Maria had not known about. Benjie, in Riyadh, increases his monthly remittance from ₱22,000 to ₱28,000 and stops sending his own family in Antipolo anything at all. Everyone is holding the household up at the same time. The arithmetic still does not close.</p>
+
+          <p>On 3 November, at the Ayala Triangle Christmas tree lighting, the crowd is markedly thinner than in 2025. Maria takes Elijah and Sophia anyway. Elijah asks why there are fewer people this year. She tells him she doesn&rsquo;t know. She is telling him the truth and she is telling him a lie at the same time.</p>
+        </div>
+
+        <div class="pullquote reveal-root">
+          <blockquote>The displacement wave is not invisible. It is visible and legible and in the data. The Philippine state, in late 2027, has not yet decided whether to name it.</blockquote>
+          <cite>Chapter 02 &middot; The first wave</cite>
+        </div>
+
+        <div class="research-links-row">
+          <a href="Research.html#bpo" class="research-link">Fig. 01 · Headcount</a>
+          <a href="Research.html#bpo" class="research-link">Fig. 03 · Displacement wave</a>
+          <a href="Research.html#bpo" class="research-link">Voice-tier exposure</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2028 -->
+    <section id="y2028" data-year="2028" data-crisis="3">
+      <div class="year-marker col-wide reveal-root">
+        <div class="year-tag">Chapter 03 &middot; 2028</div>
+        <h2 class="year-big">20<em>28</em></h2>
+        <p class="year-sub">Presidential election year. A five-way race with no runoff. The candidate polling at 11% in January wins with 34.7% in May. She is inaugurated on 30 June. By December the peso is at &#8369;66.40 and the one BPO segment that had been growing &mdash; global capability centers &mdash; is quietly evaluating Kuala Lumpur.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <div class="scene">
+          <div class="scene-meta">Scene &middot; Smart Araneta Coliseum, Cubao, 9 March 2028, 7:18 p.m.</div>
+
+          <p class="dropcap">The senator is a second-term labor-rights lawyer from Cagayan de Oro, fifty-two years old, who had spent eight years on the Senate Labor Committee before anyone outside her constituency had heard of her. Her campaign had been polling at 11% in January. In February, at a Cebu rally, a heckler called out from the back asking what she would actually do differently. She stopped mid-sentence and answered without notes: <em>Tatlumpung taon nating pinag-aral ang kanilang accent. Isang earnings call lang para palitan tayo.</em> The eleven-second clip &mdash; thirty years learning their accent, one earnings call to replace us &mdash; was viewed 48 million times on TikTok and Facebook within ten days. She is now polling at 27% and climbing. The crowd at Araneta is twenty-two thousand people. The front three rows are Concentrix and Teleperformance retrenchers wearing their old lanyards.</p>
+
+          <p>The five-way race has a clean logic. The two establishment candidates &mdash; a former DILG secretary backed by the Ayala and Aboitiz blocs, and a former <span class="gloss" data-gloss="neda">NEDA</span> director-general backed by a coalition of business chambers and the Gokongwei family &mdash; are splitting 48% of the vote between them. Neither will concede to the other. The senator needs only to hold her base. Within forty minutes of the Araneta speech, a deepfake video begins circulating on Telegram &mdash; the senator apparently endorsing a rival, voice model clean, lip-sync imperfect. <span class="gloss" data-gloss="comelec">COMELEC</span>&rsquo;s Task Force KKK issues a takedown request at 11:14 p.m. The platforms respond six and a half hours later. By then the clip has 3.8 million views and a second edit has been made in which the lip-sync is better.</p>
+        </div>
+
+        <div class="scene">
+          <div class="scene-meta">Scene &middot; BGC, Taguig, 13 May 2028, 11:40 p.m.</div>
+
+          <p>Maria Villanueva is sitting on the floor of a BGC startup office, surrounded by five annotators whose shift ended at 10, watching the <span class="gloss" data-gloss="comelec">COMELEC</span> partial count on her phone. At 89% reporting, the senator is at 34.7%. The DILG secretary is at 24.1%. The NEDA director-general, who had been the pick of every editorial board in the country, is at 21.8%. Maria&rsquo;s startup has eleven employees. Three of them voted for the senator. Three voted for the NEDA candidate. Two voted for the DILG candidate. Three did not vote because they could not get to their home precinct. She does not ask which three.</p>
+
+          <p>The startup&rsquo;s board meets via Zoom from Singapore, London, and San Francisco the following Monday. The meeting lasts forty-one minutes. The minutes note, in one line, that the board has resolved to &ldquo;review the corporate domicile structure in light of the evolving regulatory environment.&rdquo; Maria is not on the board. She reads the minutes because her boss, who is on the board, forgets to take her off the distribution list. She does not say anything. She updates her LinkedIn profile that afternoon for the first time in two years.</p>
+        </div>
+
+        <div class="stats reveal-root" style="margin:40px 0;">
+          <div class="stat"><div class="value">34.7<span class="unit">%</span></div><div class="label">New president&rsquo;s vote share &mdash; first past the post, no runoff</div></div>
+          <div class="stat"><div class="value">618<span class="unit">K</span></div><div class="label">Cumulative BPO displacement 2026&ndash;2028</div></div>
+          <div class="stat"><div class="value neg">3.9<span class="unit">%</span></div><div class="label">GDP growth, full-year 2028</div></div>
+          <div class="stat"><div class="value">68.1<span class="unit">%</span></div><div class="label">Debt to GDP, end 2028</div></div>
+        </div>
+
+        <div class="col reveal-root">
+          <p>The new president is inaugurated on 30 June 2028. Her first executive order, signed at 9:14 a.m. on 1 July, establishes the &ldquo;Office for Philippine Labor Sovereignty&rdquo; within the Office of the President. Her second, signed the same afternoon, suspends the issuance of new <span class="gloss" data-gloss="gcc">GCC</span> incentives under the CREATE MORE Act pending a &ldquo;review of labor displacement impact.&rdquo; The suspension lasts fourteen months and is never formally lifted &mdash; it simply stops being processed. Her third executive order, in August, requires any foreign AI model used in a Philippine commercial context to be registered with the <span class="gloss" data-gloss="dict">DICT</span> and certified &ldquo;compliant with Philippine labor transition standards.&rdquo; The certification process does not yet exist. The order creates the legal instrument without the administrative infrastructure to use it. This is, in the Philippines, how a policy arrives.</p>
+
+          <p>The three competing bills &mdash; the BPO transparency levy, the expanded <span class="gloss" data-gloss="4ps">4Ps</span>, the criminal-liability clause on foreign AI &mdash; are folded into a single omnibus measure called the Philippine AI Sovereignty and Labor Protection Act, which the new administration endorses but does not actively whip. The omnibus bill passes the House by November, stalls in the Senate, and exits the year in a bicameral conference committee that has met twice. It will not clear bicam until 2030, in a form that retains the levy at 6% (down from 18%), expands 4Ps by 1.1 million households (not 1.8 million), and drops the criminal-liability clause entirely. This is also how a policy arrives.</p>
+        </div>
+
+        <div class="callout reveal-root">
+          <span class="callout-label">The oligarchs and the new administration</span>
+          <p>The Ayala Group &mdash; whose Ayala Land commercial <span class="gloss" data-gloss="psei">REIT</span> has shed 28% since 2026 as BPO office vacancies climbed past 31% in the Bay Area and Ortigas &mdash; had backed the NEDA candidate. The post-election environment is, for Ayala, punitive without being overtly hostile: regulatory processing of their BPO-to-mixed-use rezoning applications slows from weeks to months. The SM Group, which had hedged by donating to three campaigns, gets an early meeting with the new Chief of Staff and a quiet understanding on mall-retail import duties. San Miguel Corporation, whose power-generation assets had benefited from the Iran-war fuel premium, moves fastest: by August, San Miguel Energy&rsquo;s chairman has announced a &#8369;40-billion &ldquo;Philippine AI Infrastructure Fund&rdquo; in partnership with the new Office for Labor Sovereignty. What the fund will build is not specified. What San Miguel gets in return &mdash; a 25-year power-supply agreement with the proposed Bataan rehabilitation project &mdash; is specified, quietly, in a memorandum of agreement signed in September.</p>
+        </div>
+
+        <div class="col reveal-root">
+          <p>The downstream effect that matters most is the one that takes longest to appear in the data. The <span class="gloss" data-gloss="gcc">GCC</span> segment &mdash; the multinational-owned captive offices that had been the only growing component of the BPO sector through 2026 and 2027, adding 34,000 roles against the wave of tier-1 voice losses &mdash; begins, in the second half of 2028, to do what multinationals do when a policy environment becomes uncertain: it evaluates alternatives. Not publicly. Not with press releases. With site-selection consultants. With real-estate broker inquiries in Kuala Lumpur and Hyderabad. With informal conversations, at industry events in Singapore, about whether Manila is &ldquo;stable.&rdquo; By year-end, three GCCs have quietly announced regional consolidations that reduce their Philippine headcount by a combined 4,200 people. The figure does not appear in the IBPAP headline. It does not appear anywhere, except in the occupancy reports of the Ayala REIT, where it shows up as three floors going dark in Q4.</p>
+
+          <p>Maria Villanueva&rsquo;s startup has, by November 2028, incorporated a Singapore holding company for its IP. Her ₱47,000 salary is now paid by the Philippine subsidiary of a Singaporean entity. Her equity, which had briefly been worth three times her annual salary in October, is now worth approximately four months&rsquo; salary as the valuation has been reset in a restructuring she did not vote on because she does not have board representation. The condo is current. She has taken a PAG-IBIG restructuring that extends the loan to eight years and adds ₱318,000 in total interest. Benjie&rsquo;s renewal in Riyadh came through in March at the same salary but with a clause Benjie consulted the <span class="gloss" data-gloss="ofw">OFW</span> legal hotline about: a performance-conditional termination right tied to <em>comparative operational efficiency against available automated alternatives</em>. Nanay Tess read the clause at her kitchen table in Bayambang and said: <em>Kung gayon, anak, may plano na sila na hindi ka na lang kailangan.</em></p>
+
+          <p>By New Year&rsquo;s Eve, the peso closes at ₱66.40. The <span class="gloss" data-gloss="bsp">BSP</span> has spent $4.2&nbsp;billion of its $108-billion reserve defending the ₱66 line and has not succeeded. The new BSP Governor &mdash; the previous one having been replaced in September after a public disagreement with the new administration over the pace of rate normalization &mdash; tells reporters that the peso&rsquo;s level reflects &ldquo;external factors.&rdquo; This is true. It is not the whole truth.</p>
+        </div>
+
+        <div class="pullquote reveal-root">
+          <blockquote>The senator won because she named the injury. What she was elected to do &mdash; reverse it &mdash; is not something an executive order can accomplish against a global technology transition. The administration will spend four years learning this. The economy will spend four years paying for the learning.</blockquote>
+          <cite>Chapter 03 &middot; The election year</cite>
+        </div>
+
+        <div class="research-links-row">
+          <a href="Research.html#governance" class="research-link">Governance</a>
+          <a href="Research.html#geopolitics" class="research-link">Geopolitics</a>
+          <a href="Research.html#scenarios" class="research-link">Scenario math</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2029 -->
+    <section id="y2029" data-year="2029" data-crisis="4">
+      <div class="year-marker col-wide reveal-root">
+        <div class="year-tag">Chapter 04 &middot; 2029</div>
+        <h2 class="year-big">20<em>29</em></h2>
+        <p class="year-sub">The second shock lands in a place Manila is not watching. The Gulf domestic-labor wage curve and the humanoid <span class="gloss" data-gloss="raas">RaaS</span> curve cross in a shaded zone of employer-by-employer indifference. For Benjie Villanueva, in Riyadh, the indifference has a face, a model number, and a three-month trial clause.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <div class="scene">
+          <div class="scene-meta">Scene · Al Olaya district, Riyadh, 6 February 2029, 8:12 p.m. AST</div>
+
+          <p class="dropcap">The employer is a Saudi family named Al-Qahtani &mdash; three generations, nine people in a compound off Olaya Street, a transport and logistics business old enough to have predated the reforms. Benjie has been their driver and house-help for the last three years and seven months. He is twenty-nine now. His contract is up in eleven days. The family&rsquo;s eldest son, Faisal, who runs the household side of the business, has called Benjie into the majlis to talk.</p>
+
+          <p>Faisal is apologetic. He is specific. The QSS &times; Humanoid joint venture &mdash; a Saudi sovereign-fund subsidiary that had announced a 10,000-unit domestic deployment in November 2025 &mdash; had finally crossed, in Q4 2028, into the affordable mass-market tier. The units were being sold as a managed service at SAR&nbsp;1,400 per month, all-in &mdash; roughly $373 &mdash; with a three-month performance guarantee. Faisal had taken a pilot unit in October. It could drive in city conditions after a four-week geofenced training period. It could iron a thobe. It could not, yet, be trusted with the children on its own, but Faisal&rsquo;s wife did not leave the children alone with Benjie either, so this was not a regression. The unit did not need to be housed, fed, or sent home for Eid. It did not have a mother in Pangasinan who was, every February, a little sicker than she had been last February.</p>
+
+          <p>Faisal is still speaking. He is offering Benjie a supervisory role &mdash; overseeing three of the units as they deployed across a broader family compound network, at a salary of SAR&nbsp;3,200 per month. This is roughly 45% of Benjie&rsquo;s current package. Benjie is doing the arithmetic in his head. ₱28,000 a month to Nanay Tess becomes ₱13,000. Sophia&rsquo;s tuition at Miriam Elementary comes from that money. Maria&rsquo;s condo restructuring assumed Benjie&rsquo;s remittance at current levels. He says, in the way <span class="gloss" data-gloss="ofw">OFWs</span> have learned to say difficult things to Gulf employers: <em>Thank you, sir, for the consideration. May I have some time to discuss with my family?</em></p>
+
+          <p>Faisal nods. He says: <em>Of course, Benjamin. But please understand, I cannot hold the supervisory role open past next week. Three other drivers in our network are also transitioning.</em></p>
+        </div>
+
+        <figure class="chart reveal-root" style="margin:56px 0;">
+          <div class="figure-head">
+            <span class="figure-num">Fig. 05</span>
+            <span class="figure-title">Wage-cost crossover: Gulf domestic helper vs humanoid RaaS</span>
+          </div>
+          <div id="chart-crossover"></div>
+          <div class="figure-note">The crossover is a shaded zone, not a single date. For Benjie&rsquo;s Riyadh household, the crossover was 6 February 2029. For roughly 180,000 Filipino domestic workers in the Gulf, it arrives across the 2029 calendar year.</div>
+        </figure>
+
+        <div class="col reveal-root">
+          <p>The aggregate pattern, visible only in retrospect, is this. Of the 720,000 Filipino workers in Saudi Arabia, the UAE, Qatar, Kuwait, Bahrain, and Oman at the start of 2029, roughly 174,000 receive non-renewal notices during the year. Another 91,000 receive renewal offers at 40&ndash;55% of their previous compensation, attached to supervisory roles for which most of them have not been trained. About 38,000 accept the reduced roles. The remainder return. POEA processes 162,000 repatriations between March and December &mdash; more than triple the 2025 figure &mdash; and runs out of budgeted support per returnee by mid-September.</p>
+
+          <p>Remittances from the Gulf corridors fall 19% year-on-year in 2029, the sharpest single-year decline since 1997. The US corridor holds, because the US corridor is disproportionately professional-class and healthcare workers whose roles have not yet crossed the humanoid threshold. But the Gulf corridor is 23% of the remittance base, and its decline is not, yet, offset anywhere. Total personal remittances for 2029 print at $34.8 billion, against the 2028 figure of $39.1 billion. The ratio to GDP falls to 5.9%, against 2025&rsquo;s 7.3%.</p>
+        </div>
+
+        <div class="scene">
+          <div class="scene-meta">Scene · Bayambang, Pangasinan, 14 March 2029, 11:45 a.m.</div>
+
+          <p>Nanay Tess is at the kitchen table, where she conducts all of the family&rsquo;s difficult conversations. Benjie is on a video call from his shared flat in Riyadh. Maria is on the same call from Mandaluyong, with Sophia in the background asking why lola is crying. Nanay Tess is not crying. She has already done the crying, alone, the night before. She is doing the arithmetic now.</p>
+
+          <p>The family&rsquo;s decision, after forty-one minutes of discussion, is that Benjie will take the supervisory role for twelve months &mdash; long enough to accumulate return capital, bank a small reserve against the peso, and see whether the new administration&rsquo;s &ldquo;labor sovereignty&rdquo; framework produces anything that might protect him. He will not renew past March 2030. Nanay Tess does not say, but all three of them understand, that she will sell the three-hectare family riceland to Maria&rsquo;s cousin Rommel for a price that is 31% below the 2023 valuation and 19% above the 2030 valuation she does not yet know is coming. The sale closes in June. By then the administration&rsquo;s Office for Philippine Labor Sovereignty has issued seventeen press releases and zero enforceable protections for workers in Benjie&rsquo;s situation.</p>
+        </div>
+
+        <div class="callout reveal-root">
+          <span class="callout-label">The cascade begins</span>
+          <p>In an economy whose peso has no second stabilizer &mdash; where the BPO corridor and the remittance corridor are the two pillars of the current account &mdash; a simultaneous impairment of both is not additive. It is compounding. The BSP has been defending ₱66 since mid-2028. It cannot defend ₱66, ₱70, and ₱74 in sequence against two failing legs. By the end of 2029, the peso closes at ₱71.20. The Monetary Board, in December, raises rates 75 basis points. The Governor uses the word <em>unprecedented</em> at the press conference. He is not exaggerating.</p>
+        </div>
+
+        <div class="col reveal-root">
+          <p>At the same time, in other corridors, other clocks are ticking. Hong Kong and Singapore, which had explicitly exempted foreign domestic workers from their 2025 work-permit reforms, begin quiet consultations in Q3 2029 on permit-cap reductions starting 2031. Japan&rsquo;s 370,000-caregiver shortage prompts METI and MHLW to fund a humanoid-caregiving pilot in Nagoya. The Yara Birkeland&rsquo;s autonomous-mooring upgrade, after six years of delay, enters sea trials. None of these is, in 2029, a shock. Each of them, in 2029, is a headline in the Nikkei or the Lloyd&rsquo;s List that Filipino officials do not read carefully.</p>
+
+          <p>Maria Villanueva, in Mandaluyong, is thirty-two years old. The startup she works for raises a Series&nbsp;A in October at a valuation that briefly, improbably, makes her vested equity worth three times her annual salary on paper. The following month, the firm&rsquo;s largest customer &mdash; a Jollibee-affiliated food-service integrator &mdash; cancels its contract, because the US frontier lab it had been piloting against had reached parity on Taglish. The valuation compresses 62% within eleven weeks. Maria&rsquo;s paper equity is, by Christmas, worth approximately three months&rsquo; salary. By this point, she is past being surprised.</p>
+        </div>
+
+        <div class="pullquote reveal-root">
+          <blockquote>The cascade was never going to be a single moment. It was always going to be a sequence of Tuesdays, across several countries, in which specific families discovered that their arithmetic no longer closed.</blockquote>
+          <cite>Chapter 04 &middot; Gulf crossover</cite>
+        </div>
+
+        <div class="research-links-row">
+          <a href="Research.html#remittance" class="research-link">Remittance research</a>
+          <a href="Research.html#remittance" class="research-link">Fig. 05 · Crossover</a>
+          <a href="Research.html#remittance" class="research-link">The cascade math</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2030 -->
+    <section id="y2030" data-year="2030" data-crisis="5">
+      <div class="year-marker col-wide reveal-root">
+        <div class="year-tag">Chapter 05 &middot; 2030</div>
+        <h2 class="year-big">20<em>30</em></h2>
+        <p class="year-sub">The peso breaks. BPO and remittances fail together. Six corners of the economy, in the same week of March, discover they are running on the same broken engine.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <div class="scene">
+          <div class="scene-meta">The week of 11&ndash;17 March 2030 · six views</div>
+
+          <p class="dropcap">On Monday morning, 11 March 2030, the peso opens at ₱74.80 and crosses ₱76 before lunch. The BSP steps in at ₱76.40 with $1.1&nbsp;billion and holds the line for ninety-seven minutes. By 3 p.m., the rate is at ₱77.20 and the intervention has cost $1.9&nbsp;billion of the $94-billion reserve. At 4 p.m., the Monetary Board convenes an emergency meeting. At 6:40 p.m., the Governor announces a 125-basis-point hike &mdash; the sharpest single move since the Asian Financial Crisis. At 7:15 p.m., a ratings agency Tokyo analyst publishes the note that will, within eleven days, trigger the first sovereign-credit downgrade of the decade.</p>
+        </div>
+
+        <h3 style="margin-top:56px;">i. Ortigas &middot; Tuesday</h3>
+        <p>The law offices of the DLA Piper-affiliate firm handling the dissolution of the Taglish voice-AI startup Maria Villanueva works for are on the 34th floor of a building whose BPO tenants vacated eighteen months ago. The partner explains the liquidation waterfall in thirty-one minutes. Equity holders &mdash; Maria included &mdash; recover nothing. Her final paycheck, prorated to 17 March, is ₱26,400. The condo payment is due on the 30th. The PAG-IBIG restructuring is now in arrears. She calls Joseph, her old Concentrix supervisor, who is running a trade-school franchise in Marikina. He offers her a customer-support job at ₱24,000 a month. She takes it before he has finished the offer.</p>
+
+        <h3>ii. Bayambang &middot; Wednesday</h3>
+        <p>Nanay Tess cannot afford the Ventolin inhaler Sophia had been using since the previous rainy season. The pharmacy in Dagupan has it at ₱1,840, up from ₱1,120 at the start of the year. The generic substitute is out of stock at three pharmacies in sequence. Rice at the wet market is ₱78 a kilo, up from ₱54 in January. Nanay Tess converts the last of her teacher&rsquo;s-pension dollar savings &mdash; $680, held in a BPI savings account since 2018 &mdash; at ₱77.40. It buys her forty-one days of the household budget at March 2030 prices.</p>
+
+        <h3>iii. Cauayan &middot; Thursday</h3>
+        <p>The rice-import tender for Q2 2030 closes on Thursday. The National Food Authority had budgeted for 3.2 million metric tonnes at an average $540 per tonne, financed in dollars. The tender clears at $612. The NFA funds the difference, in pesos, at a rate that has moved 11% against budget in seven weeks. The Vietnamese supplier, asked informally by a DA undersecretary whether volume could be expanded, replies that the Vietnamese domestic harvest is being prioritized for a recently-signed bilateral arrangement with Saudi Arabia. The Philippine rice self-sufficiency print for 2030, released in December, will come in at 62.1% &mdash; the lowest figure in the seventy-year history of the measurement.</p>
+
+        <h3>iv. Calamba &middot; Friday</h3>
+        <p>The Samsung Electro-Mechanics plant in Calamba, which had opened in 2026 with a PHP&nbsp;50.65-billion commitment and a 3,200-head payroll, announces a 22% reduction in force and a pivot of the remaining automotive-power-IC line to Penang. The official reason is &ldquo;strategic rebalancing.&rdquo; The unofficial reason, discussed in a Korean-language briefing a week earlier, is that the Malaysian ringgit had held against the dollar while the peso had not, that Penang&rsquo;s power cost per kWh is a third of Calamba&rsquo;s, and that the Philippine political risk premium had, in the two years since the 2028 election, priced in a populist presidency. DTI issues a press release calling the move &ldquo;temporary.&rdquo; Nobody believes the press release.</p>
+
+        <h3>v. Luzon grid &middot; Friday, 8:40 p.m.</h3>
+        <p>A yellow alert on the Luzon grid, the eleventh of 2030, escalates to red at 8:40 p.m. Demand is 12,140 MW against available supply of 11,430 MW. Manual load-shedding rolls through Metro Manila in thirty-minute windows. Maria&rsquo;s district in Mandaluyong loses power from 9:30 to 10:00. The fridge, by the time the power comes back, has begun to sweat. Elijah, now eleven, is doing his Grade 6 homework by the flashlight on her phone. He asks, quietly, why the lights keep going out this year. Maria tells him: because the country cannot afford its own electricity. She does not mean this as a political statement. She means it in the way one states a fact of physics.</p>
+
+        <h3>vi. Malacañang &middot; Sunday</h3>
+        <p>On Sunday evening, the President addresses the nation for nineteen minutes. The address has been drafted and redrafted seven times over the preceding eighty hours. The final version does not use the words <em>recession</em>, <em>crisis</em>, or <em>emergency</em>. It uses <em>headwinds</em> four times, <em>resilience</em> six times, and <em>sovereignty</em> once, toward the end. It announces a PHP&nbsp;180-billion supplementary budget, to be funded through a combination of <span class="gloss" data-gloss="adb">ADB</span> emergency lending, a one-time levy on digital-services firms, and what the Secretary of Finance later describes as <em>optimizing existing allocations</em>. The <span class="gloss" data-gloss="dpwh">DPWH</span> 2030 capex is cut by PHP&nbsp;64&nbsp;billion to make room. The 4Ps expansion &mdash; which had cleared the House in the 2028 omnibus bill and spent two years in Senate bicam &mdash; is formally deferred to 2032.</p>
+
+        <p>The ADB facility had been announced in a press statement the previous Friday, before the address. A senator from the majority coalition &mdash; who had been the Luzon operations lead of the 2028 campaign &mdash; is reached by phone by a GMA News reporter that Sunday evening. He is asked whether accepting ADB conditionality is consistent with the administration&rsquo;s sovereign-labor mandate. <em>Ang paghahanap ng tulong ay hindi pagsusuko ng kalayaan</em>, he says. The reporter asks whether this means yes or no. The senator hangs up.</p>
+
+        <figure class="chart reveal-root" style="margin:56px 0;">
+          <div class="figure-head">
+            <span class="figure-num">Fig. 07</span>
+            <span class="figure-title">Six indicators, 2025 → 2030 · crisis path</span>
+          </div>
+          <div id="chart-sectors"></div>
+          <div class="figure-note">The small multiples on the research page. In the crisis scenario, every indicator is beyond what the official narrative of 2025 had priced in as plausible.</div>
+        </figure>
+
+        <div class="stats reveal-root" style="margin:40px 0;">
+          <div class="stat"><div class="value">1.15<span class="unit">M</span></div><div class="label">BPO headcount, end 2030</div></div>
+          <div class="stat"><div class="value neg">4.8<span class="unit">%</span></div><div class="label">Remittance share of GDP</div></div>
+          <div class="stat"><div class="value">₱79.60</div><div class="label">Peso close, 31 Dec 2030</div></div>
+          <div class="stat"><div class="value">73.4<span class="unit">%</span></div><div class="label">Debt to GDP</div></div>
+          <div class="stat"><div class="value">8.9<span class="unit">%</span></div><div class="label">Headline inflation, Dec YoY</div></div>
+          <div class="stat"><div class="value">62.1<span class="unit">%</span></div><div class="label">Rice self-sufficiency</div></div>
+        </div>
+
+        <div class="callout reveal-root">
+          <span class="callout-label">The underlying capability curve</span>
+          <p>Aggregated forecasts place <span class="gloss" data-gloss="agi">AGI</span>-level capability at 40% probability by 2030 and 65% by 2033. Whether or not one accepts these specific numbers, the direction is not in dispute: the systems that triggered the 2026&ndash;2027 BPO wave are, in 2030, materially more capable, not less. The Gulf humanoid crossover of 2029 is an early-tranche event in a multi-year cascade. Nothing has stopped. This is the context in which the Philippine state is attempting to run a supplementary budget.</p>
+        </div>
+
+        <div class="col reveal-root">
+          <p>By December 2030, the cumulative direct BPO displacement since end-2025 is 752,000 jobs, inside the research dossier&rsquo;s 2026 projection band of 750K&ndash;950K by 2030 under the severe scenario. Informal-sector second-order losses, estimated by IBON, run roughly 600,000 additional. Total formal-sector unemployment, by the PSA&rsquo;s narrow measure, stands at 7.8%. The PSA&rsquo;s labor-force participation rate falls to 60.4%, the lowest since 2011. Neither of these numbers is denied. Neither of them is, in any politically consequential way, addressed.</p>
+
+          <p>The peso closes the year at ₱79.60. The BSP&rsquo;s reserve has fallen from $108 billion to $79 billion across twelve months. The sovereign-credit downgrade of March has been followed by two further rating actions. Philippine dollar bonds trade at BB+ levels at the short end and BB at the long. Capital controls have not been formally discussed in public. They have been discussed in private, by the people who would discuss them, in a meeting room in the BSP complex in Malate, twice.</p>
+
+          <p>The devaluation produces one unmistakable beneficiary. San Miguel Corporation&rsquo;s peso-denominated power-generation assets &mdash; priced in pesos, denominated against dollar-linked electricity benchmarks &mdash; expand their operating margin for the third consecutive quarter. SM Prime Holdings, whose malls had hemorrhaged BPO anchor tenants since 2027, renegotiates four major anchor leases at 55&ndash;60% of prior rates and books the restructurings under &ldquo;portfolio resilience.&rdquo; Ayala Land, which had filed for BPO-to-residential rezoning on three BGC parcels in March, receives its first approval in December: fourteen months after the application, twelve months after the election. The approval is signed by an official who had been a Makati City Hall career employee until August 2028, when a new administration meant new appointments. No one remarks on the timing, because remarking on the timing is not how Manila works.</p>
+        </div>
+
+        <div class="research-links-row">
+          <a href="Research.html#scenarios" class="research-link">Fig. 07 · Indicators</a>
+          <a href="Research.html#scenarios" class="research-link">Fig. 08 · AGI curve</a>
+          <a href="Research.html#agriculture" class="research-link">Rice</a>
+          <a href="Research.html#energy" class="research-link">Energy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2031 -->
+    <section id="y2031" data-year="2031" data-crisis="5">
+      <div class="year-marker col-wide reveal-root">
+        <div class="year-tag">Chapter 06 &middot; 2031</div>
+        <h2 class="year-big">20<em>31</em></h2>
+        <p class="year-sub">The reckoning arrives in the form of a term sheet. The safety net is tested. It does not hold. The political response to its failure reshapes the state.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <div class="scene">
+          <div class="scene-meta">Scene · <span class="gloss" data-gloss="dof">DOF</span> boardroom, Roxas Boulevard, 14 February 2031, 9:00 a.m.</div>
+
+          <p class="dropcap">The meeting is nominally a coordination session on the 2032 national expenditure program. The attendees are the Secretary of Finance, the Director-General of <span class="gloss" data-gloss="neda">NEDA</span>/DEPDev, the Secretary of Budget and Management, the BSP Governor, the DSWD Secretary, and two senior economists from an <span class="gloss" data-gloss="imf">IMF</span> Article IV mission who had arrived in Manila four weeks earlier and had not, technically, been invited. The cabinet officials in the room are all the president&rsquo;s appointees &mdash; three of them former labor-rights advocates from the same Mindanao advocacy network that produced her candidacy, one a longtime party operative, one a technocrat accelerated into the BSP governorship after the previous governor&rsquo;s replacement in September 2028. None of them had been IMF-cooperation partisans. None of them had expected to become IMF-cooperation partisans. The IMF economists do not speak for the first forty minutes. When they speak, they use the phrase <em>staff-monitored program</em> three times in twelve seconds.</p>
+
+          <p>The arithmetic on the table is brutal and bounded. The 4Ps expansion &mdash; 4.4&nbsp;million to 6.2 million households &mdash; costs PHP&nbsp;74 billion incremental annually. The displacement supplement for BPO-layoff households costs a further PHP&nbsp;48 billion. The expanded SSS unemployment insurance, if made six-month recurring, costs PHP&nbsp;62 billion. Total new social-protection spend at the minimum politically viable level: PHP&nbsp;184 billion. Available fiscal space, after debt service and mandated operating expenditures at the 2031 revenue forecast: PHP&nbsp;41 billion. The DPWH 2031 capex, already cut once in 2030, stands at PHP&nbsp;762 billion. The Secretary of Finance proposes a further 18% cut.</p>
+
+          <p>The DSWD Secretary, whose agency would run the expanded transfer program, takes four minutes to argue the political impossibility of the cut. The NEDA Director-General, whose agency had spent two years modeling the infrastructure multiplier, argues the economic impossibility. The BSP Governor, who had defended the peso at ₱76 and ₱79 and was now defending it at ₱82, argues that no combination of cuts and transfers fixes the underlying current-account problem without an external program. The senior IMF economist, very quietly, agrees.</p>
+        </div>
+
+        <div class="callout reveal-root">
+          <span class="callout-label">The fiscal trilemma, 2031</span>
+          <p>The state cannot simultaneously (a) expand the safety net to catch the displacement cohort, (b) maintain infrastructure capex that sustains the non-BPO growth base, and (c) service debt at the sovereign-downgrade spread. Two of the three have to give. The political incentive in an election year is to protect the first, cut the second, and externalize the third through IMF terms. This is precisely what happens.</p>
+        </div>
+
+        <div class="col reveal-root">
+          <p>The staff-monitored program is announced on 11 March &mdash; exactly one year after the peso break of the previous spring. The terms are, by any historical IMF standard, light: fiscal-consolidation path to 4.0% deficit by 2033, digital-services-tax expansion, rationalization of tax incentives that AMRO had flagged in 2025, and a monitoring framework on BSP FX intervention. The terms are, by Philippine political standards, humiliating. The President&rsquo;s approval rating, which had entered the year at 34%, falls to 21% in the April Pulse Asia. By June, the word <em>Estrada</em> is being used in the op-eds, by people old enough to remember what <em>Estrada</em> means in this context.</p>
+
+          <p>The safety net tests fail in sequence. <span class="gloss" data-gloss="philhealth">PhilHealth</span>, whose fraud crisis of 2024 had never fully resolved, discovers in May that its auto-renewal for 2.1 million displaced BPO workers had lapsed without notification; emergency legislation restores coverage but not confidence. SSS unemployment benefits, paid at the one-time legacy formula, reach 340,000 claimants in 2031 against a displaced pool of more than a million. The 4Ps expansion, deferred in 2030, is deferred again to 2033. TESDA&rsquo;s emergency reskilling program, funded at PHP&nbsp;8 billion in 2028, has spent PHP&nbsp;4.2 billion and graduated 31,000 workers into a labor market whose relevant job postings, in 2031, are down 47% year-on-year.</p>
+        </div>
+
+        <div class="scene">
+          <div class="scene-meta">Scene · Mandaluyong, 22 August 2031, 6:50 p.m.</div>
+
+          <p>Maria is thirty-four. She has been, for eleven months, a supervisor at the trade-school franchise Joseph had offered her at ₱24,000 a month. The franchise now pays her ₱28,000, which in 2031 pesos buys roughly what ₱19,000 had bought at the start of 2029. Elijah is in Grade 7 at a public school because the Miriam Elementary tuition had become mathematically impossible in June. Sophia is in Grade 3 at the same public school. The condo, after two further restructurings, is twenty-nine months from freehold. Maria has not missed a payment, which she counts as her single non-negotiable.</p>
+
+          <p>Benjie came home in March 2030 and has not been able to leave since. POEA deployment of new domestic-worker contracts to the Gulf has fallen 74% against 2025. He drives for <span class="gloss" data-gloss="grab">Grab</span> in Antipolo. The Grab rate per ride, in real terms, has fallen 22% since 2028 because the rider pool has tripled. He remits nothing, because there is nothing to remit. He lives with Nanay Tess in Pangasinan on weekdays and in Mandaluyong on weekends, sleeping on the sofa in Maria&rsquo;s living room. This is, for the Villanuevas, the new equilibrium.</p>
+
+          <p>On the evening of 22 August, Maria and Benjie sit on the floor of the condo with a printed-out spreadsheet between them. The spreadsheet is Maria&rsquo;s budget for September. It is off by ₱7,400. Benjie looks at the number and says: <em>Ate, we can try selling the condo.</em> Maria says: <em>Hindi naman puwede, nega equity na.</em> The condo, at current peripheral-condo-market clearing prices, is worth less than the remaining loan. They sit with that for a while. The electricity, which has been on rolling brownouts for eight months, goes out at 7:04.</p>
+        </div>
+
+        <div class="pullquote reveal-root">
+          <blockquote>A safety net that was not designed for a shock of this character cannot hold a shock of this character. It was built as a targeting instrument, not a stabilizer. The failure is not a surprise. The surprise is that it was not rebuilt in the three years between the warning and the event.</blockquote>
+          <cite>Chapter 06 &middot; The reckoning</cite>
+        </div>
+
+        <div class="col reveal-root">
+          <p>The political tail of 2031 is the midterm election held on the second Monday of May, and its verdict is not ambiguous. The president&rsquo;s coalition &mdash; the Sovereign Labor Alliance and allied slates &mdash; loses fourteen House seats and three Senate positions. The Senate, which had been narrowly aligned with the administration through 2030, moves into de facto opposition control. Exit polling released that week by Pulse Asia names the economy, rice prices, and the IMF program, in that order, as the top three reasons voters chose opposition candidates. The word <em>sovereignty</em> does not appear in the exit data.</p>
+
+          <p>The president acknowledges the result in a televised address. She calls it &ldquo;a mandate for more urgency.&rdquo; Her own coalition senators, in private, use different language. The administration will govern for three more years &mdash; until the 2034 presidential election ends her term &mdash; with a budget it cannot pass and a legislature it cannot manage. The displaced cohort that had voted for her in 2028 on the promise of labor sovereignty has, in 2031, voted for whoever was not her coalition. She has delivered the IMF program she promised not to need, and lost the chambers she needed to deliver anything else. The 4Ps expansion, deferred from 2030, is now legislatively dead for the remainder of her term.</p>
+
+          <p>A reformist opposition senator &mdash; a former <span class="gloss" data-gloss="neda">NEDA</span> economist who runs on a platform of honest reckoning and IMF cooperation without euphemism &mdash; uses a phrase in a panel interview on ANC in December that will be quoted through the rest of the decade: <em>We are not arguing about which policy to pursue. We are arguing about which disaster to admit to. The country that admits to the right disaster still has a decade ahead of it. The country that admits to the wrong one does not.</em> She begins, that same month, preparing a 2034 presidential run. She is polling at 38%. The question for 2034 is whether there will be anything left to reckon with.</p>
+        </div>
+
+        <div class="research-links-row">
+          <a href="Research.html#governance" class="research-link">Governance</a>
+          <a href="Research.html#scenarios" class="research-link">Scenario math</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2032 -->
+    <section id="y2032" data-year="2032" data-crisis="5">
+      <div class="year-marker col-wide reveal-root">
+        <div class="year-tag">Chapter 07 &middot; 2032</div>
+        <h2 class="year-big">20<em>32</em></h2>
+        <p class="year-sub">What did not come back. Six years in, the shocks have stopped arriving because there is nothing left that the next shock can break. This is the floor. The Philippines, in October 2032, is a smaller country than it was in 2025 by every measure that the planners of 2025 had tracked.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <div class="scene">
+          <div class="scene-meta">Scene &middot; Mandaluyong, Tuesday, 19 October 2032, 4:48 p.m.</div>
+
+          <p class="dropcap">Maria Villanueva is thirty-five years old. She is standing at the sari-sari store on the ground floor of a building that, five years ago, she had believed she would own outright by 2030. The building has not had reliable elevator service since March. The notice from the HOA, which she reads every week out of a habit that has curdled into superstition, announces that a new maintenance vendor will begin service on 1 November. The previous three vendors had also begun service on a 1 November, in different years, under different names. The elevators were last reliably serviced in 2028.</p>
+
+          <p>She pays &#8369;4,200 for a kilo of rice &mdash; the premium import, because the NFA subsidy queue in Shaw had run out by 10 a.m. &mdash; and a week of candles. The peso closes at &#8369;81.40. Sophia&rsquo;s Ventolin, which Nanay Tess had not been able to get in the wet pharmacy in Dagupan in March 2030, is again stocked at the Mercury Drug across the street. It costs &#8369;2,140 per inhaler, against &#8369;1,120 in January 2025. Maria buys it once every forty-six days. Insurance covers none of it because <span class="gloss" data-gloss="philhealth">PhilHealth</span>, which had lapsed her family&rsquo;s auto-renewal twice in 2031, still shows her account status as &ldquo;under reconciliation&rdquo; after fourteen months of filings.</p>
+
+          <p>Sophia is seven. Elijah is twelve. Elijah has not been to a birthday party in a classmate&rsquo;s home since Grade 6, because the classmates whose homes he used to visit have moved to Cavite or Pampanga or Canada. The Miriam Elementary class of 2030, Sophia&rsquo;s original cohort, has lost 43% of its enrollment to the public system. Sophia does not know what Miriam Elementary was. Maria does not tell her. There is no way to tell her that is not cruel.</p>
+        </div>
+
+        <div class="col reveal-root">
+          <p>The Philippines in October 2032 is not recovering. It is, instead, at the bottom of what one BSP research note &mdash; released in April 2032, read by no one outside a thirty-person distribution list &mdash; calls <em>the stable trough</em>. The note argues, correctly, that the economy has stopped contracting because the contractionable sectors have contracted. The BPO sector sits at 1.02 million direct workers, against 1.90 million at the start of 2026. Services exports, after three consecutive years of decline, grew 1.1% in 2031 &mdash; an artifact of denominator collapse, not of new demand. The current-account deficit has stabilized at 5.4% of GDP, financed by concessional rollovers from <span class="gloss" data-gloss="adb">ADB</span>, <span class="gloss" data-gloss="jica">JICA</span>, and the continuing IMF arrangement. The peso has stabilized at &#8369;81 because the <span class="gloss" data-gloss="bsp">BSP</span> has, after three years of failed defense, accepted the level.</p>
+
+          <p>Stabilization is not recovery. It is, in 2032, the term the technocracy uses because the political system cannot use the accurate term, which is <em>surrender</em>.</p>
+        </div>
+
+        <div class="stats reveal-root" style="margin:40px 0;">
+          <div class="stat"><div class="value neg">&minus;47<span class="unit">%</span></div><div class="label">BPO headcount vs 2025 peak</div></div>
+          <div class="stat"><div class="value neg">&minus;48<span class="unit">%</span></div><div class="label">Real peso wage (median), 2025&ndash;2032</div></div>
+          <div class="stat"><div class="value">3.8<span class="unit">%</span></div><div class="label">Remittance share of GDP (was 7.3%)</div></div>
+          <div class="stat"><div class="value">75.1<span class="unit">%</span></div><div class="label">Debt to GDP, tracking to 78% in 2033</div></div>
+          <div class="stat"><div class="value">7.2<span class="unit">%</span></div><div class="label">Headline inflation, Dec YoY</div></div>
+          <div class="stat"><div class="value">64.8<span class="unit">%</span></div><div class="label">Rice self-sufficiency, no 2030 recovery</div></div>
+        </div>
+
+        <h3 style="margin-top:56px;">What did not come back</h3>
+
+        <p><strong>The middle class.</strong> The cohort of 500,000&ndash;900,000 English-speaking, college-educated, internet-native workers who had anchored the Philippine middle class since the early 2000s no longer exists as an economic formation. Roughly 340,000 of them have emigrated, mostly to Canada, Australia, and the UAE, on skilled-worker tracks that will not renew after 2034. Another 610,000 have moved, in two waves, into informal-sector work at 40&ndash;60% of their previous real income. The PSA does not publish a line for this cohort because the PSA&rsquo;s 2018 definitional framework did not anticipate a scenario in which this cohort contracted. In the absence of a statistic, there is no politics of recovery.</p>
+
+        <p><strong>The Gulf corridor.</strong> POEA deployment of new domestic-worker contracts to Saudi Arabia, the UAE, Qatar, Kuwait, Bahrain, and Oman stands at 87,000 for 2031 &mdash; down 78% from 2025&rsquo;s 398,000. The Gulf humanoid installed base, across domestic and logistics applications, crossed 2.4 million units in 2032. The crossover that arrived for Benjie in February 2029 has, by 2032, arrived for every Filipino <span class="gloss" data-gloss="ofw">OFW</span> corridor below the registered-nurse wage floor. The ninety-day OFW return queue at NAIA Terminal 1, which had peaked at twenty-one days in November 2029, is now zero because there is no return wave left to queue.</p>
+
+        <p><strong>The rice.</strong> The 2030 rice self-sufficiency print of 62.1% was, in retrospect, not a trough. It was a new baseline. The 2031 figure was 63.4%. The 2032 figure is tracking to 64.8%. Vietnam and Thailand, the two suppliers the Philippines had relied on for the import margin, signed bilateral volume guarantees with Saudi Arabia and Indonesia in 2030 and 2031 that compete directly with Philippine tender volumes. Nanay Tess, in Bayambang, pays &#8369;84 a kilo at the wet market in October 2032 for what had been &#8369;54 in January 2025. She does not complain because there is no one to complain to who is not also paying &#8369;84.</p>
+
+        <p><strong>The grid.</strong> Luzon has logged 34 red alerts and 142 yellow alerts in 2032 through October. The Bataan Nuclear Power Plant rehabilitation, announced with much fanfare in 2031, entered a funding dispute with the Korean reactor vendor in August 2032 that had not, at quarter-end, been resolved. First criticality is now not expected before 2037. The two <span class="gloss" data-gloss="smr">SMR</span> memoranda of understanding signed in 2032 are memoranda of understanding. Neither has advanced to contract. Elijah, twelve, has done homework by flashlight more often than not in the six weeks preceding 19 October.</p>
+
+        <p><strong>The political ceiling.</strong> The president who won on labor sovereignty in 2028 is, in October 2032, completing her fourth year in office. She will govern until June 2034, when the next presidential election ends her term. The midterm verdict of 2031 &mdash; coalition losses in House and Senate, the economy-and-rice referendum &mdash; left her administration governing against a hostile legislature for her final three years. The Office for Philippine Labor Sovereignty, which had issued forty-one press releases and zero enforceable protections between 2028 and 2031, was consolidated into the <span class="gloss" data-gloss="dict">DICT</span> in the 2032 budget reconciliation. The &#8369;40-billion Philippine AI Infrastructure Fund, announced with San Miguel Energy in August 2028, has produced one deliverable: the 25-year Bataan Nuclear Power Plant power-supply concession awarded to San Miguel&rsquo;s generation subsidiary in January 2029. The fund has not funded an AI deployment, a training program, or a displaced-worker benefit. It has funded a power deal. The concession runs through 2054. San Miguel&rsquo;s energy division books a 14% operating margin in Q3 2032, its highest in six years.</p>
+
+        <p><strong>The safety net.</strong> <span class="gloss" data-gloss="tesda">TESDA</span>&rsquo;s Transition Corps has trained 212,000 displaced workers against a displaced cohort of more than 1.5 million. Its placement rate at six months is 41%. Its placement rate at twenty-four months, previously reported at 71%, was revised to 52% in July 2032 after an internal audit found that 19 percentage points of the prior figure represented workers who had been placed and subsequently re-displaced within the follow-up window. The &ldquo;4Ps&rdquo; expansion from 4.4 to 6.2 million households, approved in principle in 2028, was deferred in 2030, deferred in 2031, and in 2032 is operating at 4.9 million households because the IMF program&rsquo;s fiscal path does not permit more. There is no national AI Act. The 2029 bill died in committee and has not been reintroduced.</p>
+
+        <div class="callout reveal-root">
+          <span class="callout-label">The 2032 floor, stated plainly</span>
+          <p>Crisis-scenario models in 2025 had forecast a 2030 trough followed by a gradual recovery phase. The trough arrived on schedule. The recovery did not. What arrived instead is stabilization at the trough &mdash; a permanent 40-plus-percent contraction of the BPO base, a permanent evaporation of the Gulf remittance corridor, a permanent peso at &#8369;80, a permanent inability to fund the safety net that the displacement demands. There is no scenario path, in the research dossier, in which 2035 looks materially better than 2032 without a policy shift that requires decisions to have been made in 2026. Those decisions were not made in 2026.</p>
+        </div>
+
+        <div class="scene">
+          <div class="scene-meta">Scene &middot; Mandaluyong, 19 October 2032, 7:40 p.m.</div>
+
+          <p>Benjie is thirty-two. He has been driving for <span class="gloss" data-gloss="grab">Grab</span> in Antipolo for twenty-nine months, at a real rate per ride that has fallen 34% since 2028 because the rider pool has quintupled. He no longer remits anything to Nanay Tess because he cannot. Nanay Tess, who is sixty-four, still lives in Bayambang on a teacher&rsquo;s pension that &mdash; in real terms &mdash; now buys what two-thirds of that pension had bought in 2025. She has given up the landline. She reads the news on a secondhand phone Maria had sent her in 2030 and which, in October 2032, has a cracked screen Maria cannot afford to replace. The rice on the table tonight is from her cousin Rommel&rsquo;s cooperative in Pangasinan, and it is the cheapest thing on the table, and she is proud of it in a way that, in 2025, she would not have understood.</p>
+
+          <p>Sophia, seven, asks Maria why her Tita Karen, who had lived in the next building over, no longer visits. Maria explains that Tita Karen lives in Calgary now. Sophia asks what Calgary is. Maria tells her it is a city in Canada. Sophia asks when they will visit. Maria does not answer.</p>
+
+          <p>Elijah, twelve, is upstairs finishing a history assignment on the 1983 Ninoy assassination. The assignment prompt, generated by the DepEd learning platform, asks him to describe a moment at which the Philippines changed irreversibly. His first draft names 1983. His teacher, in the margin comments, will suggest that he consider 2026 instead. He does not know what happened in 2026 that would qualify. No one has explicitly told him. It has not been taught.</p>
+
+          <p>Maria pays the condo bill from her phone. The balance is &#8369;184,000 on a loan that, after three restructurings, will clear in August 2033. The condo, at current peripheral-condo-market prices, is worth &#8369;2.1 million against a remaining loan of &#8369;184,000 and a replacement cost in 2032 pesos of &#8369;4.8 million. She has been current on every payment since September 2026. This is the thing she will have built. It is the only thing she will have built.</p>
+        </div>
+
+        <div class="pullquote reveal-root">
+          <blockquote>This is not an ending. It is the state the country settles into when the shocks run out of things to break. A third of the middle class has emigrated. Another third works informally at 40% of prior wages. The grid is unreliable, the rice is imported, the safety net covers less than half of the displaced, and the decisions that would have foreclosed this path were due in 2026 and were not made. None of this reverses on its own. There is no external actor coming to fix it. What 2032 is, is what 2032 will continue to be, for as long as the political system remains incapable of admitting what it is looking at.</blockquote>
+          <cite>Chapter 07 &middot; What did not come back</cite>
+        </div>
+
+        <div class="callout reveal-root" style="border-color: var(--accent);">
+          <span class="callout-label" style="color: var(--accent);">The only hope that exists in this scenario exists in 2026</span>
+          <p>Everything described in chapters 02 through 07 was, in 2026, still reversible. The BPO contraction could have been cushioned by a displacement fund legislated in 2026 instead of 2028. The Gulf crossover could have been prepared for by a sovereign humanoid-policy framework in 2026 instead of 2029. The peso could have been defended from a stronger reserve position in 2028 instead of from a depleted one in 2030. The rice could have been protected by Vietnamese and Thai bilateral agreements signed in 2027 instead of lost to Saudi and Indonesian counter-signings in 2031. Every mechanism by which the 2032 floor could have been higher was visible in the 2025 research. The decisions were not made. The decisions have to be made &mdash; if this path is to be foreclosed &mdash; now. Not in 2030, when the peso is breaking. Now.</p>
+        </div>
+
+        <div class="research-links-row">
+          <a href="Research.html#strategy" class="research-link">What 2026 could still do</a>
+          <a href="Research.html#scenarios" class="research-link">Scenario math</a>
+          <a href="Research.html#bpo" class="research-link">BPO arithmetic</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <div class="footnotes" style="max-width:var(--col);margin:80px auto 0;">
+      <h4>Notes</h4>
+      <ol>
+        <li id="fn-1">Character and scene are composite, built against dated industry facts: the Concentrix Webhelp impairment (Q4 2025), the TaskUs take-private (2025), the Q2 2025 services-export contraction (BSP), and the Klarna deployment trajectory (2024&ndash;2025). Names are invented; numbers are drawn from the <a href="Research.html#bpo">research dossier</a>.</li>
+      </ol>
+    </div>
+
+    <!-- Epilogue / Outro -->
+    <section class="outro" id="epilogue" data-year="2032" data-crisis="5">
+      <div class="mark">§</div>
+      <h2>This is the 15% tail. It is not improbable. It is the path the current trajectory permits.</h2>
+      <p style="margin-bottom:40px;">Every number in the seven chapters above sits inside the research dossier&rsquo;s crisis-scenario band. The Villanuevas are invented. The peso path, the BPO collapse arithmetic, the Gulf crossover, the grid alerts, the IMF program, the rice self-sufficiency floor, the ratings downgrades, the permanent stabilization at a 47% smaller services sector &mdash; all of these are drawn from the same model that produces the Base and Accelerated scenarios. A 15% probability is not a footnote. It is roughly the probability that the next die you roll comes up 1. The country has lived through events of lower prior probability, multiple times, in the memory of people currently in office.</p>
+
+      <p style="margin-bottom:40px;">This scenario is not a forecast. It is what the Philippines looks like in 2032 if the decisions visible to a planner in 2026 are not made in 2026. The reason the 2032 chapter is the way it is &mdash; stabilization at the trough, no recovery phase, a middle class that has emigrated or decomposed, a rice floor that does not rise, a grid that does not heal &mdash; is that the Philippines in this scenario has, uniquely among the exposed economies of 2026, no second stabilizer. It does not have Vietnam&rsquo;s manufacturing. It does not have Malaysia&rsquo;s semiconductor depth. It does not have Indonesia&rsquo;s domestic demand floor. It has BPO and remittances, and in this scenario both fail, simultaneously, against a technology transition none of the regional peers are equally exposed to. The asymmetry is not bad luck. It is structural.</p>
+
+      <p style="margin-bottom:40px;">There is, in 2032, no realistic path back to the 2025 baseline. There is, in 2026, still a path to a different 2032. The research dossier holds the mechanisms: a displacement-fund architecture legislated before the 2027 wave; a sovereign humanoid-labor framework before the 2029 Gulf crossover; a rice bilateral signed before the 2030 Saudi and Indonesian counter-signings; a safety-net expansion funded from a position of fiscal strength rather than IMF conditionality. None of these is speculative. All of these were visible in the 2025 data. The window in which they remain actionable is the window between now and the 2027 inflection.</p>
+
+      <p style="margin-bottom:40px;"><strong>The only useful question this narrative asks is a 2026 question, not a 2032 question.</strong> The 2032 outcomes, in this scenario, are no longer contestable. The 2026 decisions still are.</p>
+
+      <a href="Research.html" class="cta">Read the research &rarr;</a>
+
+      <div style="margin-top:80px;font-family:var(--mono);font-size:11px;color:var(--ink-faded);letter-spacing:0.08em;">
+        A scenario in seven chapters &middot; drafted April 2026 &middot; v0.1
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="charts.js"></script>
+<script src="app.js"></script>
+<script>
+  /* ============================================================
+     Archipelago hero (disabled — replaced by typewriter dateline).
+     ============================================================ */
+  (function () {
+    const svg = document.getElementById("arch-map");
+    if (!svg) return;
+    const dotsG = document.getElementById("arch-dots");
+    const pulsesG = document.getElementById("arch-pulses");
+    const counter = document.getElementById("arch-counter-n");
+    const SVG_NS = "http://www.w3.org/2000/svg";
+
+    // Coarse polygon sets in the 360x720 viewBox. Each polygon is a
+    // list of [x,y] pairs. These are hand-drawn approximations tuned
+    // to read as the Philippines at a glance, not cartographically
+    // exact. Manila pin at (168,260) sits on Luzon's central plain.
+    const islands = [
+      // Luzon (main body, with a Bicol tail trailing southeast).
+      { name: "luzon", hull: [
+        [150, 60], [172, 62], [190, 72], [202, 92], [212, 116],
+        [208, 140], [214, 158], [206, 178], [212, 198], [222, 216],
+        [216, 238], [200, 252], [186, 266], [196, 284], [214, 300],
+        [234, 318], [246, 336], [238, 348], [220, 346], [202, 334],
+        [184, 322], [170, 312], [156, 298], [148, 280], [142, 260],
+        [136, 240], [132, 216], [128, 192], [124, 168], [126, 144],
+        [130, 120], [136, 96], [142, 76]
+      ]},
+      // Mindoro (small, just south of Luzon).
+      { name: "mindoro", hull: [
+        [138, 340], [156, 344], [164, 358], [158, 374], [142, 376], [130, 362]
+      ]},
+      // Panay.
+      { name: "panay", hull: [
+        [162, 394], [180, 396], [186, 410], [178, 424], [162, 426], [154, 412]
+      ]},
+      // Negros.
+      { name: "negros", hull: [
+        [188, 406], [204, 410], [208, 428], [202, 448], [188, 450], [182, 432]
+      ]},
+      // Cebu (narrow north-south sliver).
+      { name: "cebu", hull: [
+        [210, 412], [218, 414], [222, 436], [218, 456], [210, 454], [208, 430]
+      ]},
+      // Bohol.
+      { name: "bohol", hull: [
+        [226, 446], [244, 448], [246, 462], [232, 466], [222, 458]
+      ]},
+      // Leyte + Samar block.
+      { name: "samar", hull: [
+        [238, 380], [256, 384], [264, 402], [262, 422], [252, 436],
+        [244, 424], [240, 408], [236, 394]
+      ]},
+      // Palawan (long diagonal sliver to the west).
+      { name: "palawan", hull: [
+        [84, 378], [100, 384], [114, 404], [128, 424], [132, 444],
+        [124, 446], [110, 430], [96, 410], [84, 392]
+      ]},
+      // Mindanao (big southern mass).
+      { name: "mindanao", hull: [
+        [176, 486], [200, 482], [222, 486], [246, 492], [266, 504],
+        [278, 522], [284, 544], [278, 568], [266, 586], [248, 598],
+        [224, 606], [200, 608], [176, 602], [160, 586], [152, 566],
+        [150, 544], [156, 522], [166, 504]
+      ]},
+    ];
+
+    function pointInPoly(x, y, hull) {
+      let inside = false;
+      for (let i = 0, j = hull.length - 1; i < hull.length; j = i++) {
+        const xi = hull[i][0], yi = hull[i][1];
+        const xj = hull[j][0], yj = hull[j][1];
+        const intersect = ((yi > y) !== (yj > y)) &&
+          (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+        if (intersect) inside = !inside;
+      }
+      return inside;
+    }
+
+    // Poisson-ish sampling via a jittered grid — cheap and good-enough.
+    const dots = [];
+    const step = 6;
+    const jitter = 2.2;
+    for (const isle of islands) {
+      let minX = 360, minY = 720, maxX = 0, maxY = 0;
+      for (const p of isle.hull) {
+        if (p[0] < minX) minX = p[0];
+        if (p[1] < minY) minY = p[1];
+        if (p[0] > maxX) maxX = p[0];
+        if (p[1] > maxY) maxY = p[1];
+      }
+      for (let y = minY; y <= maxY; y += step) {
+        for (let x = minX; x <= maxX; x += step) {
+          const jx = x + (Math.random() - 0.5) * jitter * 2;
+          const jy = y + (Math.random() - 0.5) * jitter * 2;
+          if (pointInPoly(jx, jy, isle.hull)) {
+            dots.push({ x: jx, y: jy, hit: false, dim: false });
+          }
+        }
+      }
+    }
+
+    // Manila epicenter in SVG coords.
+    const EPI_X = 168, EPI_Y = 260;
+    // Pre-compute distance from Manila for each dot.
+    for (const d of dots) {
+      const dx = d.x - EPI_X, dy = d.y - EPI_Y;
+      d.dist = Math.sqrt(dx*dx + dy*dy);
+    }
+    // Sort ascending: the wave hits the closest households first.
+    dots.sort((a, b) => a.dist - b.dist);
+
+    // Render dots.
+    const circles = [];
+    const frag = document.createDocumentFragment();
+    for (const d of dots) {
+      const c = document.createElementNS(SVG_NS, "circle");
+      c.setAttribute("cx", d.x.toFixed(2));
+      c.setAttribute("cy", d.y.toFixed(2));
+      c.setAttribute("r", "1.25");
+      frag.appendChild(c);
+      circles.push(c);
+    }
+    dotsG.appendChild(frag);
+
+    // Severity targets (cumulative fraction of dots turned red / then dimmed)
+    // per data-crisis tier (0 = pre-shock, 5 = peak).
+    // hit = red + opaque. dim = red fades to ghost (the long-tail unmoored).
+    const tiers = {
+      0: { hit: 0.00, dim: 0.00 },
+      1: { hit: 0.08, dim: 0.00 },
+      2: { hit: 0.22, dim: 0.03 },
+      3: { hit: 0.38, dim: 0.10 },
+      4: { hit: 0.52, dim: 0.20 },
+      5: { hit: 0.62, dim: 0.32 },
+    };
+
+    let currentTier = -1;
+
+    function applyTier(tier) {
+      if (tier === currentTier) return;
+      const prev = currentTier;
+      currentTier = tier;
+      const t = tiers[tier] || tiers[0];
+      const hitCount = Math.floor(dots.length * t.hit);
+      const dimCount = Math.floor(dots.length * t.dim);
+
+      // Emit a pulse ring from Manila if we're progressing forward.
+      if (tier > prev && tier >= 1) emitPulse();
+
+      for (let i = 0; i < circles.length; i++) {
+        const c = circles[i];
+        const shouldDim = i < dimCount;
+        const shouldHit = i < hitCount && !shouldDim;
+        c.classList.toggle("dim", shouldDim);
+        c.classList.toggle("lit", shouldHit);
+      }
+      if (counter) counter.textContent = hitCount.toLocaleString();
+    }
+
+    function emitPulse() {
+      const p = document.createElementNS(SVG_NS, "circle");
+      p.setAttribute("class", "arch-pulse go");
+      p.setAttribute("cx", EPI_X);
+      p.setAttribute("cy", EPI_Y);
+      p.setAttribute("r", "6");
+      pulsesG.appendChild(p);
+      setTimeout(() => p.remove(), 2800);
+    }
+
+    // Initialize.
+    applyTier(0);
+
+    // Observe the body's data-crisis attribute — the scenario tracker
+    // below sets it on scroll. We mirror that onto the map.
+    const mo = new MutationObserver(() => {
+      const c = parseInt(document.body.getAttribute("data-crisis") || "0", 10);
+      applyTier(c);
+    });
+    mo.observe(document.body, { attributes: true, attributeFilter: ["data-crisis"] });
+  })();
+
+  /* ============================================================
+     Scenario panel tracker.
+     Watches which [data-year] section is in view, writes
+     data-crisis onto the body, and updates the sidebar panel.
+     ============================================================ */
+  (function () {
+    // Per-year indicator snapshot (crisis-scenario path).
+    // pesoFill / bpoFill / remitFill / debtFill are 0–100 for the bar.
+    // Scale choices: peso from ₱55 (0%) to ₱85 (100%); BPO from 1.9M (100%) to 1.0M (0%);
+    // remit from 8% (100%) to 2% (0%); debt from 60% (0%) to 80% (100%).
+    const yearData = {
+      "2026": { sev: 1, chapter: "Ch. 01", status: "First tremors",        peso: "\u20B158.90", bpo: "1.85M", remit: "7.1%", debt: "64.4%",
+                pesoFill: 13, bpoFill: 94, remitFill: 85, debtFill: 22,
+                fam: "<strong>Maria</strong>, 29. Her 240-seat Ortigas floor loses 48 agents. She still has her job.",
+                worsen: ["peso","bpo","remit","debt"] },
+      "2027": { sev: 2, chapter: "Ch. 02", status: "First wave",            peso: "\u20B162.20", bpo: "1.68M", remit: "6.8%", debt: "66.0%",
+                pesoFill: 24, bpoFill: 76, remitFill: 80, debtFill: 30,
+                fam: "<strong>Maria</strong>, 30. Team-lead role dissolved. Twelve weeks of severance.",
+                worsen: ["peso","bpo","remit","debt"] },
+      "2028": { sev: 3, chapter: "Ch. 03", status: "Political inflection",  peso: "\u20B166.40", bpo: "1.42M", remit: "6.2%", debt: "68.1%",
+                pesoFill: 38, bpoFill: 47, remitFill: 70, debtFill: 40,
+                fam: "<strong>Maria</strong>, 31. Contract work. <strong>Benjie</strong> still in Riyadh, hours cut.",
+                worsen: ["peso","bpo","remit","debt"] },
+      "2029": { sev: 4, chapter: "Ch. 04", status: "Gulf crossover",        peso: "\u20B171.20", bpo: "1.25M", remit: "5.9%", debt: "70.8%",
+                pesoFill: 54, bpoFill: 28, remitFill: 65, debtFill: 54,
+                fam: "<strong>Benjie</strong>, 28. Replaced by a humanoid for the Al-Qahtani run. Flying home.",
+                worsen: ["peso","bpo","remit","debt"] },
+      "2030": { sev: 5, chapter: "Ch. 05", status: "The peso breaks",       peso: "\u20B179.60", bpo: "1.15M", remit: "4.8%", debt: "73.4%",
+                pesoFill: 82, bpoFill: 17, remitFill: 47, debtFill: 67,
+                fam: "<strong>Maria</strong>, 33. Condo plan written off. Rice at \u20B14,200 a kilo.",
+                worsen: ["peso","bpo","remit","debt"] },
+      "2031": { sev: 5, chapter: "Ch. 06", status: "Reckoning",             peso: "\u20B182.10", bpo: "1.08M", remit: "4.2%", debt: "75.9%",
+                pesoFill: 90, bpoFill: 9, remitFill: 37, debtFill: 80,
+                fam: "<strong>Maria</strong>, 34. IMF program signed. She enrolls in the TESDA Transition Corps.",
+                worsen: ["debt"] },
+      "2032": { sev: 5, chapter: "Ch. 07", status: "The stable trough",     peso: "\u20B181.40", bpo: "1.02M", remit: "3.8%", debt: "75.1%",
+                pesoFill: 88, bpoFill: 2, remitFill: 30, debtFill: 80,
+                fam: "<strong>Maria</strong>, 35. Rice at \u20B14,200/kg. <strong>Benjie</strong> drives Grab. No one remits.",
+                worsen: ["debt"] },
+    };
+
+    const sections = Array.from(document.querySelectorAll("section[data-year]"));
+    if (!sections.length) return;
+
+    const spYear = document.getElementById("sp-year");
+    const spChapter = document.getElementById("sp-chapter");
+    const spStatus = document.getElementById("sp-status");
+    const spSevNum = document.getElementById("sp-sev-num");
+    const sevBars = Array.from(document.querySelectorAll(".sp-sev-bar"));
+    const spPeso = document.getElementById("sp-peso");
+    const spBpo = document.getElementById("sp-bpo");
+    const spRemit = document.getElementById("sp-remit");
+    const spDebt = document.getElementById("sp-debt");
+    const spPesoFill = document.getElementById("sp-peso-fill");
+    const spBpoFill = document.getElementById("sp-bpo-fill");
+    const spRemitFill = document.getElementById("sp-remit-fill");
+    const spDebtFill = document.getElementById("sp-debt-fill");
+    const spFam = document.getElementById("sp-fam");
+
+    let currentYear = null;
+    let currentCrisis = null;
+
+    function applyWorsening(valEl, fillEl, key, worsenList) {
+      if (worsenList.includes(key)) {
+        valEl.classList.add("worsening");
+        fillEl.classList.add("worsening");
+        setTimeout(() => { valEl.classList.remove("worsening"); fillEl.classList.remove("worsening"); }, 1400);
+      }
+    }
+
+    function setSeverity(year, sev) {
+      sevBars.forEach(b => {
+        const by = b.getAttribute("data-year");
+        b.classList.remove("past", "current");
+        if (by < year) b.classList.add("past");
+        else if (by === year) b.classList.add("current");
+      });
+      if (spSevNum) spSevNum.textContent = sev + " / 5";
+    }
+
+    function update() {
+      const y = window.scrollY + window.innerHeight * 0.4;
+      let active = sections[0];
+      for (const s of sections) {
+        if (s.offsetTop <= y) active = s;
+      }
+      const year = active.getAttribute("data-year");
+      const crisis = active.getAttribute("data-crisis");
+
+      if (crisis !== currentCrisis) {
+        document.body.setAttribute("data-crisis", crisis);
+        currentCrisis = crisis;
+      }
+
+      if (year !== currentYear) {
+        const d = yearData[year];
+        if (d && active.id !== "prologue") {
+          spYear.textContent = year;
+          spChapter.textContent = d.chapter;
+          spStatus.textContent = d.status;
+          setSeverity(year, d.sev);
+          spFam.innerHTML = d.fam;
+          // Stagger the value + bar updates.
+          setTimeout(() => { spPeso.textContent = d.peso;   spPesoFill.style.width = d.pesoFill + "%";   applyWorsening(spPeso, spPesoFill, "peso", d.worsen); }, 80);
+          setTimeout(() => { spBpo.textContent = d.bpo;     spBpoFill.style.width = d.bpoFill + "%";     applyWorsening(spBpo, spBpoFill, "bpo", d.worsen); }, 200);
+          setTimeout(() => { spRemit.textContent = d.remit; spRemitFill.style.width = d.remitFill + "%"; applyWorsening(spRemit, spRemitFill, "remit", d.worsen); }, 320);
+          setTimeout(() => { spDebt.textContent = d.debt;   spDebtFill.style.width = d.debtFill + "%";   applyWorsening(spDebt, spDebtFill, "debt", d.worsen); }, 440);
+        } else if (active.id === "prologue") {
+          spYear.textContent = "2025";
+          spChapter.textContent = "Prologue";
+          spStatus.textContent = "Before the shock";
+          spSevNum.textContent = "0 / 5";
+          sevBars.forEach(b => b.classList.remove("past","current"));
+          spFam.innerHTML = "<strong>Maria</strong>, 29. Ortigas team lead. Two children. Condo plan on track.";
+        }
+        currentYear = year;
+      }
+    }
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  })();
+</script>
+</body>
+</html>

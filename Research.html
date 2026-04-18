@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Philippines 2030 — Exposure, Transition, Sovereignty</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body data-scenario="base" class="has-topnav">
+
+<nav class="topnav">
+  <a href="index.html" class="brand">Philippines <span class="yr">2030</span></a>
+  <div class="links">
+    <a href="index.html">Narrative</a>
+    <a href="Research.html" class="current">Research</a>
+  </div>
+</nav>
+
+<div class="progress-bar"><div class="fill"></div></div>
+
+<div class="page">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div>
+      <h1 class="site-title">Research <span class="year">dossier</span></h1>
+      <div class="site-sub">Structural argument · v0.1</div>
+    </div>
+
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#intro"><span class="num">00</span>Introduction</a></li>
+        <li><a href="#exposure"><span class="num">01</span>Exposure</a></li>
+        <li><a href="#bpo"><span class="num">02</span>The BPO Anchor</a></li>
+        <li><a href="#remittance"><span class="num">03</span>Remittances</a></li>
+        <li><a href="#agriculture"><span class="num">04</span>Agriculture</a></li>
+        <li><a href="#manufacturing"><span class="num">05</span>Manufacturing</a></li>
+        <li><a href="#energy"><span class="num">06</span>Energy &amp; Compute</a></li>
+        <li><a href="#governance"><span class="num">07</span>Governance</a></li>
+        <li><a href="#geopolitics"><span class="num">08</span>Geopolitics</a></li>
+        <li><a href="#scenarios"><span class="num">09</span>Scenarios</a></li>
+        <li><a href="#timeline"><span class="num">10</span>Timeline</a></li>
+        <li><a href="#strategy"><span class="num">11</span>Strategy</a></li>
+      </ul>
+    </nav>
+
+    <div class="scenario-toggle">
+      <div class="label">Scenario Lens</div>
+      <div class="scenario-btns">
+        <button class="scenario-btn active" data-scenario="base"><span class="dot"></span>Base<span class="prob">50%</span></button>
+        <button class="scenario-btn" data-scenario="accel"><span class="dot"></span>Accelerated<span class="prob">35%</span></button>
+        <button class="scenario-btn" data-scenario="crisis"><span class="dot"></span>Crisis<span class="prob">15%</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ CONTENT ============ -->
+  <main class="content">
+
+    <!-- HERO -->
+    <section class="hero" id="intro">
+      <div class="col-wide">
+        <div class="eyebrow">The Research · v0.1 · April 2026</div>
+        <h1>The <em>structural argument</em><br>behind the narrative.</h1>
+        <p class="dek">The Philippines faces the sharpest AI-exposure profile of any ASEAN economy, and the transition window is narrower than the official narrative admits. What follows is the research scaffold &mdash; the numbers, the mechanisms, and the scenario math &mdash; that the front-facing <a href="index.html">narrative</a> draws from.</p>
+        <div class="byline">
+          <div><span class="k">Horizon</span>2026 — 2035</div>
+          <div><span class="k">Scope</span>Economy · Labor · Infrastructure · Politics</div>
+          <div><span class="k">Read time</span>~ 45 minutes</div>
+          <div><span class="k">Status</span>Working draft</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPOSURE -->
+    <section class="chapter" id="exposure">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 01 &middot; Exposure</div>
+        <h2>The sharpest AI-exposure profile in ASEAN.</h2>
+        <p class="chapter-dek">Four economic engines, all running uphill into the same headwind.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <p class="lede dropcap">The Philippines runs on four engines: business process outsourcing, remittances, agriculture, and electronics assembly. Each is now facing a distinct kind of AI-era pressure &mdash; and for the first time in half a century, the shocks to each are loosely correlated rather than offsetting.</p>
+
+        <p>The argument proceeds in four parts. Sections 1A through 1D document the displacement mechanisms for each engine &mdash; the precise timing, the wage-cost crossovers, and the structural feedback loops. Section 2 builds three macroeconomic scenarios across BPO, remittance, agricultural, and manufacturing channels and traces their interactions through the peso, fiscal accounts, and political economy. Section 3 derives the national strategic implications, with particular attention to the constraints that separate feasible from aspirational policy. The timing question throughout is not whether the shocks arrive, but in what sequence and at what speed &mdash; and whether the gap between shock arrival and institutional response is measured in months or years.</p>
+
+        <p>A <span class="gloss" data-gloss="bpo">service-export economy</span> of this scale and composition has never been asked to reskill this fast. The question is whether the adjustment arrives as a gradient or as a cliff.<sup class="fn" data-fn="1">1</sup></p>
+      </div>
+
+      <div class="stats reveal-root">
+        <div class="stat"><div class="value">$40<span class="unit">B</span></div><div class="label">BPO revenue 2025</div></div>
+        <div class="stat"><div class="value">$39.6<span class="unit">B</span></div><div class="label">Remittances 2025</div></div>
+        <div class="stat"><div class="value">71.7<span class="unit">%</span></div><div class="label">Rice self-sufficiency</div></div>
+        <div class="stat"><div class="value">63.2<span class="unit">%</span></div><div class="label">Debt to GDP</div></div>
+        <div class="stat"><div class="value neg">4.2<span class="unit">%</span></div><div class="label">Q2 services export contraction</div></div>
+      </div>
+    </section>
+
+    <!-- BPO -->
+    <section class="chapter" id="bpo">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 02 &middot; The BPO Anchor</div>
+        <h2>A $40B engine, mispriced.</h2>
+        <p class="chapter-dek">Official targets assume rising revenue and rising headcount simultaneously. The arithmetic doesn&rsquo;t close.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <p class="dropcap">The business process outsourcing sector is the single most important element of the Philippine middle class. It employs roughly 1.9&nbsp;million people directly, another 1.5&nbsp;million indirectly, and anchors somewhere around eight percent of GDP. It also sits squarely in the path of the most capable AI systems being deployed today.</p>
+
+        <p>The displacement timeline resolves into two distinct waves. The first (2026&ndash;2027) removes 150K&ndash;300K jobs concentrated in tier-1 voice, outbound telesales, basic AP/invoice matching, and entry-level content moderation; the mechanism is outcome-based AI-native competitors quoting $0.05&ndash;0.20 per resolved contact against the BPO voice rate of $4&ndash;8, making the per-seat B2B contract model arithmetically indefensible. The second wave (2028&ndash;2030) extends to tier-2 technical support, claims adjudication, KYC/AML, month-end F&A close support, and commodity LPO &mdash; a further 300K&ndash;500K. A deep-persistence layer of 500K&ndash;700K roles survives into 2031&ndash;2035 on regulatory mandates, relationship-dense B2B work, and data annotation. IBPAP&rsquo;s 2028 target of $59B revenue on 2.5M jobs is arithmetically incompatible with the industry&rsquo;s own AI strategy of rising revenue-per-employee: given the pricing compression documented above, headcount is the binding constraint and two of the three headline targets must give.</p>
+      </div>
+
+      <figure class="chart reveal-root">
+        <div class="figure-head">
+          <span class="figure-num">FIG. 01</span>
+          <span class="figure-title">BPO headcount to 2030, under three scenarios</span>
+        </div>
+        <div id="chart-bpo"></div>
+        <div class="figure-note">Dashed lines show inactive scenarios. Switch scenarios from the sidebar or the Scenarios section to re-weight the figure.</div>
+        <div class="figure-source">Source: IBPAP; BSP services-exports data; author projections. Figures in millions of direct workers.</div>
+      </figure>
+
+      <div class="col reveal-root">
+        <p>The first crack is already visible in the official data: Philippine services exports contracted 4.2% year-on-year in Q2&nbsp;2025 &mdash; the first non-COVID contraction since 2012 &mdash; before any mass agentic deployment. Enterprise-side signals align: <span class="gloss" data-gloss="gcc">captive centers</span> are growing, pure voice is not.<sup class="fn" data-fn="2">2</sup></p>
+
+        <p data-scenario-text="base">Under the <span class="scenario-inline">Base</span> scenario, headcount drifts from 1.9M to around 1.71M by 2030. The transition is uncomfortable but not destabilizing &mdash; roughly the pace of a typical sector restructuring.</p>
+        <p data-scenario-text="accel">Under the <span class="scenario-inline">Accelerated</span> scenario, headcount falls to 1.42M by 2030 &mdash; a 25% contraction. Political stress becomes visible in the 2028 cycle; FDI cools.</p>
+        <p data-scenario-text="crisis">Under the <span class="scenario-inline">Crisis</span> scenario, headcount collapses to 1.15M by 2030 &mdash; a 40% reduction. The middle-class stabilizer for urban Luzon and Cebu is gone. The political consequences follow.</p>
+      </div>
+
+      <div class="callout reveal-root">
+        <span class="callout-label">The arithmetic problem</span>
+        <p>You cannot simultaneously achieve $59B revenue, 2.5M jobs, and rising revenue per employee. Two of the three have to give; headcount is the binding constraint.</p>
+      </div>
+
+      <figure class="chart reveal-root">
+        <div class="figure-head">
+          <span class="figure-num">FIG. 02</span>
+          <span class="figure-title">Regional concentration and voice-tier exposure</span>
+        </div>
+        <div id="chart-exposure"></div>
+        <div class="figure-source">Metro Manila concentrates two-thirds of the sector; voice-tier work &mdash; the most AI-exposed &mdash; is 55–65% of headcount across hubs.</div>
+      </figure>
+
+      <figure class="chart reveal-root">
+        <div class="figure-head">
+          <span class="figure-num">FIG. 03</span>
+          <span class="figure-title">Cumulative displacement, 2026–2030</span>
+        </div>
+        <div id="chart-displacement"></div>
+        <div class="figure-source">Displacement is cumulative and front-loaded: tier-1 voice and back-office first, then tier-2 and claims adjudication, then a persistent layer survives on regulatory mandates.</div>
+      </figure>
+
+      <div class="pullquote reveal-root">
+        <blockquote>Displacement of 500K to 900K English-speaking workers is precisely the demographic that has swung every recent Philippine election.</blockquote>
+        <cite>Section 1A &middot; The BPO anchor is mispriced</cite>
+      </div>
+    </section>
+
+    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+
+    <!-- REMITTANCE -->
+    <section class="chapter" id="remittance">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 03 &middot; Remittances</div>
+        <h2>The domestic-work tranche is the underpriced risk.</h2>
+        <p class="chapter-dek">Hardware isn&rsquo;t ready for the kitchen. It will be ready for the factory floor first &mdash; and for the Gulf household not long after.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <p class="lede dropcap"><span class="gloss" data-gloss="remit">Remittances</span> hit a record $39.6 billion in 2025 &mdash; 7.3% of GDP. The ratio is already eroding. And the structural shock has not yet arrived.</p>
+
+        <p>The displacement cascade is tranche-sequential, not simultaneous. The first tranche to cross the humanoid wage-cost threshold is industrial: Japanese, Korean, Singaporean, Taiwanese, and UAE factories and warehouses (2027&ndash;2028), hitting the 15.4% plant-and-machine-operator OFW cohort. Gulf domestic work &mdash; the largest single tranche by remittance volume &mdash; crosses plausibly in 2029&ndash;2031, driven by the QSS &times; Humanoid 10,000-unit Saudi deployment, Vision 2030 labour-substitution incentives, and an all-in employer cost of $5,500&ndash;7,000 per Filipina worker per year converging on sub-$400/month RaaS pricing. Hong Kong and Singapore follow in 2030&ndash;2033; Japanese caregiving substitution in 2031&ndash;2034, constrained by policy preference and the 370,000-caregiver structural shortage; seafarer rating roles from 2032, gated by the IMO MASS Code mandatory entry-into-force date of 1 January 2032. Each tranche has a different wage-cost crossover point, a different regulatory clock, and a different political economy in the host country. Together they define an erosion path whose cumulative remittance impact depends critically on the degree of co-movement with the BPO displacement wave.</p>
+      </div>
+
+      <figure class="chart reveal-root">
+        <div class="figure-head">
+          <span class="figure-num">FIG. 04</span>
+          <span class="figure-title">Remittance share of GDP, 2015–2035</span>
+        </div>
+        <div id="chart-remit"></div>
+        <div class="figure-note">The structural erosion is visible before any humanoid deployment. The acceleration comes from hardware clearing the wage-cost threshold, tranche by tranche.</div>
+        <div class="figure-source">BSP; POEA; World Bank; author projections under three scenarios.</div>
+      </figure>
+
+      <figure class="chart reveal-root">
+        <div class="figure-head">
+          <span class="figure-num">FIG. 05</span>
+          <span class="figure-title">Wage-cost crossover: Gulf domestic helper vs humanoid <span class="gloss" data-gloss="raas">RaaS</span></span>
+        </div>
+        <div id="chart-crossover"></div>
+        <div class="figure-note">The crossover is not a single moment but a shaded zone of employer-by-employer indifference &mdash; plausibly 2029–2031 for Gulf domestic work.</div>
+      </figure>
+
+      <div class="callout reveal-root">
+        <span class="callout-label">The cascade</span>
+        <p>Under the severe scenario, a fifty-percent remittance decline over 2030–2035 produces a peso at ₱75–85/USD within 12–18 months, sustained 8–10% headline inflation, and a 5–6% direct GDP hit pre-multiplier. The peso has no second stabilizer if both BPO and remittances fail together.<sup class="fn" data-fn="3">3</sup></p>
+      </div>
+    </section>
+
+    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+
+    <!-- AGRICULTURE -->
+    <section class="chapter" id="agriculture">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 04 &middot; Agriculture</div>
+        <h2>Structural fragility meets automating competitors.</h2>
+        <p class="chapter-dek">A 1.3-hectare average farm cannot support a $20,000 drone. The economics of modernization run through the aggregator.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <p class="dropcap">Rice self-sufficiency collapsed to 71.7% in 2024 &mdash; the lowest print in 37 years. Philippine palay yield is roughly 4.0 tonnes per hectare against Vietnam&rsquo;s 5.8–6.0; Filipino farmers produce rice at twice the cost. Three-quarters of rice land lacks adequate irrigation for multi-cropping.</p>
+
+        <p>The binding constraint is the legacy fragmentation of <span class="gloss" data-gloss="carp">agrarian reform</span>. Collective CLOAs block consolidation; cooperatives have a documented poor track record in Philippine agriculture; the average farmer is 53&ndash;56 years old and youth exit is accelerating as BPO and OFW channels, until recently, absorbed the rural-to-urban transition cohort. That absorption channel is now narrowing, which will slow youth exit and extend the tenure of low-productivity smallholders &mdash; a feedback loop that worsens the productivity gap rather than accelerating the generational transfer of land to more capitalizable operators. Against this structural backdrop, AI and robotics opportunities face brutal unit economics: a DJI Agras T50 at $20,000&ndash;$25,000 costs ten times the annual net income of a typical 1.29-hectare smallholder; drone-spraying-as-a-service cooperatives, satellite yield advisory, and AI-enabled cooperative lending are the viable delivery mechanisms, but each requires aggregation infrastructure the Philippine rural sector has consistently failed to sustain at scale.</p>
+      </div>
+
+      <div class="stats reveal-root">
+        <div class="stat"><div class="value">1.29<span class="unit">ha</span></div><div class="label">Avg farm size 2012</div></div>
+        <div class="stat"><div class="value">4.0<span class="unit">t/ha</span></div><div class="label">Philippine palay yield</div></div>
+        <div class="stat"><div class="value">5.9<span class="unit">t/ha</span></div><div class="label">Vietnam palay yield</div></div>
+        <div class="stat"><div class="value">53–56<span class="unit"></span></div><div class="label">Avg farmer age</div></div>
+      </div>
+
+      <div class="col reveal-root">
+        <p>The viable path is the aggregator layer &mdash; drone-spraying-as-a-service cooperatives, satellite yield advisory sold to traders and crop insurers, AI-enabled lending against cooperative cash flows rather than land-encumbered collateral. The food-security failure mode is that structural import dependence at 15–20% of consumption becomes permanent, and rice &mdash; 9% of the CPI basket &mdash; feeds political instability through the poorest quintiles.</p>
+      </div>
+    </section>
+
+    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+
+    <!-- MANUFACTURING -->
+    <section class="chapter" id="manufacturing">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 05 &middot; Manufacturing</div>
+        <h2>A middle-tier packaging player at an inflection.</h2>
+        <p class="chapter-dek">The Philippines is deep in semiconductor assembly, test, and packaging &mdash; and essentially absent in advanced packaging, substrates, and front-end.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <p class="dropcap">Electronics exports hit $49.6 billion in 2025, with semiconductors at roughly $34.6 billion. The <span class="gloss" data-gloss="chips">CHIPS Act</span> partner-country designation brings a share of a $500M training fund &mdash; real money, but a fraction of the investment flowing to Penang, Johor, and Arizona.</p>
+
+        <p>DTI&rsquo;s PSEI Roadmap target of $110B in electronics exports by 2030 has been publicly disclaimed by SEIPI president Danilo Lachica, who projects closer to 5% annual growth from the 2025 base of $49.6B &mdash; implying a 2030 print of $55&ndash;60B in a base case. The competitive landscape is unfavourable for upside: Malaysia&rsquo;s Penang has captured Intel&rsquo;s $7B advanced-packaging expansion and Infineon&rsquo;s €5B SiC facility; Vietnam has surpassed the Philippines in total electronics FDI; and Amkor&rsquo;s $2B advanced-packaging facility in Peoria, Arizona positions US CHIPS Act volume away from Philippine sites. The defensible niche is narrow but real: automotive power ICs (onsemi, Analog Devices Cavite), SiC/GaN power devices, MEMS/sensor packaging, and battery-pack assembly (StB Giga Factory&rsquo;s 300 MWh LFP line). The risk is that the political expectation set by the $110B target makes the $55B reality, when it arrives, read as a policy failure &mdash; generating the same demand-management problem the BPO sector has faced with IBPAP&rsquo;s headcount figures.</p>
+      </div>
+    </section>
+
+    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+
+    <!-- ENERGY -->
+    <section class="chapter" id="energy">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 06 &middot; Energy &amp; Compute</div>
+        <h2>The binding constraint on AI ambition.</h2>
+        <p class="chapter-dek">Frontier training is not compatible with Meralco rates. Inference might be &mdash; if the grid holds.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <p class="dropcap">Residential electricity tariffs ran roughly US$0.22–0.24 per kilowatt-hour in early 2026 &mdash; two to four times the ASEAN peer median. Reserve margins sit chronically below target. Nuclear exists as a political signal more than an operational plan.</p>
+
+        <p>Total operational data-centre capacity stood at approximately 200 MW at end-2025 (DICT), with a stated national target of 1.5 GW by 2028. The gap between target and trajectory is material: STT GDC Fairview 1 (124 MW IT load, ~$1B capex), ePLDT VITRO Sta. Rosa (50 MW AI hyperscale with NVIDIA GPU-as-a-Service), and Digital Edge/Stonepeak&rsquo;s planned 300 MW Narra Technology Park represent the visible pipeline, but hyperscalers maintain only edge presence &mdash; no AWS, Azure, Google Cloud, or Oracle sovereign region exists in the Philippines, against Malaysia&rsquo;s $12B&ndash;plus in committed hyperscaler investment and Johor&rsquo;s 5.8 GW of announced supply. At Meralco tariff rates of US$0.22&ndash;0.24/kWh, a 100 MW AI facility incurs $130&ndash;150M per year in electricity costs against $40&ndash;60M in Johor or $25&ndash;35M in Vietnam; this is the structural reason hyperscalers route Philippine traffic through Singapore. Without nuclear revival or behind-the-meter renewable campuses, Philippine compute is confined to latency-sensitive inference, BPO-adjacent workloads, and sovereign-data-residency use cases &mdash; not frontier training &mdash; through at least 2030, leaving the country as a fifth-tier Southeast Asian compute jurisdiction by any measure.</p>
+      </div>
+
+      <figure class="chart narrow reveal-root">
+        <div class="figure-head">
+          <span class="figure-num">FIG. 06</span>
+          <span class="figure-title">Generation mix &amp; total data-center capacity</span>
+        </div>
+        <div id="chart-energy"></div>
+        <div class="figure-source">Coal dominance plus thin reserve margins produce the highest effective AI-compute cost in the region.</div>
+      </figure>
+    </section>
+
+    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+
+    <!-- GOVERNANCE -->
+    <section class="chapter" id="governance">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 07 &middot; Governance</div>
+        <h2>Weak-Weberian state, fastest-ever transition.</h2>
+        <p class="chapter-dek">Technocratic pockets do serious work. The political apparatus runs on patronage. Both are true.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <p class="dropcap">The central bank, the planning agency, finance, and the statistics authority are genuinely capable. The World Bank&rsquo;s governance indicators place the country in the bottom half globally on control of corruption and rule of law. The fiscal math &mdash; 63% debt-to-GDP, 14% tax effort, a 5.6% deficit &mdash; leaves no space for Singapore- or Malaysia-scale industrial policy.</p>
+
+        <p>Legislation is fragmented across competing agency mandates. Senate Bill 852 (Cayetano) places AI governance under a DOST-led council; parallel House Bills 13, 1920, 3195, 5158, and 6920 vest authority in DICT; HB 7396 (AI Development Act), HB 7913 (AI Bill of Rights), and the harmonized &ldquo;Philippine AI Act&rdquo; remain in committee as of April 2026. COMELEC&rsquo;s Task Force KKK largely failed to contain AI-generated disinformation in the 2025 midterms, establishing a precedent of regulatory lag that compounds with each subsequent electoral cycle. The social-protection architecture is structurally insufficient for a displacement shock of this character: 4Ps covers 4.4 million households as a poverty-targeting instrument, not a displacement buffer; the SSS unemployment benefit is one-time, two-month, and lifetime-capped; PhilHealth transferred PHP 89.9B in &ldquo;idle funds&rdquo; to Treasury in 2024 amid a fraud crisis that has not resolved; and IBON estimates 20.2 million informal workers (41.6% of employed) are entirely outside meaningful coverage. Universal basic income proposals circulate in public debate but are fiscally incoherent at 14% tax effort: a PHP 1,500/adult/month floor costs 8&ndash;10% of GDP, leaving no residual for any other fiscal function.</p>
+      </div>
+
+      <div class="callout reveal-root">
+        <span class="callout-label">Political risk</span>
+        <p>Displacement of 500K to 900K English-speaking, college-educated, internet-native workers &mdash; the cohort that has swung every Philippine election since 1998 &mdash; is the most under-priced domestic political risk for the 2028 cycle.</p>
+      </div>
+    </section>
+
+    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+
+    <!-- GEOPOLITICS -->
+    <section class="chapter" id="geopolitics">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 08 &middot; Geopolitics</div>
+        <h2>Sharpest pro-US tilt, most exposed cable landscape.</h2>
+        <p class="chapter-dek">Security aligns one way. Procurement logic pulls the other.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <p class="dropcap">The Marcos Jr. administration has executed the sharpest pro-US pivot since Ramos. <span class="gloss" data-gloss="edca">EDCA</span> expanded from five to nine sites in 2023, with three of the four new sites facing Taiwan. The Mutual Defense Treaty has been reaffirmed over the <span class="gloss" data-gloss="wps">West Philippine Sea</span> by two successive US administrations.</p>
+
+        <p>Eleven international submarine cables are in service with six under construction; Apricot, Echo, Bifrost, and Candle are Pacific-facing through Baler, Digos, and Davao by deliberate design to avoid South China Sea exposure. The pattern of anchor-drag cable cuts &mdash; Matsu (2023, 2025), Baltic interconnectors (2024), Red Sea (2024) &mdash; and the recovery of underwater drones of suspected Chinese origin off Masbate in January 2026 prompted the Philippine Navy to formally add undersea-cable protection to its mission profile. A coordinated cut in a Taiwan contingency scenario represents the single largest infrastructure tail risk for any Philippine-hosted AI or cloud workload, with up to 72 hours of degraded trans-Pacific latency as a plausible contingency. The geopolitical posture otherwise faces a structural tension: Chinese AI models (DeepSeek, Qwen, Ernie, Doubao) are unregulated in the Philippine private sector and price 30&ndash;50% below US equivalents on token economics, creating a durable wedge between Manila&rsquo;s pro-US security alignment and the procurement logic of Philippine enterprises operating under cost pressure.</p>
+      </div>
+    </section>
+
+    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+
+    <!-- SCENARIOS -->
+    <section class="chapter" id="scenarios">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 09 &middot; Scenarios</div>
+        <h2>Three paths through the decade.</h2>
+        <p class="chapter-dek">Click a scenario to re-weight every figure on this page.</p>
+      </div>
+
+      <div class="col-wide reveal-root">
+        <div id="chart-scenarios"></div>
+      </div>
+
+      <figure class="chart reveal-root">
+        <div class="figure-head">
+          <span class="figure-num">FIG. 07</span>
+          <span class="figure-title">Six indicators, 2025 → 2030</span>
+        </div>
+        <div id="chart-sectors"></div>
+        <div class="figure-note">Small multiples redraw against the active scenario. Ghosted curves show the alternative paths.</div>
+      </figure>
+
+      <figure class="chart reveal-root">
+        <div class="figure-head">
+          <span class="figure-num">FIG. 08</span>
+          <span class="figure-title">Aggregated forecast: AGI &amp; <span class="gloss" data-gloss="asi">ASI</span> arrival</span>
+        </div>
+        <div id="chart-agi"></div>
+        <div class="figure-source">Aggregated across Metaculus, AI Futures revised medians, Epoch compute projections, METR time-horizons, and CEO-adjusted forecasts.</div>
+      </figure>
+
+      <div class="col reveal-root">
+        <p>The global AI outcome distribution is not uniformly consequential across states. A country with low fiscal space, high exposure concentration across correlated income streams, and a safety-net architecture that predates the displacement wave in question has the same prior probability over the benign/middling/catastrophic global outcomes as any other country &mdash; but its conditional outcome at every branch is materially worse. Under the benign global path (25&ndash;35% probability), Philippine BPO still contracts sharply in 2027&ndash;2029 because the sectoral disruption mechanism is not contingent on global AI alignment; the question is only whether fiscal transfers and productivity gains compensate. Under the middling path (35&ndash;45%), the Philippines faces 2&ndash;4% growth through the adjustment with high political stress and eventual IMF-adjacent discipline. Under the catastrophic path (20&ndash;30%), the &ldquo;Intelligence Curse&rdquo; dynamic &mdash; in which labour-replacing AI makes citizens less economically valuable to concentrated elites &mdash; is especially acute in a political economy where AI infrastructure is already concentrating in the hands of six to eight conglomerate families.</p>
+      </div>
+    </section>
+
+    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+
+    <!-- TIMELINE -->
+    <section class="chapter" id="timeline">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 10 &middot; Timeline</div>
+        <h2>2026 &rarr; 2035.</h2>
+        <p class="chapter-dek">The decade as a series of dated events. Scroll the figure to reveal each.</p>
+      </div>
+
+      <div class="timeline reveal-root" id="timeline-host"></div>
+
+      <div class="col reveal-root">
+        <p>The timeline should be read as a dependency graph rather than a sequence of independent events. The Gulf humanoid crossover node (2029&ndash;2031) is not independent of the AGI-capability node: both depend on the same compute-scaling trajectory, and an acceleration or deceleration in frontier capability progress shifts both dates in the same direction. The political-inflection node (2028 election cycle) is a first-order consequence of the BPO displacement node (2026&ndash;2027): the cohort displaced in the first wave is the same cohort that has swung Philippine national elections since 1998, and the timing of political response depends on how quickly displacement becomes numerically visible in a constituency that can be mobilised. The fiscal-stress node (2030&ndash;2031) is co-determined by the BPO and remittance nodes, because the peso stabilisation mechanism depends on both legs of the current-account equation holding. The cable-protection node and the nuclear-capacity node are relatively independent of the labour-market sequence but are critical dependencies for the inference-infrastructure node, which in turn determines whether the sovereign-AI strategic option remains viable through the decade.</p>
+      </div>
+    </section>
+
+    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+
+    <!-- STRATEGY -->
+    <section class="chapter" id="strategy">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">Chapter 11 &middot; Strategy</div>
+        <h2>Inference, not frontier. Specialist, not generalist.</h2>
+        <p class="chapter-dek">The Philippines cannot out-spend or out-compute Singapore, Malaysia, or Vietnam. It must out-strategize.</p>
+      </div>
+
+      <div class="col reveal-root">
+        <p class="lede dropcap">The national strategy is more about managing a transition than about winning a race. The defensible niche runs through the inference, deployment, and transition-management layer &mdash; with sovereign data assets as the differentiated input.</p>
+
+        <p>Five moves anchor the strategy, ordered by time-sensitivity. First, accept managed BPO decline explicitly and fund the transition: abandon the IBPAP $59B/2.5M target publicly, redirect subsidy toward GCC and analytics-consulting migration, and capitalise a PHP 50B multi-year reskilling programme through ADB, JICA, and US DFC concessional facilities rather than through a fiscal envelope that does not exist. Second, modernise agriculture through the aggregator layer &mdash; drone-spraying cooperatives, satellite yield advisory, AI-enabled cooperative lending &mdash; rather than at the smallholder unit, and prioritise irrigation capex as the single highest-leverage physical investment. Third, build inference-layer sovereignty rather than frontier ambition: 3&ndash;5 GPU-as-a-Service facilities of 50&ndash;100 MW each, anchored by BSP, DOH, and major-bank workload commitments, with a mandated Filipino-language data commons funded by anonymised BPO call-centre data. Fourth, reform the safety net before the displacement wave peaks rather than after: expand 4Ps, convert SSS unemployment insurance to a six-month recurring structure, and fund both through digital-services-tax revenue and rationalised tax incentives. Fifth, hedge the geopolitics honestly: maintain US security alignment, allow private-sector access to Chinese AI models, pursue a formal Japan&ndash;Philippines AI and robotics tech-transfer corridor, and use the 2026 ASEAN chairship to establish a regional data-commons standard.</p>
+
+        <p>The window is narrower than the official narrative admits &mdash; and the political consequences of pretending otherwise compound each year the admission is delayed.<sup class="fn" data-fn="4">4</sup></p>
+      </div>
+
+      <div class="pullquote reveal-root">
+        <blockquote>The probability that an English-speaking Filipino college graduate in 2026 has a career path resembling her parents&rsquo; is, for the first time since the 1970s, less than even.</blockquote>
+        <cite>A closing observation</cite>
+      </div>
+    </section>
+
+    <!-- Footnotes -->
+    <div class="footnotes">
+      <h4>Notes &amp; sources</h4>
+      <ol>
+        <li id="fn-1">Research dossier, Section 1. Placeholder citation &mdash; full sources to be attached in the narrative draft.</li>
+        <li id="fn-2">BSP services-exports data, Q2 2025; IBPAP member reports; public filings from Concentrix, Teleperformance, and TaskUs, 2025.</li>
+        <li id="fn-3">BSP gross international reserves; peso pass-through literature from the Philippine Institute for Development Studies; author modeling.</li>
+        <li id="fn-4">Philippine Energy Plan; AMRO 2025 Article IV consultation; author synthesis.</li>
+      </ol>
+    </div>
+
+  </main>
+</div>
+
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
