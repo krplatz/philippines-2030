@@ -161,6 +161,7 @@
     "dof": { term: "DOF", def: "Department of Finance — manages the national treasury, tax policy, and sovereign borrowing." },
     "dbm": { term: "DBM", def: "Department of Budget and Management — prepares and executes the national budget." },
     "dole": { term: "DOLE", def: "Department of Labor and Employment — processes illegal-dismissal complaints, overseas worker documentation, and labor-standards enforcement." },
+    "dmw": { term: "DMW", def: "Department of Migrant Workers — established by RA 11641 in 2022, absorbing POEA's overseas deployment, documentation, and repatriation functions." },
     "doh": { term: "DOH", def: "Department of Health — the national public-health agency." },
     "dpwh": { term: "DPWH", def: "Department of Public Works and Highways — builds and maintains roads, bridges, and flood control." },
     "tesda": { term: "TESDA", def: "Technical Education and Skills Development Authority — national agency for vocational training and trade-school programs." },
