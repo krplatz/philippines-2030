@@ -9,13 +9,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=2">
+<style>
+  .ref-section { max-width: var(--col); margin: 0 auto 80px; }
+  .ref-section h4 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-muted); margin: 48px 0 16px; border-top: 1px solid var(--rule); padding-top: 20px; }
+  .ref-section h4:first-child { border-top: none; margin-top: 0; }
+  .ref-list { list-style: none; padding: 0; margin: 0 0 8px; }
+  .ref-list li { font-family: var(--serif); font-size: 13.5px; line-height: 1.6; color: var(--ink-2); padding: 7px 0; border-bottom: 1px solid var(--rule); display: flex; gap: 14px; }
+  .ref-list li .ref-n { font-family: var(--mono); font-size: 10.5px; color: var(--ink-muted); min-width: 24px; margin-top: 3px; }
+  .ref-list li a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; word-break: break-all; }
+  .ref-list li a:hover { color: var(--accent); }
+  .inst-list { list-style: none; padding: 0; margin: 0; }
+  .inst-list li { font-family: var(--serif); font-size: 13.5px; line-height: 1.6; color: var(--ink-2); padding: 5px 0 5px 16px; border-left: 2px solid var(--rule); margin-bottom: 6px; }
+  .inst-list li strong { color: var(--ink); font-weight: 500; }
+</style>
 </head>
 <body data-scenario="base" class="has-topnav">
 
 <nav class="topnav">
-  <a href="index.html" class="brand">Philippines <span class="yr">2030</span></a>
+  <a href="Philippines 2030.html" class="brand">Philippines <span class="yr">2030</span></a>
   <div class="links">
-    <a href="index.html">Narrative</a>
+    <a href="Philippines 2030.html">Narrative</a>
     <a href="Research.html" class="current">Research</a>
   </div>
 </nav>
@@ -28,7 +41,7 @@
   <aside class="sidebar">
     <div>
       <h1 class="site-title">Research <span class="year">dossier</span></h1>
-      <div class="site-sub">Structural argument · v0.1</div>
+      <div class="site-sub">Structural argument &middot; v0.2 &middot; April 2026</div>
     </div>
 
     <nav>
@@ -45,6 +58,7 @@
         <li><a href="#scenarios"><span class="num">09</span>Scenarios</a></li>
         <li><a href="#timeline"><span class="num">10</span>Timeline</a></li>
         <li><a href="#strategy"><span class="num">11</span>Strategy</a></li>
+        <li><a href="#references"><span class="num">—</span>References</a></li>
       </ul>
     </nav>
 
@@ -64,13 +78,13 @@
     <!-- HERO -->
     <section class="hero" id="intro">
       <div class="col-wide">
-        <div class="eyebrow">The Research · v0.1 · April 2026</div>
+        <div class="eyebrow">The Research &middot; v0.2 &middot; April 2026</div>
         <h1>The <em>structural argument</em><br>behind the narrative.</h1>
-        <p class="dek">The Philippines faces the sharpest AI-exposure profile of any ASEAN economy, and the transition window is narrower than the official narrative admits. What follows is the research scaffold &mdash; the numbers, the mechanisms, and the scenario math &mdash; that the front-facing <a href="index.html">narrative</a> draws from.</p>
+        <p class="dek">The Philippines faces the sharpest AI-exposure profile of any ASEAN economy, and the transition window is narrower than the official narrative admits. What follows is the research scaffold &mdash; the numbers, the mechanisms, the scenario math, and the full citation trail &mdash; that the front-facing <a href="Philippines 2030.html">narrative</a> draws from.</p>
         <div class="byline">
-          <div><span class="k">Horizon</span>2026 — 2035</div>
-          <div><span class="k">Scope</span>Economy · Labor · Infrastructure · Politics</div>
-          <div><span class="k">Read time</span>~ 45 minutes</div>
+          <div><span class="k">Horizon</span>2026 &mdash; 2035</div>
+          <div><span class="k">Scope</span>Economy &middot; Labor &middot; Infrastructure &middot; Politics</div>
+          <div><span class="k">Citations</span>98 URL-level sources + 20 institutional</div>
           <div><span class="k">Status</span>Working draft</div>
         </div>
       </div>
@@ -87,17 +101,18 @@
       <div class="col reveal-root">
         <p class="lede dropcap">The Philippines runs on four engines: business process outsourcing, remittances, agriculture, and electronics assembly. Each is now facing a distinct kind of AI-era pressure &mdash; and for the first time in half a century, the shocks to each are loosely correlated rather than offsetting.</p>
 
-        <p>The argument proceeds in four parts. Sections 1A through 1D document the displacement mechanisms for each engine &mdash; the precise timing, the wage-cost crossovers, and the structural feedback loops. Section 2 builds three macroeconomic scenarios across BPO, remittance, agricultural, and manufacturing channels and traces their interactions through the peso, fiscal accounts, and political economy. Section 3 derives the national strategic implications, with particular attention to the constraints that separate feasible from aspirational policy. The timing question throughout is not whether the shocks arrive, but in what sequence and at what speed &mdash; and whether the gap between shock arrival and institutional response is measured in months or years.</p>
+        <p>This dossier proceeds through eleven chapters. Chapters 02 through 04 document the displacement mechanisms for each major income engine &mdash; the precise timing, the wage-cost crossovers, and the structural feedback loops. Chapter 05 covers manufacturing&rsquo;s competitive position. Chapter 06 maps the energy and compute constraint that caps AI ambition. Chapter 07 examines the governance and social-protection architecture. Chapter 08 models the geopolitical pressure field. Chapter 09 builds three macroeconomic scenarios and traces their interactions through the peso, fiscal accounts, and political economy. Chapter 10 gives the decade as a dependency timeline. Chapter 11 derives national strategic implications. A full references section follows.</p>
 
-        <p>A <span class="gloss" data-gloss="bpo">service-export economy</span> of this scale and composition has never been asked to reskill this fast. The question is whether the adjustment arrives as a gradient or as a cliff.<sup class="fn" data-fn="1">1</sup></p>
+        <p>The timing question throughout is not whether the shocks arrive, but in what sequence and at what speed &mdash; and whether the gap between shock arrival and institutional response is measured in months or years. A <span class="gloss" data-gloss="bpo">service-export economy</span> of this scale and composition has never been asked to reskill this fast.<sup class="fn" data-fn="1">1</sup></p>
       </div>
 
       <div class="stats reveal-root">
-        <div class="stat"><div class="value">$40<span class="unit">B</span></div><div class="label">BPO revenue 2025</div></div>
-        <div class="stat"><div class="value">$39.6<span class="unit">B</span></div><div class="label">Remittances 2025</div></div>
-        <div class="stat"><div class="value">71.7<span class="unit">%</span></div><div class="label">Rice self-sufficiency</div></div>
-        <div class="stat"><div class="value">63.2<span class="unit">%</span></div><div class="label">Debt to GDP</div></div>
-        <div class="stat"><div class="value neg">4.2<span class="unit">%</span></div><div class="label">Q2 services export contraction</div></div>
+        <div class="stat"><div class="value">$40<span class="unit">B</span></div><div class="label">IT-BPM revenue 2025</div></div>
+        <div class="stat"><div class="value">$35.6<span class="unit">B</span></div><div class="label">OFW remittances 2025 (BSP)</div></div>
+        <div class="stat"><div class="value">71.7<span class="unit">%</span></div><div class="label">Rice self-sufficiency 2024 &mdash; 37-yr low</div></div>
+        <div class="stat"><div class="value">63.2<span class="unit">%</span></div><div class="label">Debt to GDP, end 2025</div></div>
+        <div class="stat"><div class="value neg">&minus;4.2<span class="unit">%</span></div><div class="label">Services export growth, Q2 2025 YoY</div></div>
+        <div class="stat"><div class="value">1.9<span class="unit">M</span></div><div class="label">Direct BPO workers, 2025</div></div>
       </div>
     </section>
 
@@ -110,9 +125,11 @@
       </div>
 
       <div class="col reveal-root">
-        <p class="dropcap">The business process outsourcing sector is the single most important element of the Philippine middle class. It employs roughly 1.9&nbsp;million people directly, another 1.5&nbsp;million indirectly, and anchors somewhere around eight percent of GDP. It also sits squarely in the path of the most capable AI systems being deployed today.</p>
+        <p class="dropcap">The business process outsourcing sector is the single most important element of the Philippine middle class. It employs roughly 1.9&nbsp;million people directly, another 1.5&nbsp;million indirectly, and anchors somewhere around eight percent of GDP.<sup class="fn" data-fn="2">2</sup> It also sits squarely in the path of the most capable AI systems being deployed today.</p>
 
-        <p>The displacement timeline resolves into two distinct waves. The first (2026&ndash;2027) removes 150K&ndash;300K jobs concentrated in tier-1 voice, outbound telesales, basic AP/invoice matching, and entry-level content moderation; the mechanism is outcome-based AI-native competitors quoting $0.05&ndash;0.20 per resolved contact against the BPO voice rate of $4&ndash;8, making the per-seat B2B contract model arithmetically indefensible. The second wave (2028&ndash;2030) extends to tier-2 technical support, claims adjudication, KYC/AML, month-end F&A close support, and commodity LPO &mdash; a further 300K&ndash;500K. A deep-persistence layer of 500K&ndash;700K roles survives into 2031&ndash;2035 on regulatory mandates, relationship-dense B2B work, and data annotation. IBPAP&rsquo;s 2028 target of $59B revenue on 2.5M jobs is arithmetically incompatible with the industry&rsquo;s own AI strategy of rising revenue-per-employee: given the pricing compression documented above, headcount is the binding constraint and two of the three headline targets must give.</p>
+        <p>The displacement timeline resolves into two distinct waves. The <strong>first wave (2026&ndash;2027)</strong> removes 150K&ndash;300K jobs concentrated in tier-1 voice, outbound telesales, basic AP/invoice matching, and entry-level content moderation. The mechanism is outcome-based AI-native competitors quoting $0.05&ndash;0.20 per resolved contact against the BPO voice rate of $4&ndash;8, making the per-seat B2B contract model arithmetically indefensible.<sup class="fn" data-fn="3">3</sup> The <strong>second wave (2028&ndash;2030)</strong> extends to tier-2 technical support, claims adjudication, KYC/AML review, month-end financial-accounting close, and commodity legal process outsourcing &mdash; a further 300K&ndash;500K direct roles. A deep-persistence layer of 500K&ndash;700K roles survives into 2031&ndash;2035 on regulatory mandates, relationship-dense B2B work, and data-annotation tasks requiring cultural and linguistic judgment.</p>
+
+        <p>The only growing segment within BPO through 2026&ndash;2027 is the global capability center (<span class="gloss" data-gloss="gcc">GCC</span>) tier &mdash; multinational-owned captive offices running analytics, compliance, and software QA. GCCs added approximately 34,000 roles through 2027, providing a partial offset. The partial offset is the trap: it creates a political surface that allows IBPAP and government officials to point to headline &ldquo;resilience&rdquo; statistics while 280,000 net jobs disappear in the same calendar year.</p>
       </div>
 
       <figure class="chart reveal-root">
@@ -121,21 +138,27 @@
           <span class="figure-title">BPO headcount to 2030, under three scenarios</span>
         </div>
         <div id="chart-bpo"></div>
-        <div class="figure-note">Dashed lines show inactive scenarios. Switch scenarios from the sidebar or the Scenarios section to re-weight the figure.</div>
+        <div class="figure-note">Dashed lines show inactive scenarios. Switch scenarios from the sidebar to re-weight the figure.</div>
         <div class="figure-source">Source: IBPAP; BSP services-exports data; author projections. Figures in millions of direct workers.</div>
       </figure>
 
       <div class="col reveal-root">
-        <p>The first crack is already visible in the official data: Philippine services exports contracted 4.2% year-on-year in Q2&nbsp;2025 &mdash; the first non-COVID contraction since 2012 &mdash; before any mass agentic deployment. Enterprise-side signals align: <span class="gloss" data-gloss="gcc">captive centers</span> are growing, pure voice is not.<sup class="fn" data-fn="2">2</sup></p>
+        <p>The first crack is already visible in the official data: Philippine services exports contracted 4.2% year-on-year in Q2&nbsp;2025 &mdash; the first non-COVID contraction since 2012 &mdash; before any mass agentic deployment. Enterprise-side signals align: Concentrix took a $1.52&nbsp;billion goodwill impairment on its Webhelp book in Q4&nbsp;2025; Teleperformance&rsquo;s share price had fallen over 70% from its 2021 peak by early 2026; TaskUs investor presentations began explicitly addressing AI-substitution risk in Q3&nbsp;2025.<sup class="fn" data-fn="4">4</sup></p>
 
-        <p data-scenario-text="base">Under the <span class="scenario-inline">Base</span> scenario, headcount drifts from 1.9M to around 1.71M by 2030. The transition is uncomfortable but not destabilizing &mdash; roughly the pace of a typical sector restructuring.</p>
-        <p data-scenario-text="accel">Under the <span class="scenario-inline">Accelerated</span> scenario, headcount falls to 1.42M by 2030 &mdash; a 25% contraction. Political stress becomes visible in the 2028 cycle; FDI cools.</p>
-        <p data-scenario-text="crisis">Under the <span class="scenario-inline">Crisis</span> scenario, headcount collapses to 1.15M by 2030 &mdash; a 40% reduction. The middle-class stabilizer for urban Luzon and Cebu is gone. The political consequences follow.</p>
+        <p>The Klarna case is instructive and widely misread. Klarna deployed an AI agent that handled 2.3&nbsp;million conversations in its first month, equivalent to the work of 700 full-time agents. The company reduced its human support headcount from roughly 850 to around 150 full-time equivalents. A partial reversal followed &mdash; Klarna rehired some human agents for complex voice interactions &mdash; but the widely-circulated interpretation that this represented a &ldquo;failure&rdquo; of AI is incorrect. The equilibrium Klarna settled into retains 15&ndash;20% of the original headcount. That is the most dangerous outcome for Philippine BPO: not a reversal, but a permanent 80&ndash;85% reduction with a small human complement surviving on edge cases.<sup class="fn" data-fn="5">5</sup></p>
+
+        <p><span class="gloss" data-gloss="ibpap">IBPAP</span>&rsquo;s 2028 target of $59B revenue on 2.5M jobs is arithmetically incompatible with the industry&rsquo;s own AI strategy of rising revenue-per-employee. Given the pricing compression documented above, headcount is the binding constraint: you cannot simultaneously achieve higher revenue-per-seat, rising total revenue, and rising total headcount when the pricing curve is collapsing. Two of the three headline targets must give. In late 2025, no official body in the Philippines was explaining which two.<sup class="fn" data-fn="6">6</sup></p>
+
+        <p>A secondary political risk has opened on the US end. The &ldquo;Keep Call Centers in America Act,&rdquo; introduced in 2025, would require federal contractors to disclose and repatriate offshore call-center work. If enacted in any form, it would directly threaten the $12&ndash;15B of US federal and federally-adjacent contracts in the Philippine BPO base. The bill has not advanced to a floor vote, but its existence signals an emerging political constituency for domestic reshoring that does not require a Democratic or Republican supermajority to find expression in procurement rules.<sup class="fn" data-fn="7">7</sup></p>
+
+        <p data-scenario-text="base">Under the <span class="scenario-inline">Base</span> scenario, headcount drifts from 1.9M to around 1.71M by 2030. The transition is uncomfortable but not destabilizing &mdash; roughly the pace of a typical sector restructuring, and partially offset by GCC growth.</p>
+        <p data-scenario-text="accel">Under the <span class="scenario-inline">Accelerated</span> scenario, headcount falls to 1.42M by 2030 &mdash; a 25% contraction. Political stress becomes visible in the 2028 election cycle; GCC site-selection evaluations accelerate as policy uncertainty rises.</p>
+        <p data-scenario-text="crisis">Under the <span class="scenario-inline">Crisis</span> scenario, headcount collapses to 1.15M by 2030 &mdash; a 40% reduction. The middle-class stabilizer for urban Luzon and Cebu is functionally destroyed. Informal-sector second-order losses (estimated at 0.8 indirect jobs per direct BPO seat) add a further 600,000&ndash;700,000 to the displacement count. The political consequences follow within two election cycles.</p>
       </div>
 
       <div class="callout reveal-root">
-        <span class="callout-label">The arithmetic problem</span>
-        <p>You cannot simultaneously achieve $59B revenue, 2.5M jobs, and rising revenue per employee. Two of the three have to give; headcount is the binding constraint.</p>
+        <span class="callout-label">The arithmetic problem, stated precisely</span>
+        <p>IBPAP&rsquo;s 2028 target requires $59B revenue, 2.5M workers, and rising revenue per employee simultaneously. AI-native competitors pricing at $0.05&ndash;0.20 per resolved contact against $5&ndash;8 in BPO voice contracts makes rising per-seat revenue arithmetically incompatible with rising headcount. The industry&rsquo;s own AI-deflection strategy confirms this: every percentage point of AI deflection reduces headcount demand in exact proportion. Two of the three targets must give &mdash; and headcount is the binding constraint that gives first.</p>
       </div>
 
       <figure class="chart reveal-root">
@@ -144,25 +167,29 @@
           <span class="figure-title">Regional concentration and voice-tier exposure</span>
         </div>
         <div id="chart-exposure"></div>
-        <div class="figure-source">Metro Manila concentrates two-thirds of the sector; voice-tier work &mdash; the most AI-exposed &mdash; is 55–65% of headcount across hubs.</div>
+        <div class="figure-source">Metro Manila concentrates two-thirds of the sector. Voice-tier work &mdash; the highest AI-exposure segment &mdash; represents 55&ndash;65% of direct headcount across all major hubs. Source: IBPAP; Colliers office-vacancy data.</div>
       </figure>
 
       <figure class="chart reveal-root">
         <div class="figure-head">
           <span class="figure-num">FIG. 03</span>
-          <span class="figure-title">Cumulative displacement, 2026–2030</span>
+          <span class="figure-title">Cumulative displacement wave, 2026&ndash;2030</span>
         </div>
         <div id="chart-displacement"></div>
-        <div class="figure-source">Displacement is cumulative and front-loaded: tier-1 voice and back-office first, then tier-2 and claims adjudication, then a persistent layer survives on regulatory mandates.</div>
+        <div class="figure-source">Displacement is cumulative and front-loaded: tier-1 voice and back-office first (2026&ndash;2027), then tier-2 and claims adjudication (2028&ndash;2029), then a persistent deep layer survives on regulatory mandates through 2030&ndash;2035. Source: author projections against IBPAP baseline.</div>
       </figure>
 
+      <div class="col reveal-root">
+        <p>The real-estate signal is the fastest-moving indicator. Colliers&rsquo; 2025 office-market data already shows BPO-driven recalibration in Metro Manila, with vacancy rising across the Bay Area and Ortigas sub-markets.<sup class="fn" data-fn="8">8</sup> Peripheral condo markets in Parañaque and Pasig moved in the same direction as BPO seat-count declines, because the BPO worker is the marginal buyer in those sub-markets. The REIT exposure is direct: Ayala REIT holds Makati and BGC towers whose anchor-tenant BPO contracts come up for renewal in waves through 2027&ndash;2029.</p>
+      </div>
+
       <div class="pullquote reveal-root">
-        <blockquote>Displacement of 500K to 900K English-speaking workers is precisely the demographic that has swung every recent Philippine election.</blockquote>
-        <cite>Section 1A &middot; The BPO anchor is mispriced</cite>
+        <blockquote>Displacement of 500K to 900K English-speaking, college-educated, internet-native workers is precisely the demographic that has swung every recent Philippine election.</blockquote>
+        <cite>Ch. 02 &middot; The BPO anchor is mispriced</cite>
       </div>
     </section>
 
-    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+    <div class="rule-div reveal-root"><span class="dingbat">&sect; &sect; &sect;</span></div>
 
     <!-- REMITTANCE -->
     <section class="chapter" id="remittance">
@@ -173,19 +200,29 @@
       </div>
 
       <div class="col reveal-root">
-        <p class="lede dropcap"><span class="gloss" data-gloss="remit">Remittances</span> hit a record $39.6 billion in 2025 &mdash; 7.3% of GDP. The ratio is already eroding. And the structural shock has not yet arrived.</p>
+        <p class="lede dropcap"><span class="gloss" data-gloss="remit">OFW remittances</span> reached a record $35.6&nbsp;billion in 2025 &mdash; representing approximately 7.3% of GDP. The stock of deployed overseas Filipino workers stood at 2.19&nbsp;million in 2024, the most recent full-year PSA count.<sup class="fn" data-fn="9">9</sup> The structural shock from humanoid robotics has not yet arrived in the data. When it does, it will not arrive uniformly.</p>
 
-        <p>The displacement cascade is tranche-sequential, not simultaneous. The first tranche to cross the humanoid wage-cost threshold is industrial: Japanese, Korean, Singaporean, Taiwanese, and UAE factories and warehouses (2027&ndash;2028), hitting the 15.4% plant-and-machine-operator OFW cohort. Gulf domestic work &mdash; the largest single tranche by remittance volume &mdash; crosses plausibly in 2029&ndash;2031, driven by the QSS &times; Humanoid 10,000-unit Saudi deployment, Vision 2030 labour-substitution incentives, and an all-in employer cost of $5,500&ndash;7,000 per Filipina worker per year converging on sub-$400/month RaaS pricing. Hong Kong and Singapore follow in 2030&ndash;2033; Japanese caregiving substitution in 2031&ndash;2034, constrained by policy preference and the 370,000-caregiver structural shortage; seafarer rating roles from 2032, gated by the IMO MASS Code mandatory entry-into-force date of 1 January 2032. Each tranche has a different wage-cost crossover point, a different regulatory clock, and a different political economy in the host country. Together they define an erosion path whose cumulative remittance impact depends critically on the degree of co-movement with the BPO displacement wave.</p>
+        <p>The displacement cascade is <strong>tranche-sequential</strong>, not simultaneous. Each OFW occupation segment has a different wage-cost crossover point, a different host-country regulatory framework, and a different timeline:</p>
+
+        <p><strong>Industrial and warehouse work (2027&ndash;2028).</strong> Japanese, Korean, Singaporean, Taiwanese, and UAE factories and warehouses hit the humanoid cost threshold first, targeting the 15.4% plant-and-machine-operator OFW cohort. This tranche is already partially underway as industrial humanoid pilots (Agility Digit, Figure-01, Tesla Optimus) complete commercial warehouse deployments.<sup class="fn" data-fn="10">10</sup></p>
+
+        <p><strong>Gulf domestic work (2029&ndash;2031).</strong> The largest single tranche by remittance volume. The QSS &times; Humanoid joint venture &mdash; a Saudi sovereign-fund subsidiary &mdash; unveiled the Middle East&rsquo;s first humanoid robotics showroom in Riyadh in late 2025, with a 10,000-unit domestic deployment program already announced. All-in employer cost for a Filipina domestic worker runs $5,500&ndash;7,000 per year; the humanoid RaaS pricing trajectory is converging on sub-$400 per month ($4,800/year) by 2029.<sup class="fn" data-fn="11">11</sup> The crossover is not a single date but a shaded zone of employer-by-employer indifference.</p>
+
+        <p><strong>Hong Kong and Singapore (2030&ndash;2033).</strong> Both city-states have already moved on foreign-worker permit caps. Singapore&rsquo;s 2025 foreign-worker policy update tightened quotas and increased levies across sectors, accelerating the economic incentive for domestic-deployment substitution.<sup class="fn" data-fn="12">12</sup></p>
+
+        <p><strong>Japanese caregiving (2031&ndash;2034).</strong> Japan faces a 370,000-caregiver structural shortage. METI and MHLW have funded humanoid-caregiving pilots in Nagoya and Osaka, with AI-assisted elder care already deployable for non-intensive supervision.<sup class="fn" data-fn="13">13</sup> The timeline is constrained by policy preference for human contact in high-touch care &mdash; but economics will eventually override preference.</p>
+
+        <p><strong>Seafarers (2032+).</strong> The IMO Maritime Autonomous Surface Ships (MASS) Code enters mandatory force on 1&nbsp;January 2032, opening a formal legal pathway for autonomous ship operations. Autonomous mooring, deep-sea monitoring, and rating-function substitution follow sequentially. The Yara Birkeland autonomous container vessel completed its sea-trial phase in 2025.<sup class="fn" data-fn="14">14</sup> Filipino ratings (unlicensed crew) represent approximately 25% of the global ratings pool; officer ranks are structurally safer on a longer timeline but not immune.</p>
       </div>
 
       <figure class="chart reveal-root">
         <div class="figure-head">
           <span class="figure-num">FIG. 04</span>
-          <span class="figure-title">Remittance share of GDP, 2015–2035</span>
+          <span class="figure-title">Remittance share of GDP, 2015&ndash;2035</span>
         </div>
         <div id="chart-remit"></div>
-        <div class="figure-note">The structural erosion is visible before any humanoid deployment. The acceleration comes from hardware clearing the wage-cost threshold, tranche by tranche.</div>
-        <div class="figure-source">BSP; POEA; World Bank; author projections under three scenarios.</div>
+        <div class="figure-note">The structural erosion is visible before any humanoid deployment. The acceleration arrives as hardware clears the wage-cost threshold, tranche by tranche.</div>
+        <div class="figure-source">Source: BSP; DMW (formerly POEA); World Bank; author projections under three scenarios.</div>
       </figure>
 
       <figure class="chart reveal-root">
@@ -194,16 +231,16 @@
           <span class="figure-title">Wage-cost crossover: Gulf domestic helper vs humanoid <span class="gloss" data-gloss="raas">RaaS</span></span>
         </div>
         <div id="chart-crossover"></div>
-        <div class="figure-note">The crossover is not a single moment but a shaded zone of employer-by-employer indifference &mdash; plausibly 2029–2031 for Gulf domestic work.</div>
+        <div class="figure-note">The crossover is not a single moment but a shaded zone of employer-by-employer indifference &mdash; plausibly 2029&ndash;2031 for Gulf domestic work, accelerated by Vision 2030 labour-substitution incentives.</div>
       </figure>
 
       <div class="callout reveal-root">
-        <span class="callout-label">The cascade</span>
-        <p>Under the severe scenario, a fifty-percent remittance decline over 2030–2035 produces a peso at ₱75–85/USD within 12–18 months, sustained 8–10% headline inflation, and a 5–6% direct GDP hit pre-multiplier. The peso has no second stabilizer if both BPO and remittances fail together.<sup class="fn" data-fn="3">3</sup></p>
+        <span class="callout-label">The cascade mechanics</span>
+        <p>Under the crisis scenario, a 50%-plus remittance decline over 2030&ndash;2035 produces a peso at &#8369;75&ndash;85/USD within 12&ndash;18 months of the dual-shock onset, sustained 8&ndash;10% headline inflation, and a 5&ndash;6% direct GDP hit pre-multiplier. The structural vulnerability is that the peso has no second stabilizer: if both the BPO current-account contribution and the remittance inflow fail simultaneously &mdash; which they do under the crisis path, because both are exposed to the same AI capability curve &mdash; the BSP has no offsetting income stream to defend against. The country has neither Vietnam&rsquo;s manufacturing depth, Malaysia&rsquo;s semiconductor anchor, nor Indonesia&rsquo;s domestic demand floor.<sup class="fn" data-fn="15">15</sup></p>
       </div>
     </section>
 
-    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+    <div class="rule-div reveal-root"><span class="dingbat">&sect; &sect; &sect;</span></div>
 
     <!-- AGRICULTURE -->
     <section class="chapter" id="agriculture">
@@ -214,24 +251,31 @@
       </div>
 
       <div class="col reveal-root">
-        <p class="dropcap">Rice self-sufficiency collapsed to 71.7% in 2024 &mdash; the lowest print in 37 years. Philippine palay yield is roughly 4.0 tonnes per hectare against Vietnam&rsquo;s 5.8–6.0; Filipino farmers produce rice at twice the cost. Three-quarters of rice land lacks adequate irrigation for multi-cropping.</p>
+        <p class="dropcap">Rice self-sufficiency collapsed to 71.7% in 2024 &mdash; the lowest print in 37 years &mdash; leaving the Philippines structurally dependent on imports for roughly 28% of consumption.<sup class="fn" data-fn="16">16</sup> Philippine palay yield sits at approximately 4.0 tonnes per hectare against Vietnam&rsquo;s 5.8&ndash;6.0 and Thailand&rsquo;s 3.4 (higher than PH in value terms because of variety premium); Filipino farmers produce rice at roughly twice the dollar cost per tonne of their main import competitors. Three-quarters of rice land lacks adequate irrigation for reliable multi-cropping.</p>
 
-        <p>The binding constraint is the legacy fragmentation of <span class="gloss" data-gloss="carp">agrarian reform</span>. Collective CLOAs block consolidation; cooperatives have a documented poor track record in Philippine agriculture; the average farmer is 53&ndash;56 years old and youth exit is accelerating as BPO and OFW channels, until recently, absorbed the rural-to-urban transition cohort. That absorption channel is now narrowing, which will slow youth exit and extend the tenure of low-productivity smallholders &mdash; a feedback loop that worsens the productivity gap rather than accelerating the generational transfer of land to more capitalizable operators. Against this structural backdrop, AI and robotics opportunities face brutal unit economics: a DJI Agras T50 at $20,000&ndash;$25,000 costs ten times the annual net income of a typical 1.29-hectare smallholder; drone-spraying-as-a-service cooperatives, satellite yield advisory, and AI-enabled cooperative lending are the viable delivery mechanisms, but each requires aggregation infrastructure the Philippine rural sector has consistently failed to sustain at scale.</p>
+        <p>The binding structural constraint is the fragmentation legacy of the Comprehensive Agrarian Reform Program (<span class="gloss" data-gloss="carp">CARP</span>). The average Philippine farm size fell to 1.29 hectares as of the 2012 census of agriculture and has continued to shrink; collective CLOAs prevent efficient consolidation; the cooperatives that were envisioned as the aggregation layer have a documented poor track record. Quantitative work by Adamopoulos and Restuccia (NBER) estimates that CARP-style land-reform fragmentation reduced Philippine agricultural total factor productivity by 10&ndash;17% relative to a counterfactual without the reform, through misallocation of land across operators of sharply different productivity.<sup class="fn" data-fn="17">17</sup></p>
+
+        <p>The average farmer is 53&ndash;56 years old, and youth exit has historically been absorbed by BPO and OFW channels. That absorption channel is now narrowing, which creates a feedback loop: slower youth exit extends the tenure of low-productivity smallholders, delays the generational transfer of land to more capitalisable operators, and compounds the productivity gap over the next decade precisely as Vietnam and Thailand are accelerating AI-enabled precision-agriculture adoption at scale.<sup class="fn" data-fn="18">18</sup></p>
+
+        <p>The 2024 typhoon season compounded this structural fragility. Typhoons Enteng, Julian, and Kristine, hitting in rapid succession between August and October 2024, caused cumulative agricultural damage exceeding P786&nbsp;million by the DA&rsquo;s conservative count, with palay and corn losses concentrated in Regions I, II, III, IV-A, and V.<sup class="fn" data-fn="19">19</sup> The structural food-security story and the climate-volatility story are not independent: a fragmented smallholder base with inadequate crop insurance has almost no balance-sheet capacity to absorb back-to-back weather losses and maintain productive investment simultaneously.</p>
       </div>
 
       <div class="stats reveal-root">
-        <div class="stat"><div class="value">1.29<span class="unit">ha</span></div><div class="label">Avg farm size 2012</div></div>
+        <div class="stat"><div class="value">1.29<span class="unit">ha</span></div><div class="label">Avg farm size (2012 census)</div></div>
         <div class="stat"><div class="value">4.0<span class="unit">t/ha</span></div><div class="label">Philippine palay yield</div></div>
         <div class="stat"><div class="value">5.9<span class="unit">t/ha</span></div><div class="label">Vietnam palay yield</div></div>
-        <div class="stat"><div class="value">53–56<span class="unit"></span></div><div class="label">Avg farmer age</div></div>
+        <div class="stat"><div class="value">53&ndash;56</div><div class="label">Avg farmer age</div></div>
+        <div class="stat"><div class="value neg">&minus;17<span class="unit">%</span></div><div class="label">Est. TFP loss from CARP fragmentation</div></div>
       </div>
 
       <div class="col reveal-root">
-        <p>The viable path is the aggregator layer &mdash; drone-spraying-as-a-service cooperatives, satellite yield advisory sold to traders and crop insurers, AI-enabled lending against cooperative cash flows rather than land-encumbered collateral. The food-security failure mode is that structural import dependence at 15–20% of consumption becomes permanent, and rice &mdash; 9% of the CPI basket &mdash; feeds political instability through the poorest quintiles.</p>
+        <p>Against this structural backdrop, AI and robotics opportunities face brutal unit economics. A DJI Agras T50 precision-agriculture drone costs $20,000&ndash;$25,000 &mdash; roughly ten times the annual net income of a typical 1.29-hectare smallholder. The viable delivery mechanisms are aggregator-layer: drone-spraying-as-a-service cooperatives, satellite yield advisory sold to traders and crop insurers, and AI-enabled cooperative lending against consolidated cash flows rather than land-encumbered collateral. Each requires aggregation infrastructure the Philippine rural sector has consistently failed to sustain at scale, for the same institutional reasons that produced the fragmentation in the first place.</p>
+
+        <p>The food-security failure mode is that structural import dependence at 28% of consumption becomes permanent, and rice &mdash; 9% of the CPI basket &mdash; transmits food-price shocks directly through the poorest quintiles. Under the crisis scenario, the rice self-sufficiency floor does not recover above 65% through 2032 because the fiscal contraction prevents irrigation capex and the peso depreciation raises import-hedging costs simultaneously.</p>
       </div>
     </section>
 
-    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+    <div class="rule-div reveal-root"><span class="dingbat">&sect; &sect; &sect;</span></div>
 
     <!-- MANUFACTURING -->
     <section class="chapter" id="manufacturing">
@@ -242,13 +286,17 @@
       </div>
 
       <div class="col reveal-root">
-        <p class="dropcap">Electronics exports hit $49.6 billion in 2025, with semiconductors at roughly $34.6 billion. The <span class="gloss" data-gloss="chips">CHIPS Act</span> partner-country designation brings a share of a $500M training fund &mdash; real money, but a fraction of the investment flowing to Penang, Johor, and Arizona.</p>
+        <p class="dropcap">Electronics exports hit $49.6&nbsp;billion in 2025, with semiconductors at roughly $34.6&nbsp;billion of that total &mdash; making electronics the country&rsquo;s single largest goods-export category by a wide margin.<sup class="fn" data-fn="20">20</sup> The sector employs approximately 600,000 workers directly, concentrated in Clark (Pampanga), Laguna, Cavite, and Cebu.</p>
 
-        <p>DTI&rsquo;s PSEI Roadmap target of $110B in electronics exports by 2030 has been publicly disclaimed by SEIPI president Danilo Lachica, who projects closer to 5% annual growth from the 2025 base of $49.6B &mdash; implying a 2030 print of $55&ndash;60B in a base case. The competitive landscape is unfavourable for upside: Malaysia&rsquo;s Penang has captured Intel&rsquo;s $7B advanced-packaging expansion and Infineon&rsquo;s €5B SiC facility; Vietnam has surpassed the Philippines in total electronics FDI; and Amkor&rsquo;s $2B advanced-packaging facility in Peoria, Arizona positions US CHIPS Act volume away from Philippine sites. The defensible niche is narrow but real: automotive power ICs (onsemi, Analog Devices Cavite), SiC/GaN power devices, MEMS/sensor packaging, and battery-pack assembly (StB Giga Factory&rsquo;s 300 MWh LFP line). The risk is that the political expectation set by the $110B target makes the $55B reality, when it arrives, read as a policy failure &mdash; generating the same demand-management problem the BPO sector has faced with IBPAP&rsquo;s headcount figures.</p>
+        <p>The Philippine semiconductor industry occupies a specific and vulnerable niche: assembly, test, and packaging (ATP) of analog and mixed-signal devices, primarily for automotive, industrial, and consumer applications. Major embedded players include Texas Instruments (Baguio), Analog Devices (Cavite), onsemi (Carmona), and Integrated Micro-Electronics Inc. (IMI, multiple sites). These are established operations with long-term site commitments; they are not leaving in the near term. The risk is not exit but relative underinvestment: as competitors in Malaysia (Penang), Vietnam, and the US (Arizona) absorb the advanced-packaging and front-end expansion capital flowing from the US CHIPS Act, the Philippine sector risks being locked into a shrinking ATP tier of the global semiconductor value chain while the high-value tiers migrate elsewhere.<sup class="fn" data-fn="21">21</sup></p>
+
+        <p>The <span class="gloss" data-gloss="chips">CHIPS Act</span> partner-country designation brings a share of a $500&nbsp;million International Technology Security and Innovation (ITSI) fund &mdash; real money, but a fraction of the investment flowing to Penang ($7B Intel expansion), Johor (Infineon &euro;5B SiC facility), and Arizona (Amkor $2B advanced packaging). DTI&rsquo;s PSEI Roadmap target of $110&nbsp;billion in electronics exports by 2030 has been publicly qualified by SEIPI president Danilo Lachica, who projects closer to 5% annual growth from the 2025 base &mdash; implying a 2030 print of $55&ndash;60&nbsp;billion.<sup class="fn" data-fn="22">22</sup></p>
+
+        <p>The defensible niche is narrow but real: automotive power ICs (onsemi Cavite, Analog Devices), SiC/GaN power devices, MEMS and sensor packaging, and battery-pack assembly. The risk is that the political expectation set by the $110B target makes the $55&ndash;60B reality, when it arrives, read as a policy failure &mdash; generating the same demand-management problem that IBPAP&rsquo;s BPO headcount targets created. Anchoring public expectations to an achievable band rather than an aspirational ceiling is the single most valuable communication task DTI can perform.</p>
       </div>
     </section>
 
-    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+    <div class="rule-div reveal-root"><span class="dingbat">&sect; &sect; &sect;</span></div>
 
     <!-- ENERGY -->
     <section class="chapter" id="energy">
@@ -259,44 +307,61 @@
       </div>
 
       <div class="col reveal-root">
-        <p class="dropcap">Residential electricity tariffs ran roughly US$0.22–0.24 per kilowatt-hour in early 2026 &mdash; two to four times the ASEAN peer median. Reserve margins sit chronically below target. Nuclear exists as a political signal more than an operational plan.</p>
+        <p class="dropcap">Residential electricity tariffs ran roughly US$0.22&ndash;0.24 per kilowatt-hour in early 2026 &mdash; two to four times the ASEAN peer median, and the highest in the region for AI-compute-relevant industrial users. The generation mix is coal-heavy (approximately 57% of total installed capacity), with natural gas at around 22% and renewables at roughly 21%.<sup class="fn" data-fn="23">23</sup> Reserve margins on the Luzon grid sit chronically below the target 20% &mdash; the first yellow alert of 2025 was triggered in February, and the grid logged multiple further alerts through the year.<sup class="fn" data-fn="24">24</sup></p>
 
-        <p>Total operational data-centre capacity stood at approximately 200 MW at end-2025 (DICT), with a stated national target of 1.5 GW by 2028. The gap between target and trajectory is material: STT GDC Fairview 1 (124 MW IT load, ~$1B capex), ePLDT VITRO Sta. Rosa (50 MW AI hyperscale with NVIDIA GPU-as-a-Service), and Digital Edge/Stonepeak&rsquo;s planned 300 MW Narra Technology Park represent the visible pipeline, but hyperscalers maintain only edge presence &mdash; no AWS, Azure, Google Cloud, or Oracle sovereign region exists in the Philippines, against Malaysia&rsquo;s $12B&ndash;plus in committed hyperscaler investment and Johor&rsquo;s 5.8 GW of announced supply. At Meralco tariff rates of US$0.22&ndash;0.24/kWh, a 100 MW AI facility incurs $130&ndash;150M per year in electricity costs against $40&ndash;60M in Johor or $25&ndash;35M in Vietnam; this is the structural reason hyperscalers route Philippine traffic through Singapore. Without nuclear revival or behind-the-meter renewable campuses, Philippine compute is confined to latency-sensitive inference, BPO-adjacent workloads, and sovereign-data-residency use cases &mdash; not frontier training &mdash; through at least 2030, leaving the country as a fifth-tier Southeast Asian compute jurisdiction by any measure.</p>
+        <p>The Bataan Nuclear Power Plant rehabilitation has been under active discussion since 2023. In April 2026, Philippine Energy Secretary Lotilla renewed calls for revival amid the Iran-war oil-price spike, and the Philippines and South Korea have engaged on a formal assessment of rehabilitation feasibility.<sup class="fn" data-fn="25">25</sup> The plant is a 621&nbsp;MW Westinghouse pressurized-water reactor completed in 1984 but never fueled; rehabilitation cost estimates range from $1&ndash;3B and timelines from six to twelve years depending on the scope of works. The Philippine Energy Plan targets 1,200&nbsp;MW of nuclear capacity by 2032 &mdash; a target that requires a final investment decision before the end of 2025, which has not been made. The 2032 date will slip to 2034&ndash;2037 under the most optimistic realistic assessment.</p>
+
+        <p>Total operational data-center capacity stood at approximately 200&nbsp;MW at end-2025, against a DICT stated national target of 1.5&nbsp;GW by 2028 &mdash; a seven-fold increase in three years that no credible pipeline of announced projects supports.<sup class="fn" data-fn="26">26</sup> The visible pipeline: STT GDC Fairview 1 (124&nbsp;MW IT load, ~$1B capex), ePLDT VITRO Sta. Rosa (50&nbsp;MW AI hyperscale with NVIDIA GPU-as-a-Service, Philippines&rsquo; first AI-ready hyperscale facility), and Digital Edge/Stonepeak&rsquo;s planned Narra Technology Park.<sup class="fn" data-fn="27">27</sup></p>
+
+        <p>The structural constraint is Meralco tariffs. At US$0.22&ndash;0.24/kWh, a 100&nbsp;MW AI facility incurs $130&ndash;150M per year in electricity costs &mdash; against $40&ndash;60M in Johor Bahru (where Malaysia has committed $12B&ndash;plus in hyperscaler investment and 5.8&nbsp;GW of announced data-center supply) and $25&ndash;35M in Vietnam.<sup class="fn" data-fn="28">28</sup> This tariff gap is the structural reason AWS, Azure, Google Cloud, and Oracle have not committed sovereign cloud regions to the Philippines, despite PLDT and Globe partnerships with each. Without nuclear revival or a significant behind-the-meter renewable program, Philippine compute remains confined to latency-sensitive inference, BPO-adjacent workloads, and sovereign-data-residency use cases &mdash; not frontier training &mdash; through at least 2030.</p>
       </div>
 
       <figure class="chart narrow reveal-root">
         <div class="figure-head">
           <span class="figure-num">FIG. 06</span>
-          <span class="figure-title">Generation mix &amp; total data-center capacity</span>
+          <span class="figure-title">Generation mix &amp; total data-center capacity trajectory</span>
         </div>
         <div id="chart-energy"></div>
-        <div class="figure-source">Coal dominance plus thin reserve margins produce the highest effective AI-compute cost in the region.</div>
+        <div class="figure-source">Coal dominance plus thin reserve margins produce the highest effective AI-compute cost in ASEAN. Source: Enerdata; DICT; author estimates.</div>
       </figure>
     </section>
 
-    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+    <div class="rule-div reveal-root"><span class="dingbat">&sect; &sect; &sect;</span></div>
 
     <!-- GOVERNANCE -->
     <section class="chapter" id="governance">
       <div class="chapter-header reveal-root">
         <div class="chapter-num">Chapter 07 &middot; Governance</div>
         <h2>Weak-Weberian state, fastest-ever transition.</h2>
-        <p class="chapter-dek">Technocratic pockets do serious work. The political apparatus runs on patronage. Both are true.</p>
+        <p class="chapter-dek">Technocratic pockets do serious work. The political apparatus runs on patronage. Both are true simultaneously.</p>
       </div>
 
       <div class="col reveal-root">
-        <p class="dropcap">The central bank, the planning agency, finance, and the statistics authority are genuinely capable. The World Bank&rsquo;s governance indicators place the country in the bottom half globally on control of corruption and rule of law. The fiscal math &mdash; 63% debt-to-GDP, 14% tax effort, a 5.6% deficit &mdash; leaves no space for Singapore- or Malaysia-scale industrial policy.</p>
+        <p class="dropcap">The central bank, the planning agency, the finance department, and the statistics authority are genuinely capable institutions by regional standards. The World Bank&rsquo;s Worldwide Governance Indicators (WGI) place the Philippines in the bottom half globally on control of corruption and rule of law, while scoring in the middle ranges on government effectiveness and regulatory quality.<sup class="fn" data-fn="29">29</sup> The fiscal envelope &mdash; 63% debt-to-GDP, 14% tax effort, a deficit that exceeded the 2025 target &mdash; leaves essentially no space for Singapore- or Malaysia-scale industrial policy.<sup class="fn" data-fn="30">30</sup> AMRO&rsquo;s 2026 Article IV consultation flagged tax-reform delays and swelling contingent liabilities as the primary near-term fiscal risks.</p>
 
-        <p>Legislation is fragmented across competing agency mandates. Senate Bill 852 (Cayetano) places AI governance under a DOST-led council; parallel House Bills 13, 1920, 3195, 5158, and 6920 vest authority in DICT; HB 7396 (AI Development Act), HB 7913 (AI Bill of Rights), and the harmonized &ldquo;Philippine AI Act&rdquo; remain in committee as of April 2026. COMELEC&rsquo;s Task Force KKK largely failed to contain AI-generated disinformation in the 2025 midterms, establishing a precedent of regulatory lag that compounds with each subsequent electoral cycle. The social-protection architecture is structurally insufficient for a displacement shock of this character: 4Ps covers 4.4 million households as a poverty-targeting instrument, not a displacement buffer; the SSS unemployment benefit is one-time, two-month, and lifetime-capped; PhilHealth transferred PHP 89.9B in &ldquo;idle funds&rdquo; to Treasury in 2024 amid a fraud crisis that has not resolved; and IBON estimates 20.2 million informal workers (41.6% of employed) are entirely outside meaningful coverage. Universal basic income proposals circulate in public debate but are fiscally incoherent at 14% tax effort: a PHP 1,500/adult/month floor costs 8&ndash;10% of GDP, leaving no residual for any other fiscal function.</p>
+        <p>On AI governance, the legislative environment is fragmented. Senate Bill 852 (Cayetano) vests AI oversight in a DOST-led council; parallel House Bills 13, 1920, 3195, 5158, and 6920 vest authority in DICT; HB 7396 (AI Development Act), HB 7913 (AI Bill of Rights), and the harmonized &ldquo;Philippine AI Act&rdquo; remain in committee as of April 2026. The <span class="gloss" data-gloss="dict">DICT</span> requested a near-doubling of its 2026 budget to over $300M to fund the National AI Strategy and data-center ambitions, but the appropriation cleared at a significantly lower figure given the broader fiscal constraint.<sup class="fn" data-fn="31">31</sup></p>
+
+        <p><span class="gloss" data-gloss="comelec">COMELEC</span>&rsquo;s Task Force KKK largely failed to contain AI-generated disinformation in the 2025 midterms &mdash; deepfakes circulated for six-plus hours before successful takedown requests were executed by major platforms. The pattern establishes a regulatory-lag precedent that compounds with each subsequent electoral cycle and is particularly dangerous in a political environment where BPO-displaced workers represent both the most internet-native and the most grievance-motivated voting cohort.</p>
+
+        <p>The social-protection architecture is structurally insufficient for a displacement shock of this character:</p>
+
+        <ul style="font-family:var(--serif);font-size:17px;line-height:1.7;color:var(--ink-2);padding-left:28px;margin:24px 0;">
+          <li><strong>4Ps</strong> covers 4.4&nbsp;million households as a poverty-targeting instrument. It is not designed as a displacement buffer, and its means-testing architecture excludes the BPO-worker cohort at the outset.</li>
+          <li><strong>SSS unemployment insurance</strong> is a one-time, two-month benefit with a lifetime cap. It is insufficient for a structural displacement event that takes 12&ndash;24&nbsp;months to resolve in the labor market.</li>
+          <li><strong>PhilHealth</strong> transferred PHP&nbsp;89.9B in &ldquo;idle funds&rdquo; to Treasury in 2024 amid a fraud crisis whose resolution remains incomplete. Auto-renewal lapses affected millions of beneficiaries in 2031 under the crisis scenario.</li>
+          <li><strong>IBON estimates</strong> 20.2&nbsp;million informal workers (41.6% of employed) are entirely outside any meaningful formal coverage &mdash; these are the BPO-adjacent workers (canteen, security, transport) who absorb the second-order shock with zero institutional support.</li>
+        </ul>
+
+        <p>Universal basic income proposals circulate in public debate but are fiscally incoherent at 14% tax effort: a PHP&nbsp;1,500/adult/month floor for the adult population costs 8&ndash;10% of GDP, leaving no residual for any other fiscal function including debt service.</p>
       </div>
 
       <div class="callout reveal-root">
-        <span class="callout-label">Political risk</span>
-        <p>Displacement of 500K to 900K English-speaking, college-educated, internet-native workers &mdash; the cohort that has swung every Philippine election since 1998 &mdash; is the most under-priced domestic political risk for the 2028 cycle.</p>
+        <span class="callout-label">The political risk, priced plainly</span>
+        <p>Displacement of 500K to 900K English-speaking, college-educated, internet-native workers &mdash; the cohort that has swung every Philippine election since 1998 &mdash; is the most under-priced domestic political risk for the 2028 election cycle. The same cohort drove the senator&rsquo;s 34.7% first-past-the-post victory in the narrative scenario. The mechanism does not require a majority; it only requires a plurality in a five-way race.</p>
       </div>
     </section>
 
-    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+    <div class="rule-div reveal-root"><span class="dingbat">&sect; &sect; &sect;</span></div>
 
     <!-- GEOPOLITICS -->
     <section class="chapter" id="geopolitics">
@@ -307,20 +372,24 @@
       </div>
 
       <div class="col reveal-root">
-        <p class="dropcap">The Marcos Jr. administration has executed the sharpest pro-US pivot since Ramos. <span class="gloss" data-gloss="edca">EDCA</span> expanded from five to nine sites in 2023, with three of the four new sites facing Taiwan. The Mutual Defense Treaty has been reaffirmed over the <span class="gloss" data-gloss="wps">West Philippine Sea</span> by two successive US administrations.</p>
+        <p class="dropcap">The Marcos Jr. administration executed the sharpest pro-US security pivot since Ramos. <span class="gloss" data-gloss="edca">EDCA</span> expanded from five to nine sites in 2023, with three of the four new additions facing Taiwan through the Cagayan and Batanes corridor. The Mutual Defense Treaty has been affirmed over the <span class="gloss" data-gloss="wps">West Philippine Sea</span> by two successive US administrations. The Philippines, as of April 2026, is the most explicitly US-aligned ASEAN state on security matters.</p>
 
-        <p>Eleven international submarine cables are in service with six under construction; Apricot, Echo, Bifrost, and Candle are Pacific-facing through Baler, Digos, and Davao by deliberate design to avoid South China Sea exposure. The pattern of anchor-drag cable cuts &mdash; Matsu (2023, 2025), Baltic interconnectors (2024), Red Sea (2024) &mdash; and the recovery of underwater drones of suspected Chinese origin off Masbate in January 2026 prompted the Philippine Navy to formally add undersea-cable protection to its mission profile. A coordinated cut in a Taiwan contingency scenario represents the single largest infrastructure tail risk for any Philippine-hosted AI or cloud workload, with up to 72 hours of degraded trans-Pacific latency as a plausible contingency. The geopolitical posture otherwise faces a structural tension: Chinese AI models (DeepSeek, Qwen, Ernie, Doubao) are unregulated in the Philippine private sector and price 30&ndash;50% below US equivalents on token economics, creating a durable wedge between Manila&rsquo;s pro-US security alignment and the procurement logic of Philippine enterprises operating under cost pressure.</p>
+        <p>The undersea cable infrastructure is the sharpest infrastructure-geopolitics intersection. Eleven international submarine cables are in service with six more under construction as of 2026. Apricot, Echo, Bifrost, and Candle route trans-Pacific traffic through Baler (Aurora), Digos (Davao del Sur), and Davao by design, deliberately avoiding South China Sea exposure.<sup class="fn" data-fn="32">32</sup> Despite this routing architecture, the Philippines remains exposed to coordinated cable disruption as a contingency-scenario instrument. The recovery of underwater drones of suspected Chinese origin off Masbate in January 2026 prompted the Philippine Navy to formally add undersea-cable protection to its institutional mission profile. The &ldquo;Underwater Cable Contest&rdquo; dynamic documented in Southeast Asian strategic literature &mdash; in which cable infrastructure has become an active domain of great-power competition rather than a passive civilian utility &mdash; applies directly to the Philippines&rsquo; position as a trans-Pacific routing hub.</p>
+
+        <p>A coordinated cable cut in a Taiwan contingency scenario represents the single largest infrastructure tail risk for any Philippine-hosted AI or cloud workload, with up to 72 hours of degraded trans-Pacific latency as a plausible contingency, and potentially longer for workloads that cannot route through the Indian Ocean alternate path.</p>
+
+        <p>The geopolitical posture faces a structural procurement tension. Chinese AI models &mdash; DeepSeek, Qwen, Ernie, Doubao &mdash; are currently unregulated in the Philippine private sector and price 30&ndash;50% below US-tier equivalents on token economics. Philippine enterprises operating under significant cost pressure in 2028&ndash;2032 have strong financial incentives to route AI workloads through Chinese-origin models regardless of the security posture of the government they operate under. This creates a durable wedge between Manila&rsquo;s formal US security alignment and the de facto AI supply-chain of the Philippine private sector that no executive order has successfully bridged in any comparable jurisdiction.</p>
       </div>
     </section>
 
-    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+    <div class="rule-div reveal-root"><span class="dingbat">&sect; &sect; &sect;</span></div>
 
     <!-- SCENARIOS -->
     <section class="chapter" id="scenarios">
       <div class="chapter-header reveal-root">
         <div class="chapter-num">Chapter 09 &middot; Scenarios</div>
         <h2>Three paths through the decade.</h2>
-        <p class="chapter-dek">Click a scenario to re-weight every figure on this page.</p>
+        <p class="chapter-dek">Click a scenario in the sidebar to re-weight every figure on this page.</p>
       </div>
 
       <div class="col-wide reveal-root">
@@ -330,44 +399,55 @@
       <figure class="chart reveal-root">
         <div class="figure-head">
           <span class="figure-num">FIG. 07</span>
-          <span class="figure-title">Six indicators, 2025 → 2030</span>
+          <span class="figure-title">Six indicators, 2025 &rarr; 2030</span>
         </div>
         <div id="chart-sectors"></div>
-        <div class="figure-note">Small multiples redraw against the active scenario. Ghosted curves show the alternative paths.</div>
+        <div class="figure-note">Small multiples redraw against the active scenario. Ghosted curves show the alternative paths. All terminal values are 2035 endpoints; intermediate values are interpolated against the channel mechanisms documented in Chapters 02&ndash;04.</div>
+        <div class="figure-source">Source: IBPAP; BSP; PSA; World Bank; author scenario projections.</div>
       </figure>
 
       <figure class="chart reveal-root">
         <div class="figure-head">
           <span class="figure-num">FIG. 08</span>
-          <span class="figure-title">Aggregated forecast: AGI &amp; <span class="gloss" data-gloss="asi">ASI</span> arrival</span>
+          <span class="figure-title">Aggregated forecast: AGI &amp; <span class="gloss" data-gloss="asi">ASI</span> probability distribution</span>
         </div>
         <div id="chart-agi"></div>
-        <div class="figure-source">Aggregated across Metaculus, AI Futures revised medians, Epoch compute projections, METR time-horizons, and CEO-adjusted forecasts.</div>
+        <div class="figure-source">Aggregated across Metaculus community forecasts, AI Futures Project revised medians, Epoch AI compute-trajectory extrapolations, METR time-horizon doubling measurements, and CEO-adjusted estimates. The bands represent uncertainty across aggregators, not a single point estimate. The direction of the capability curve is not contested by any aggregator; the specific probability values are.<sup class="fn" data-fn="33">33</sup></div>
       </figure>
 
       <div class="col reveal-root">
-        <p>The global AI outcome distribution is not uniformly consequential across states. A country with low fiscal space, high exposure concentration across correlated income streams, and a safety-net architecture that predates the displacement wave in question has the same prior probability over the benign/middling/catastrophic global outcomes as any other country &mdash; but its conditional outcome at every branch is materially worse. Under the benign global path (25&ndash;35% probability), Philippine BPO still contracts sharply in 2027&ndash;2029 because the sectoral disruption mechanism is not contingent on global AI alignment; the question is only whether fiscal transfers and productivity gains compensate. Under the middling path (35&ndash;45%), the Philippines faces 2&ndash;4% growth through the adjustment with high political stress and eventual IMF-adjacent discipline. Under the catastrophic path (20&ndash;30%), the &ldquo;Intelligence Curse&rdquo; dynamic &mdash; in which labour-replacing AI makes citizens less economically valuable to concentrated elites &mdash; is especially acute in a political economy where AI infrastructure is already concentrating in the hands of six to eight conglomerate families.</p>
+        <p>The global AI outcome distribution is not uniformly consequential across states. A country with low fiscal space, high exposure concentration across correlated income streams, and a safety-net architecture that predates the displacement wave has the same prior probability over the benign/middling/catastrophic global outcome space as any other country &mdash; but its conditional outcome at every branch is materially worse.</p>
+
+        <p>Under the <strong>benign global path</strong> (25&ndash;35% probability on aggregated forecasts), Philippine BPO still contracts sharply in 2027&ndash;2029 because the sectoral disruption mechanism is not contingent on transformative AI; it is driven by outcome-based pricing that is already commercially viable at the 2025 capability level. The question under the benign path is only whether fiscal transfers and productivity gains compensate faster than displacement compounds.</p>
+
+        <p>Under the <strong>middling path</strong> (35&ndash;45%), the Philippines faces 2&ndash;4% growth through the adjustment decade with high political stress and eventual IMF-adjacent fiscal discipline. The Base scenario in this dossier corresponds to the middling global outcome combined with a moderate Philippine institutional response.</p>
+
+        <p>Under the <strong>catastrophic path</strong> (20&ndash;30%), the &ldquo;Intelligence Curse&rdquo; dynamic &mdash; in which labour-replacing AI makes workers economically less valuable to elites who own the capital &mdash; is especially acute in a political economy where AI infrastructure is already concentrating in the hands of six to eight conglomerate families.<sup class="fn" data-fn="34">34</sup> The Kulveit et al. &ldquo;Gradual Disempowerment&rdquo; framework models precisely this failure mode: institutions that were never designed for a world in which citizens&rsquo; economic leverage over capital has been permanently degraded.</p>
+
+        <p>Goldman Sachs Research projects the humanoid robotics total addressable market at $38B by 2035 under its base case, with physical AI (embodied systems) representing the largest single labor-substitution vector of the decade.<sup class="fn" data-fn="35">35</sup> The Philippine exposure is concentrated in the Gulf domestic-work tranche and industrial assembly, both of which sit within Goldman&rsquo;s earliest crossover cohorts.</p>
       </div>
     </section>
 
-    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+    <div class="rule-div reveal-root"><span class="dingbat">&sect; &sect; &sect;</span></div>
 
     <!-- TIMELINE -->
     <section class="chapter" id="timeline">
       <div class="chapter-header reveal-root">
         <div class="chapter-num">Chapter 10 &middot; Timeline</div>
         <h2>2026 &rarr; 2035.</h2>
-        <p class="chapter-dek">The decade as a series of dated events. Scroll the figure to reveal each.</p>
+        <p class="chapter-dek">The decade as a dependency graph. Each node shifts when its upstream inputs shift.</p>
       </div>
 
       <div class="timeline reveal-root" id="timeline-host"></div>
 
       <div class="col reveal-root">
-        <p>The timeline should be read as a dependency graph rather than a sequence of independent events. The Gulf humanoid crossover node (2029&ndash;2031) is not independent of the AGI-capability node: both depend on the same compute-scaling trajectory, and an acceleration or deceleration in frontier capability progress shifts both dates in the same direction. The political-inflection node (2028 election cycle) is a first-order consequence of the BPO displacement node (2026&ndash;2027): the cohort displaced in the first wave is the same cohort that has swung Philippine national elections since 1998, and the timing of political response depends on how quickly displacement becomes numerically visible in a constituency that can be mobilised. The fiscal-stress node (2030&ndash;2031) is co-determined by the BPO and remittance nodes, because the peso stabilisation mechanism depends on both legs of the current-account equation holding. The cable-protection node and the nuclear-capacity node are relatively independent of the labour-market sequence but are critical dependencies for the inference-infrastructure node, which in turn determines whether the sovereign-AI strategic option remains viable through the decade.</p>
+        <p>The timeline should be read as a dependency graph rather than a sequence of independent events. The Gulf humanoid crossover node (2029&ndash;2031) is not independent of the AGI-capability node: both depend on the same compute-scaling trajectory, and an acceleration or deceleration in frontier capability progress shifts both dates in the same direction. The political-inflection node (2028 election cycle) is a first-order consequence of the BPO displacement node (2026&ndash;2027): the cohort displaced in the first wave is the same cohort that has swung Philippine national elections since 1998, and the timing of political response depends on how quickly displacement becomes visible in a constituency that can be mobilised.</p>
+
+        <p>The fiscal-stress node (2030&ndash;2031) is co-determined by the BPO and remittance nodes, because the peso stabilisation mechanism depends on both legs of the current account holding simultaneously. The cable-protection node and the nuclear-capacity node are relatively independent of the labour-market sequence, but are critical dependencies for the inference-infrastructure node, which in turn determines whether the sovereign-AI strategic option remains viable through the decade. The timeline is not a forecast. It is a map of what must be true for the Crisis scenario to unfold in the specific sequence documented in the narrative.</p>
       </div>
     </section>
 
-    <div class="rule-div reveal-root"><span class="dingbat">§ § §</span></div>
+    <div class="rule-div reveal-root"><span class="dingbat">&sect; &sect; &sect;</span></div>
 
     <!-- STRATEGY -->
     <section class="chapter" id="strategy">
@@ -378,29 +458,262 @@
       </div>
 
       <div class="col reveal-root">
-        <p class="lede dropcap">The national strategy is more about managing a transition than about winning a race. The defensible niche runs through the inference, deployment, and transition-management layer &mdash; with sovereign data assets as the differentiated input.</p>
+        <p class="lede dropcap">The national strategy is more about managing a transition than about winning a race. The defensible niche runs through the inference, deployment, and transition-management layer &mdash; with sovereign data assets as the differentiated input that no other ASEAN competitor can replicate at Philippine scale.</p>
 
-        <p>Five moves anchor the strategy, ordered by time-sensitivity. First, accept managed BPO decline explicitly and fund the transition: abandon the IBPAP $59B/2.5M target publicly, redirect subsidy toward GCC and analytics-consulting migration, and capitalise a PHP 50B multi-year reskilling programme through ADB, JICA, and US DFC concessional facilities rather than through a fiscal envelope that does not exist. Second, modernise agriculture through the aggregator layer &mdash; drone-spraying cooperatives, satellite yield advisory, AI-enabled cooperative lending &mdash; rather than at the smallholder unit, and prioritise irrigation capex as the single highest-leverage physical investment. Third, build inference-layer sovereignty rather than frontier ambition: 3&ndash;5 GPU-as-a-Service facilities of 50&ndash;100 MW each, anchored by BSP, DOH, and major-bank workload commitments, with a mandated Filipino-language data commons funded by anonymised BPO call-centre data. Fourth, reform the safety net before the displacement wave peaks rather than after: expand 4Ps, convert SSS unemployment insurance to a six-month recurring structure, and fund both through digital-services-tax revenue and rationalised tax incentives. Fifth, hedge the geopolitics honestly: maintain US security alignment, allow private-sector access to Chinese AI models, pursue a formal Japan&ndash;Philippines AI and robotics tech-transfer corridor, and use the 2026 ASEAN chairship to establish a regional data-commons standard.</p>
+        <p>Five moves anchor the strategy, ordered by time-sensitivity:</p>
 
-        <p>The window is narrower than the official narrative admits &mdash; and the political consequences of pretending otherwise compound each year the admission is delayed.<sup class="fn" data-fn="4">4</sup></p>
+        <p><strong>First: Accept managed BPO decline explicitly and fund the transition.</strong> Abandon the IBPAP $59B/2.5M target publicly. Redirect subsidy toward GCC and analytics-consulting migration. Capitalise a PHP&nbsp;50B multi-year reskilling programme through ADB, JICA, and US DFC concessional facilities. A domestic-funded safety net at this scale does not exist within the fiscal envelope; the only viable funding path is concessional external financing against a credible structural-adjustment program.</p>
+
+        <p><strong>Second: Modernise agriculture through the aggregator layer.</strong> Drone-spraying cooperatives, satellite yield advisory sold to traders and crop insurers, AI-enabled cooperative lending against consolidated cash flows rather than land-encumbered collateral. The unit-economics of smallholder-level modernisation do not work at 1.29&nbsp;hectares; the aggregator layer is the only economically viable delivery mechanism. Prioritise irrigation capex as the single highest-leverage physical investment available to the agricultural sector within the fiscal envelope.</p>
+
+        <p><strong>Third: Build inference-layer sovereignty rather than frontier ambition.</strong> Three to five GPU-as-a-Service facilities of 50&ndash;100&nbsp;MW each, anchored by BSP, DOH, and major-bank committed workloads, with a mandated Filipino-language data commons funded by anonymised BPO call-centre data under a consent and monetisation framework. This is the country&rsquo;s only viable path to a non-marginal position in the regional AI infrastructure stack through 2030.</p>
+
+        <p><strong>Fourth: Reform the safety net before the displacement wave peaks, not after.</strong> Expand 4Ps targeting to include displaced formal-sector workers. Convert SSS unemployment insurance to a six-month recurring structure. Fund both through digital-services-tax revenue and rationalised tax incentives. The window for pre-emptive reform is 2026&ndash;2027; after 2028, the fiscal space for reform has been consumed by the displacement cost itself.</p>
+
+        <p><strong>Fifth: Hedge the geopolitics honestly.</strong> Maintain US security alignment. Allow private-sector access to Chinese AI models under a transparency-registration framework (not prohibition). Pursue a formal Japan&ndash;Philippines AI and robotics tech-transfer corridor using the caregiving-shortage alignment as the entry point. Use the 2026 ASEAN chairship to establish a regional data-commons standard that the Philippines can lead rather than follow.</p>
+
+        <p>The window is narrower than the official narrative admits &mdash; and the political consequences of pretending otherwise compound each year the admission is delayed.<sup class="fn" data-fn="36">36</sup></p>
       </div>
 
       <div class="pullquote reveal-root">
         <blockquote>The probability that an English-speaking Filipino college graduate in 2026 has a career path resembling her parents&rsquo; is, for the first time since the 1970s, less than even.</blockquote>
-        <cite>A closing observation</cite>
+        <cite>Ch. 11 &middot; A closing observation</cite>
       </div>
     </section>
 
     <!-- Footnotes -->
-    <div class="footnotes">
-      <h4>Notes &amp; sources</h4>
+    <div class="footnotes" style="max-width:var(--col);margin:80px auto 0;">
+      <h4>Numbered notes</h4>
       <ol>
-        <li id="fn-1">Research dossier, Section 1. Placeholder citation &mdash; full sources to be attached in the narrative draft.</li>
-        <li id="fn-2">BSP services-exports data, Q2 2025; IBPAP member reports; public filings from Concentrix, Teleperformance, and TaskUs, 2025.</li>
-        <li id="fn-3">BSP gross international reserves; peso pass-through literature from the Philippine Institute for Development Studies; author modeling.</li>
-        <li id="fn-4">Philippine Energy Plan; AMRO 2025 Article IV consultation; author synthesis.</li>
+        <li id="fn-1">BSP services-exports data (Q2 2025 YoY); IBPAP annual members report; Philippine Daily Inquirer, &ldquo;IT-BPM industry in the Philippines outpaced global growth in 2025.&rdquo;</li>
+        <li id="fn-2">IBPAP Roadmap 2028; VA Masters, &ldquo;Outsourcing Statistics 2026: 55+ Philippines BPO Facts &amp; Data&rdquo;; 365Outsource employment overview.</li>
+        <li id="fn-3">Pilot, &ldquo;The New Economics of AI Pricing: Models That Actually Work&rdquo; (2026). Outcome-based pricing bands cross-checked against Outsource Accelerator industry reporting.</li>
+        <li id="fn-4">Concentrix: FinancialContent/PredictStreet AI Pivot deep-dive (Jan 2026); goodwill impairment Q4 2025. Teleperformance: Investing.com FY 2025 slides, drawdown from 2021 peak. TaskUs: Business Wire Q3 2025 results; MarketScreener Q4 2025 investor presentation.</li>
+        <li id="fn-5">Klarna AI agent case: Vibe Graveyard; Customer Experience Dive (853-employee equivalent); Entrepreneur, &ldquo;Klarna Is Hiring Customer Service Agents After AI Couldn&rsquo;t Cut It on Calls.&rdquo; The reversal retained a small human complement, not the full headcount.</li>
+        <li id="fn-6">Outsource Accelerator, &ldquo;Philippines BPOs race to upskill in AI age, says IBPAP chief&rdquo;; author arithmetic against IBPAP&rsquo;s stated targets.</li>
+        <li id="fn-7">Outsource Accelerator, &ldquo;U.S. bill threatens Philippine call center industry&rsquo;s $40Bn future&rdquo;; Site Selection Group analysis of Keep Call Centers in America Act.</li>
+        <li id="fn-8">Colliers Philippines, &ldquo;From floorplates to footprints: Where BPOs should expand next&rdquo;; Context.ph, &ldquo;Colliers says BPO shift spurs office market recalibration&rdquo; (Oct 2025); BusinessWorld, Metro Manila office-rent analysis (Jan 2026).</li>
+        <li id="fn-9">GMA News, &ldquo;OFWs grew to 2.19M in 2024 &mdash; PSA&rdquo;; Philippine Statistics Authority, &ldquo;Results of the 2024 Overseas Filipino Workers.&rdquo;</li>
+        <li id="fn-10">Agility Robotics, &ldquo;Digit Moves Over 100,000 Totes in Commercial Deployment&rdquo; (Nov 2025); Goldman Sachs humanoid TAM analysis. Tesla Optimus production timeline 2026: Optimusk blog; Green Drive Accessories coverage. Figure AI valuation and deployment: Sacra research.</li>
+        <li id="fn-11">Wamda, &ldquo;Humanoid, QSS AI &amp; Robotics unveil MENA&rsquo;s first robotics showroom in Riyadh&rdquo; (Nov 2025); Humanoid Robotics Technology, announcement detail. RaaS pricing: Unitree G1 at $16,000 list price (RoboHorizon Apr 2026); New Market Pitch humanoid comparison tracker.</li>
+        <li id="fn-12">Yuanyii Agency, &ldquo;2025 Singapore Foreign Worker Policy Update.&rdquo;</li>
+        <li id="fn-13">Hello World Japan, &ldquo;Robotics in Care: How Japan is Using AI to Solve Its Elderly Care Crisis.&rdquo; MHLW caregiver shortage figures: BusinessWorld, &ldquo;Global seafarer shortage underscores need for more Filipino officers&rdquo; (Feb 2025) for contextual labour dynamics.</li>
+        <li id="fn-14">Marine Public, &ldquo;What is IMO MASS Code: Automation Maritime Shipping by 2030&rdquo;; Yara International, &ldquo;Yara Birkeland, two years on.&rdquo;</li>
+        <li id="fn-15">BSP gross international reserves and peso-pass-through literature; Philippine Institute for Development Studies current-account modelling; author scenario projections.</li>
+        <li id="fn-16">Philippine Star, &ldquo;Rice self-sufficiency ratio at lowest level in 37 years&rdquo; (Oct 2025); Philippine Daily Inquirer, &ldquo;Rice and our future.&rdquo;</li>
+        <li id="fn-17">Philippine Institute for Development Studies, &ldquo;Agri growth stunted by shrinking farm size, low productivity&rdquo;; Alpha Ag Venture, &ldquo;Land Fragmentation: A Hurdle for Philippine Agriculture&rdquo;; Adamopoulos &amp; Restuccia, &ldquo;The Political Economy of Agricultural Productivity&rdquo; (NBER / AEJ Macro) &mdash; Philippines country results on CARP fragmentation and TFP.</li>
+        <li id="fn-18">Medium / Michael Endino Viloan, &ldquo;Aging Farms, Shrinking Fields: The Philippines&rsquo; Farming Crisis&rdquo;; BusinessWorld, &ldquo;Land reform land reform&rdquo; (BWorldOnline, July 2020, still definitive on CARP mechanics).</li>
+        <li id="fn-19">DOST-PCAARRD: Typhoon Enteng agricultural devastation; Typhoon Julian&rsquo;s impact on agriculture; Typhoon Kristine&rsquo;s impact on agriculture. Philippine Star, &ldquo;DA: Typhoons left P786 million damage to agriculture&rdquo; (Nov 2024).</li>
+        <li id="fn-20">BusinessWorld, &ldquo;Electronics exports goal of $110B on track, DTI says, but industry more cautious&rdquo; (Apr 2026). Semiconductor breakdown: PC Basic, top semiconductor companies in the Philippines; Mordor Intelligence, Philippines Semiconductor Market report.</li>
+        <li id="fn-21">PC Basic semiconductor company directory; Mordor Intelligence Philippines semiconductor market 2031 growth trends.</li>
+        <li id="fn-22">Manila Bulletin, &ldquo;US chip giants eyeing Philippines expansion&rdquo; (Dec 2024); BusinessWorld, &ldquo;US grant prepares PHL for CHIPS Act investments&rdquo; (Sep 2024); Philippine Star, &ldquo;Philippines semicon industry to benefit from US-funded program&rdquo; (Sep 2024).</li>
+        <li id="fn-23">Enerdata, Philippines Energy Information; Gulf News, &ldquo;Philippines&rsquo; Energy Crisis: Coal&rsquo;s Dominance and the Rising Electricity Rates&rdquo;; BusinessWorld, &ldquo;The role of natural gas in the Philippines&rsquo; energy mix.&rdquo;</li>
+        <li id="fn-24">Philippine News Agency, &ldquo;Luzon grid logs 1st yellow alert status in 2025&rdquo;; Cebu Daily News/Inquirer, NGCP confirmation.</li>
+        <li id="fn-25">Philippine Star, &ldquo;Bataan nuclear plant revival pushed amid oil crisis&rdquo; (Apr 2026); Asia News Network, &ldquo;Philippines, South Korea eye revival of Marcos Sr-era nuclear power plant&rdquo;; World Nuclear News, &ldquo;Korea to assess rehabilitation of Philippine plant.&rdquo;</li>
+        <li id="fn-26">BusinessWorld, &ldquo;Philippine data center capacity may hit 1.5 GW by 2028 &mdash; DICT&rdquo; (Oct 2025); STT GDC press release on Fairview 1 facility; Mordor Intelligence Philippines Data Center Power Market Forecasts 2031.</li>
+        <li id="fn-27">RCR Wireless News, &ldquo;Philippines opens first GPU-powered, AI-first hyperscale data center&rdquo;; Light Reading, PLDT 12th data center confirmation; W.Media, VITRO AI-ready hyperscale launch.</li>
+        <li id="fn-28">The Sun Malaysia, &ldquo;Johor powers Asia-Pacific&rsquo;s record-breaking data centre boom&rdquo;; Tutorials Dojo, AWS Local Zones Manila analysis. Johor investment: $12B-plus in committed hyperscaler spend (Microsoft, Google, AWS, Oracle).</li>
+        <li id="fn-29">World Bank, &ldquo;The Worldwide Governance Indicators: Methodology and 2024 Update&rdquo; (SSRN, Kaufmann &amp; Kraay); World Bank, &ldquo;The Worldwide Governance Indicators: 2025 Methodology Revision.&rdquo; Philippines scores: middle quartile government effectiveness; bottom quartile control of corruption, rule of law.</li>
+        <li id="fn-30">Trading Economics, Philippines Government Debt to GDP; Metrobank Wealth Insights, &ldquo;Debt hits record PHP 17.71 trillion in 2025&rdquo;; Manila Times, &ldquo;Govt budget deficit exceeds 2025 target&rdquo;; Manila Bulletin, AMRO 2026 fiscal constraints assessment.</li>
+        <li id="fn-31">Philippine Daily Inquirer, &ldquo;New chief seeks doubling of DICT 2026 budget&rdquo;; CoinGeek, &ldquo;DICT seeks over $300M budget for Philippines 2026 digital agenda&rdquo;; NewsBytes Philippines, DICT budget coverage.</li>
+        <li id="fn-32">Submarine Networks, Philippines country stations directory; Apricot cable system profile. University of Hawai&lsquo;i at M&#257;noa CIPA, &ldquo;Entangled: Southeast Asia and the Geopolitics of Undersea Cables&rdquo;; Inquirer Opinion, &ldquo;Underwater cable contest&rdquo;; Baird Maritime, &ldquo;Philippine Navy to include undersea cable protection in mission profile.&rdquo;</li>
+        <li id="fn-33">Metaculus community forecast aggregates (Philippines 2030 relevant questions); AI Futures Project revised scenario timelines; Epoch AI compute-trajectory extrapolations; METR autonomy time-horizon doubling measurements. Probability bands represent uncertainty across aggregators, not a confidence interval on a point estimate.</li>
+        <li id="fn-34">Drago, L Rudolf, &ldquo;The Intelligence Curse&rdquo; &mdash; on labour-replacing AI and the political economy of concentrated capital. Kulveit et al., ICML 2025, &ldquo;Gradual Disempowerment&rdquo; framework for institutional erosion under advanced AI.</li>
+        <li id="fn-35">Moomoo / Goldman Sachs, &ldquo;Amid the wave of humanoid robots, visual perception systems are undergoing an arms race&rdquo;; Goldman Sachs humanoid TAM and shipment forecast (institutional sources).</li>
+        <li id="fn-36">Philippine Energy Plan 2023&ndash;2040; AMRO 2025&ndash;2026 Article IV consultation; NEDA/DEPDev macroeconomic projections; author synthesis across Chapters 01&ndash;11.</li>
       </ol>
     </div>
+
+    <!-- REFERENCES -->
+    <section class="chapter" id="references" style="padding-top:80px;border-top:1px solid var(--rule);margin-top:80px;">
+      <div class="chapter-header reveal-root">
+        <div class="chapter-num">References</div>
+        <h2>Sources and citations.</h2>
+        <p class="chapter-dek">98 URL-level citations plus institutional and academic data streams. All URLs accessed April 2026.</p>
+      </div>
+
+      <div class="ref-section reveal-root">
+
+        <h4>Philippine Macroeconomic and Fiscal Data</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">1</span><div>Trading Economics &mdash; Philippines Government Debt to GDP<br><a href="https://tradingeconomics.com/philippines/government-debt-to-gdp" target="_blank" rel="noopener">tradingeconomics.com/philippines/government-debt-to-gdp</a></div></li>
+          <li><span class="ref-n">2</span><div>Metrobank Wealth Insights &mdash; &ldquo;Debt hits record PHP 17.71 trillion in 2025&rdquo;<br><a href="https://wealthinsights.metrobank.com.ph/bworldonline/debt-hits-record-p17-71-trillion-in-2025/" target="_blank" rel="noopener">wealthinsights.metrobank.com.ph</a></div></li>
+          <li><span class="ref-n">3</span><div>The Manila Times &mdash; &ldquo;Govt budget deficit exceeds 2025 target&rdquo; (4 Mar 2026)<br><a href="https://www.manilatimes.net/2026/03/04/business/top-business/govt-budget-deficit-exceeds-2025-target/2292307" target="_blank" rel="noopener">manilatimes.net</a></div></li>
+          <li><span class="ref-n">4</span><div>Manila Bulletin &mdash; &ldquo;Philippines faces fiscal constraints on tax reform delays, swelling debt &mdash; AMRO&rdquo; (13 Apr 2026)<br><a href="https://mb.com.ph/2026/04/13/philippines-faces-fiscal-constraints-on-tax-reform-delays-swelling-debtamro" target="_blank" rel="noopener">mb.com.ph</a></div></li>
+        </ul>
+
+        <h4>BPO / IT-BPM Industry</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">5</span><div>Philippine Daily Inquirer &mdash; &ldquo;IT-BPM industry in the Philippines outpaced global growth in 2025&rdquo;<br><a href="https://business.inquirer.net/567026/it-bpm-industry-in-ph-outpaced-global-growth-in-2025" target="_blank" rel="noopener">business.inquirer.net</a></div></li>
+          <li><span class="ref-n">6</span><div>VA Masters &mdash; &ldquo;Outsourcing Statistics 2026: 55+ Philippines BPO Facts &amp; Data&rdquo;<br><a href="https://vamasters.com/outsourcing-statistics-2026/" target="_blank" rel="noopener">vamasters.com</a></div></li>
+          <li><span class="ref-n">7</span><div>Outsource Accelerator &mdash; &ldquo;Philippines BPOs race to upskill in AI age, says IBPAP chief&rdquo;<br><a href="https://news.outsourceaccelerator.com/?p=82091" target="_blank" rel="noopener">news.outsourceaccelerator.com</a></div></li>
+          <li><span class="ref-n">8</span><div>Nearshore Americas &mdash; &ldquo;Philippines Bets $25 Million to Shield BPO Jobs From AI Disruption&rdquo;<br><a href="https://nearshoreamericas.com/philippines-bets-25-million-to-shield-bpo-jobs-from-ai-disruption/" target="_blank" rel="noopener">nearshoreamericas.com</a></div></li>
+          <li><span class="ref-n">9</span><div>365Outsource &mdash; &ldquo;Philippines Outsourcing: The Bright Spot in Philippine Employment&rdquo;<br><a href="https://www.365outsource.com/information/philippines-outsourcing-bright-spot-in-employment/" target="_blank" rel="noopener">365outsource.com</a></div></li>
+          <li><span class="ref-n">10</span><div>365Outsource &mdash; &ldquo;The Continued Growth of BPO in the Philippines&rdquo;<br><a href="https://www.365outsource.com/information/continued-growth-bpo-philippines/" target="_blank" rel="noopener">365outsource.com</a></div></li>
+          <li><span class="ref-n">11</span><div>Outsource Accelerator &mdash; &ldquo;U.S. bill threatens Philippine call center industry&rsquo;s $40Bn future&rdquo;<br><a href="https://news.outsourceaccelerator.com/?p=78090" target="_blank" rel="noopener">news.outsourceaccelerator.com</a></div></li>
+          <li><span class="ref-n">12</span><div>Site Selection Group &mdash; &ldquo;Keep Call Centers in America Act: Global Outsourcing Impact&rdquo;<br><a href="https://info.siteselectiongroup.com/blog/keep-call-centers-in-america-act-global-outsourcing-impact" target="_blank" rel="noopener">info.siteselectiongroup.com</a></div></li>
+          <li><span class="ref-n">13</span><div>MicroSourcing &mdash; &ldquo;2025 Philippines Outsourcing Industry Report&rdquo;<br><a href="https://www.microsourcing.com/2025-philippines-outsourcing-trend-report" target="_blank" rel="noopener">microsourcing.com</a></div></li>
+          <li><span class="ref-n">14</span><div>CoDev Blog &mdash; &ldquo;History of Business Process Outsourcing (BPO) in the Philippines&rdquo;<br><a href="https://www.codev.com/article/history-bpo-philippines" target="_blank" rel="noopener">codev.com</a></div></li>
+          <li><span class="ref-n">15</span><div>HKTDC &mdash; &ldquo;Philippines: The BPO Boom and Consumer Growth&rdquo;<br><a href="http://m.hktdc.com/business-news/article/Asia/Philippines-The-BPO-Boom-and-Consumer-Growth/rp/en/1/1X4UWAUC/1X0A05RU.htm" target="_blank" rel="noopener">m.hktdc.com</a></div></li>
+        </ul>
+
+        <h4>BPO Firm-Level Financials and AI Strategy</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">16</span><div>FinancialContent / PredictStreet &mdash; &ldquo;The AI Pivot: A Comprehensive Deep-Dive into Concentrix Corporation (CNXC)&rdquo; (Jan 2026)<br><a href="https://markets.financialcontent.com/stocks/article/predictstreet-2026-1-13-the-ai-pivot-a-comprehensive-deep-dive-into-concentrix-corporation-cnxc" target="_blank" rel="noopener">markets.financialcontent.com</a></div></li>
+          <li><span class="ref-n">17</span><div>MarketScreener &mdash; &ldquo;TaskUs: Investor Presentation &ndash; Q4 2025&rdquo;<br><a href="https://www.marketscreener.com/news/taskus-investor-presentation-a-q4-2025-ce7e5cdeda8bf427" target="_blank" rel="noopener">marketscreener.com</a></div></li>
+          <li><span class="ref-n">18</span><div>Business Wire &mdash; &ldquo;TaskUs Announces Fiscal Third Quarter 2025 Results&rdquo; (7 Nov 2025)<br><a href="https://www.businesswire.com/news/home/20251107123527/en/TaskUs-Announces-Fiscal-Third-Quarter-2025-Results" target="_blank" rel="noopener">businesswire.com</a></div></li>
+          <li><span class="ref-n">19</span><div>Investing.com &mdash; &ldquo;Teleperformance FY 2025 slides: AI push accelerates amid FX headwinds&rdquo;<br><a href="https://www.investing.com/news/company-news/teleperformance-fy-2025-slides-ai-push-accelerates-amid-fx-headwinds-93CH-4529289" target="_blank" rel="noopener">investing.com</a></div></li>
+          <li><span class="ref-n">20</span><div>Vibe Graveyard &mdash; &ldquo;Klarna reintroduces humans after AI support both sucks, and blows&rdquo;<br><a href="https://vibegraveyard.ai/story/klarna-ai-assistant-customer-service-shift/" target="_blank" rel="noopener">vibegraveyard.ai</a></div></li>
+          <li><span class="ref-n">21</span><div>Customer Experience Dive &mdash; Klarna AI agent coverage<br><a href="https://www.customerexperiencedive.com/news/klarna-says-ai-agent-work-853-employees/805987" target="_blank" rel="noopener">customerexperiencedive.com</a></div></li>
+          <li><span class="ref-n">22</span><div>Entrepreneur &mdash; &ldquo;Klarna Is Hiring Customer Service Agents After AI Couldn&rsquo;t Cut It on Calls&rdquo;<br><a href="https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396" target="_blank" rel="noopener">entrepreneur.com</a></div></li>
+          <li><span class="ref-n">23</span><div>Pilot &mdash; &ldquo;The New Economics of AI Pricing: Models That Actually Work&rdquo; (2026)<br><a href="https://pilot.com/blog/ai-pricing-economics-2026" target="_blank" rel="noopener">pilot.com</a></div></li>
+        </ul>
+
+        <h4>Philippine Real Estate and Office Market</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">24</span><div>Colliers &mdash; &ldquo;From floorplates to footprints: Where BPOs should expand next&rdquo;<br><a href="https://www.colliers.com/en-ph/news/bpo-situationer-floorplates-footprints-where-bpo-should-expand-next" target="_blank" rel="noopener">colliers.com/en-ph</a></div></li>
+          <li><span class="ref-n">25</span><div>Context.ph &mdash; &ldquo;Colliers says BPO shift spurs office market recalibration&rdquo; (Oct 2025)<br><a href="https://context.ph/2025/10/27/colliers-says-bpo-shift-spurs-office-market-recalibration/" target="_blank" rel="noopener">context.ph</a></div></li>
+          <li><span class="ref-n">26</span><div>BusinessWorld &mdash; &ldquo;Metro Manila office rents seen to rise in some districts, analysts say&rdquo; (Jan 2026)<br><a href="https://www.bworldonline.com/property/2026/01/20/725030/metro-manila-office-rents-seen-to-rise-in-some-districts-analysts-say/" target="_blank" rel="noopener">bworldonline.com</a></div></li>
+        </ul>
+
+        <h4>OFW Remittances and Labor Migration</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">27</span><div>Daily Tribune &mdash; &ldquo;OFW remittances hit record $35.6B&rdquo; (16 Feb 2026)<br><a href="https://tribune.net.ph/2026/02/16/ofw-remittances-hit-record-356b" target="_blank" rel="noopener">tribune.net.ph</a></div></li>
+          <li><span class="ref-n">28</span><div>BusinessWorld &mdash; &ldquo;OFW remittances hit record $35.6B&rdquo; (17 Feb 2026)<br><a href="https://www.bworldonline.com/top-stories/2026/02/17/730931/ofw-remittances-hit-record-35-6b/" target="_blank" rel="noopener">bworldonline.com</a></div></li>
+          <li><span class="ref-n">29</span><div>GMA News &mdash; &ldquo;OFWs grew to 2.19M in 2024 &mdash; PSA&rdquo;<br><a href="https://www.gmanetwork.com/news/pinoyabroad/dispatch/969755/ofws-grew-to-2-19m-in-2024-psa/story/" target="_blank" rel="noopener">gmanetwork.com</a></div></li>
+          <li><span class="ref-n">30</span><div>Philippine Statistics Authority &mdash; &ldquo;Results of the 2024 Overseas Filipino Workers&rdquo;<br><a href="https://psa.gov.ph/content/results-2024-overseas-filipino-workers-number-overseas-filipino-workers-grew" target="_blank" rel="noopener">psa.gov.ph</a></div></li>
+          <li><span class="ref-n">31</span><div>BusinessWorld &mdash; &ldquo;Global seafarer shortage underscores the need for more Filipino officers&rdquo; (Feb 2025)<br><a href="https://www.bworldonline.com/labor-and-management/2025/02/25/658536/global-seafarer-shortage-underscores-the-need-for-more-filipino-officers/" target="_blank" rel="noopener">bworldonline.com</a></div></li>
+          <li><span class="ref-n">32</span><div>Yuanyii Agency &mdash; &ldquo;2025 Singapore Foreign Worker Policy Update&rdquo;<br><a href="https://yuanyiiagency.com/2025-singapore-foreign-worker-policy-2/" target="_blank" rel="noopener">yuanyiiagency.com</a></div></li>
+          <li><span class="ref-n">33</span><div>Hello World Japan &mdash; &ldquo;Robotics in Care: How Japan is Using AI to Solve Its Elderly Care Crisis&rdquo;<br><a href="https://helloworldjapan.com/robotics-in-care-how-japan-is-using-ai-to-solve-its-elderly-care-crisis/" target="_blank" rel="noopener">helloworldjapan.com</a></div></li>
+        </ul>
+
+        <h4>Humanoid Robotics &mdash; Manufacturers and Deployment</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">34</span><div>Sacra &mdash; &ldquo;Figure AI valuation, funding &amp; news&rdquo;<br><a href="https://sacra.com/c/figure-ai/" target="_blank" rel="noopener">sacra.com</a></div></li>
+          <li><span class="ref-n">35</span><div>Learn Architecture &mdash; &ldquo;NEO by 1X: World&rsquo;s First Consumer Humanoid Robot for the Home&rdquo;<br><a href="https://learnarchitecture.net/technology/32338-neo-by-1x-humanoid-robot.html" target="_blank" rel="noopener">learnarchitecture.net</a></div></li>
+          <li><span class="ref-n">36</span><div>Mike Kalil &mdash; &ldquo;Physical Intelligence&rsquo;s &pi;0.5 VLA with Open-World Generalization&rdquo;<br><a href="https://mikekalil.com/blog/pi-vla-open-world-generalization/" target="_blank" rel="noopener">mikekalil.com</a></div></li>
+          <li><span class="ref-n">37</span><div>Humanoid.guide &mdash; &ldquo;Unitree G1 Robot &mdash; Specs, Price &amp; Capabilities&rdquo;<br><a href="https://humanoid.guide/product/g1/" target="_blank" rel="noopener">humanoid.guide</a></div></li>
+          <li><span class="ref-n">38</span><div>RoboHorizon &mdash; &ldquo;Unitree G1 Humanoid Drops for $16,000, Upending the Robotics Market&rdquo; (Apr 2026)<br><a href="https://robohorizon.com/en-gb/news/2026/04/unitree-g1-humanoid-drops-for-16000-upending-the-robotics-market/" target="_blank" rel="noopener">robohorizon.com</a></div></li>
+          <li><span class="ref-n">39</span><div>Green Drive Accessories &mdash; &ldquo;Tesla Optimus 3: production to begin in summer 2026&rdquo;<br><a href="https://www.greendrive-accessories.com/blog/language/en/tesla-optimus-3-robot-humanoide-2026-2/" target="_blank" rel="noopener">greendrive-accessories.com</a></div></li>
+          <li><span class="ref-n">40</span><div>Times Online &mdash; &ldquo;From prototypes to production: Tesla&rsquo;s Optimus humanoid robots take charge of the factory floor&rdquo; (Jan 2026)<br><a href="https://business.times-online.com/times-online/article/tokenring-2026-1-16-from-prototypes-to-production-teslas-optimus-humanoid-robots-take-charge-of-the-factory-floor" target="_blank" rel="noopener">business.times-online.com</a></div></li>
+          <li><span class="ref-n">41</span><div>Optimusk &mdash; &ldquo;Tesla Optimus Production Timeline 2026&rdquo;<br><a href="https://optimusk.blog/blog/tesla-optimus-production-timeline/" target="_blank" rel="noopener">optimusk.blog</a></div></li>
+          <li><span class="ref-n">42</span><div>Robotics and Automation News &mdash; &ldquo;Agility Robotics&rsquo; Digit humanoid hits 100,000-tote milestone&rdquo; (Nov 2025)<br><a href="https://roboticsandautomationnews.com/2025/11/24/agility-robotics-digit-humanoid-passes-100000-tote-milestone-in-live-gxo-implementation/96877/" target="_blank" rel="noopener">roboticsandautomationnews.com</a></div></li>
+          <li><span class="ref-n">43</span><div>Agility Robotics &mdash; &ldquo;Digit Moves Over 100,000 Totes in Commercial Deployment&rdquo;<br><a href="https://www.agilityrobotics.com/content/digit-moves-over-100k-totes" target="_blank" rel="noopener">agilityrobotics.com</a></div></li>
+          <li><span class="ref-n">44</span><div>New Market Pitch &mdash; &ldquo;Humanoid Robot Comparison Tracker (2026)&rdquo;<br><a href="https://newmarketpitch.com/blogs/news/humanoid-robotics-robot-comparison" target="_blank" rel="noopener">newmarketpitch.com</a></div></li>
+          <li><span class="ref-n">45</span><div>Moomoo / Goldman Sachs &mdash; &ldquo;Amid the wave of humanoid robots, visual perception systems are undergoing an arms race&rdquo;<br><a href="https://www.moomoo.com/news/post/49702351/goldman-sachs-amid-the-wave-of-humanoid-robots-visual-perception" target="_blank" rel="noopener">moomoo.com</a></div></li>
+          <li><span class="ref-n">46</span><div>NewsBytes &mdash; &ldquo;Unitree&rsquo;s $5,900 humanoid robot can run, do cartwheels&rdquo;<br><a href="https://www.newsbytesapp.com/news/science/unitrees-5900-humanoid-robot-can-run-do-cartwheels/tldr" target="_blank" rel="noopener">newsbytesapp.com</a></div></li>
+          <li><span class="ref-n">47</span><div>Medium / The Frontier &mdash; &ldquo;Humanoid Robot Unitree R1 on AliExpress &mdash; What You Get&rdquo;<br><a href="https://techfrontier.medium.com/aliexpress-listed-humanoid-robots-00f1589ea33a" target="_blank" rel="noopener">techfrontier.medium.com</a></div></li>
+          <li><span class="ref-n">48</span><div>Humanoid.guide &mdash; &ldquo;NEO &mdash; what 1X just launched&rdquo;<br><a href="https://humanoid.guide/neo-what-1x-just-launched/" target="_blank" rel="noopener">humanoid.guide</a></div></li>
+          <li><span class="ref-n">49</span><div>ChinaTalk &mdash; &ldquo;China&rsquo;s Leap into Robotics for Industry&rdquo;<br><a href="https://www.chinatalk.media/p/chinas-leap-into-robotics-for-industry" target="_blank" rel="noopener">chinatalk.media</a></div></li>
+          <li><span class="ref-n">50</span><div>Wamda &mdash; &ldquo;Humanoid, QSS AI &amp; Robotics unveil MENA&rsquo;s first robotics showroom in Riyadh&rdquo; (Nov 2025)<br><a href="https://www.wamda.com/2025/11/humanoid-qss-ai-robotics-unveil-mena-robotics-showroom-riyadh" target="_blank" rel="noopener">wamda.com</a></div></li>
+          <li><span class="ref-n">51</span><div>Humanoid Robotics Technology &mdash; &ldquo;Humanoid Opens Middle East&rsquo;s First Robotics Showroom&rdquo;<br><a href="https://humanoidroboticstechnology.com/industry-news/humanoid-and-qss-announces-menas-first-humanoid-robotics-showroom/" target="_blank" rel="noopener">humanoidroboticstechnology.com</a></div></li>
+        </ul>
+
+        <h4>Maritime Autonomy</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">52</span><div>Marine Public &mdash; &ldquo;What is IMO MASS Code: Automation Maritime Shipping by 2030&rdquo;<br><a href="https://www.marinepublic.com/blogs/hse/877179-what-is-mass-code-automation-maritime-shipping-by-2030" target="_blank" rel="noopener">marinepublic.com</a></div></li>
+          <li><span class="ref-n">53</span><div>Yara International &mdash; &ldquo;Yara Birkeland, two years on&rdquo;<br><a href="https://www.yara.com/knowledge-grows/yara-birkeland-two-years-on/" target="_blank" rel="noopener">yara.com</a></div></li>
+        </ul>
+
+        <h4>Agriculture</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">54</span><div>Philippine Star &mdash; &ldquo;Rice self-sufficiency ratio at lowest level in 37 years&rdquo; (Oct 2025)<br><a href="https://www.philstar.com/business/2025/10/16/2480115/rice-self-sufficiency-ratio-lowest-level-37-years" target="_blank" rel="noopener">philstar.com</a></div></li>
+          <li><span class="ref-n">55</span><div>Philippine Daily Inquirer &mdash; &ldquo;Rice and our future&rdquo;<br><a href="https://business.inquirer.net/183569/rice-and-our-future/amp" target="_blank" rel="noopener">business.inquirer.net</a></div></li>
+          <li><span class="ref-n">56</span><div>BusinessWorld &mdash; &ldquo;Land reform land reform&rdquo; (Jul 2020)<br><a href="https://www.bworldonline.com/editors-picks/2020/07/19/306259/land-reform-land-reform/" target="_blank" rel="noopener">bworldonline.com</a></div></li>
+          <li><span class="ref-n">57</span><div>Philippine Institute for Development Studies (PIDS) &mdash; &ldquo;Agri growth stunted by shrinking farm size, low productivity&rdquo;<br><a href="https://www.pids.gov.ph/details/pids-agri-growth-stunted-by-shrinking-farm-size-low-productivity" target="_blank" rel="noopener">pids.gov.ph</a></div></li>
+          <li><span class="ref-n">58</span><div>Alpha Ag Venture &mdash; &ldquo;Land Fragmentation: A Hurdle for Philippine Agriculture&rdquo;<br><a href="https://www.alphaagventure.com/land-fragmentation-a-hurdle-for-philippine-agriculture/" target="_blank" rel="noopener">alphaagventure.com</a></div></li>
+          <li><span class="ref-n">59</span><div>Medium / Michael Endino Viloan &mdash; &ldquo;Aging Farms, Shrinking Fields: The Philippines&rsquo; Farming Crisis&rdquo;<br><a href="https://medium.com/@b3nt3.lang/aging-farms-shrinking-fields-the-philippines-farming-crisis-91caf8876af7" target="_blank" rel="noopener">medium.com</a></div></li>
+          <li><span class="ref-n">60</span><div>DOST-PCAARRD &mdash; &ldquo;Typhoon Enteng: Agricultural Devastation, Impact on Prices, Government Response and Support&rdquo;<br><a href="https://ispweb.pcaarrd.dost.gov.ph/typhoon-enteng-agricultural-devastation-impact-on-prices-government-response-and-support/" target="_blank" rel="noopener">ispweb.pcaarrd.dost.gov.ph</a></div></li>
+          <li><span class="ref-n">61</span><div>DOST-PCAARRD &mdash; &ldquo;Typhoon Julian&rsquo;s Impact on Agriculture&rdquo;<br><a href="https://ispweb.pcaarrd.dost.gov.ph/typhoon-julians-impact-on-agriculture-crop-losses-infrastructure-damages-and-price-increases-amid-recovery-efforts/" target="_blank" rel="noopener">ispweb.pcaarrd.dost.gov.ph</a></div></li>
+          <li><span class="ref-n">62</span><div>DOST-PCAARRD &mdash; &ldquo;Typhoon Kristine&rsquo;s Impact on Agriculture&rdquo;<br><a href="https://ispweb.pcaarrd.dost.gov.ph/typhoon-kristines-impact-on-agriculture-crop-losses-infrastructure-damage-and-market-disruptions/" target="_blank" rel="noopener">ispweb.pcaarrd.dost.gov.ph</a></div></li>
+          <li><span class="ref-n">63</span><div>Philippine Star &mdash; &ldquo;DA: Typhoons left P786 million damage to agriculture&rdquo; (Nov 2024)<br><a href="https://www.philstar.com/nation/2024/11/26/2402904/da-typhoons-left-p786-million-damage-agriculture" target="_blank" rel="noopener">philstar.com</a></div></li>
+        </ul>
+
+        <h4>Electronics and Semiconductors</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">64</span><div>BusinessWorld &mdash; &ldquo;Electronics exports goal of $110B on track, DTI says, but industry more cautious&rdquo; (Apr 2026)<br><a href="https://www.bworldonline.com/economy/2026/04/08/741721/electronics-exports-goal-of-110b-on-track-dti-says-but-industry-more-cautious/" target="_blank" rel="noopener">bworldonline.com</a></div></li>
+          <li><span class="ref-n">65</span><div>PC Basic &mdash; &ldquo;Top 10 Semiconductor Companies in the Philippines&rdquo;<br><a href="https://www.pcbasic.com/blog/semiconductor_companies_in_the_philippines.html" target="_blank" rel="noopener">pcbasic.com</a></div></li>
+          <li><span class="ref-n">66</span><div>Mordor Intelligence &mdash; &ldquo;Philippines Semiconductor Market Size, Share &amp; 2031 Growth Trends Report&rdquo;<br><a href="https://www.mordorintelligence.com/industry-reports/philippines-semiconductor-market" target="_blank" rel="noopener">mordorintelligence.com</a></div></li>
+          <li><span class="ref-n">67</span><div>Manila Bulletin &mdash; &ldquo;US chip giants eyeing Philippines expansion&rdquo; (Dec 2024)<br><a href="https://mb.com.ph/2024/12/16/us-chip-giants-eyeing-ph-expansion" target="_blank" rel="noopener">mb.com.ph</a></div></li>
+          <li><span class="ref-n">68</span><div>BusinessWorld &mdash; &ldquo;US grant prepares PHL for CHIPS Act investments&rdquo; (Sep 2024)<br><a href="https://www.bworldonline.com/economy/2024/09/25/623937/us-grant-prepares-phl-for-chips-act-investments/" target="_blank" rel="noopener">bworldonline.com</a></div></li>
+          <li><span class="ref-n">69</span><div>Philippine Star &mdash; &ldquo;Philippines semicon industry to benefit from US-funded program&rdquo; (Sep 2024)<br><a href="https://www.philstar.com/business/2024/09/27/2388211/philippines-semicon-industry-benefit-us-funded-program" target="_blank" rel="noopener">philstar.com</a></div></li>
+        </ul>
+
+        <h4>Energy and Grid Infrastructure</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">70</span><div>Enerdata &mdash; &ldquo;Philippines Energy Information&rdquo;<br><a href="https://www.enerdata.net/estore/energy-market/philippines/" target="_blank" rel="noopener">enerdata.net</a></div></li>
+          <li><span class="ref-n">71</span><div>BusinessWorld &mdash; &ldquo;The role of natural gas in the Philippines&rsquo; energy mix&rdquo;<br><a href="https://www.bworldonline.com/?p=580226" target="_blank" rel="noopener">bworldonline.com</a></div></li>
+          <li><span class="ref-n">72</span><div>Gulf News &mdash; &ldquo;Philippines&rsquo; Energy Crisis: Coal&rsquo;s Dominance and the Rising Electricity Rates&rdquo;<br><a href="https://gulfnews.com/business/energy/philippines-coal-dominates-power-generation-while-oil-is-only-at-1-so-why-are-electricity-rates-rising-1.500473171" target="_blank" rel="noopener">gulfnews.com</a></div></li>
+          <li><span class="ref-n">73</span><div>Philippine News Agency &mdash; &ldquo;Luzon grid logs 1st yellow alert status in 2025&rdquo;<br><a href="https://www.pna.gov.ph/articles/1245463" target="_blank" rel="noopener">pna.gov.ph</a></div></li>
+          <li><span class="ref-n">74</span><div>Cebu Daily News / Inquirer &mdash; &ldquo;Luzon grid logs 1st yellow alert status in 2025 &mdash; NGCP&rdquo;<br><a href="https://cebudailynews.inquirer.net/626427/luzon-grid-logs-1st-yellow-alert-status-in-2025-ngcp" target="_blank" rel="noopener">cebudailynews.inquirer.net</a></div></li>
+          <li><span class="ref-n">75</span><div>Philippine Star &mdash; &ldquo;Bataan nuclear plant revival pushed amid oil crisis&rdquo; (Apr 2026)<br><a href="https://www.philstar.com/business/2026/04/17/2521435/bataan-nuclear-plant-revival-pushed-amid-oil-crisis" target="_blank" rel="noopener">philstar.com</a></div></li>
+          <li><span class="ref-n">76</span><div>Asia News Network &mdash; &ldquo;Philippines, South Korea eye revival of Marcos Sr-era nuclear power plant&rdquo;<br><a href="https://asianews.network/philippines-south-korea-eye-revival-of-marcos-sr-era-nuclear-power-plant/" target="_blank" rel="noopener">asianews.network</a></div></li>
+          <li><span class="ref-n">77</span><div>Philippine Daily Inquirer &mdash; &ldquo;PH, Korea eye revival of Bataan nuke plant&rdquo;<br><a href="https://globalnation.inquirer.net/251606/ph-korea-eye-revival-of-bataan-nuke-plant" target="_blank" rel="noopener">globalnation.inquirer.net</a></div></li>
+          <li><span class="ref-n">78</span><div>World Nuclear News &mdash; &ldquo;Korea to assess rehabilitation of Philippine plant&rdquo;<br><a href="https://www.world-nuclear-news.org/articles/korea-to-assess-rehabilitation-of-philippine-plant" target="_blank" rel="noopener">world-nuclear-news.org</a></div></li>
+        </ul>
+
+        <h4>Data Centers and Compute Infrastructure</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">79</span><div>BusinessWorld &mdash; &ldquo;Philippine data center capacity may hit 1.5 GW by 2028 &mdash; DICT&rdquo; (Oct 2025)<br><a href="https://www.bworldonline.com/corporate/2025/10/23/707346/philippine-data-center-capacity-may-hit-1-5-gw-by-2028-dict/" target="_blank" rel="noopener">bworldonline.com</a></div></li>
+          <li><span class="ref-n">80</span><div>STT GDC &mdash; &ldquo;STT GDC to Build Largest and Most Interconnected Data Centre in the Philippines&rdquo;<br><a href="https://www.sttelemediagdc.com/ph-en/newsroom/stt-gdc-build-largest-and-most-interconnected-data-centre-philippines" target="_blank" rel="noopener">sttelemediagdc.com</a></div></li>
+          <li><span class="ref-n">81</span><div>Mordor Intelligence &mdash; &ldquo;Philippines Data Center Power Market Forecasts 2031&rdquo;<br><a href="https://www.mordorintelligence.com/industry-reports/philippines-data-center-power-market" target="_blank" rel="noopener">mordorintelligence.com</a></div></li>
+          <li><span class="ref-n">82</span><div>RCR Wireless News &mdash; &ldquo;Philippines opens first GPU-powered, AI-first hyperscale data center&rdquo;<br><a href="https://www.rcrwireless.com/20250428/ai-ml/philippines-ai-data" target="_blank" rel="noopener">rcrwireless.com</a></div></li>
+          <li><span class="ref-n">83</span><div>Light Reading &mdash; &ldquo;PLDT confirms plan for 12th data center as it launches the first AI-ready hyperscale facility in the Philippines&rdquo;<br><a href="https://www.lightreading.com/data-centers/pldt-confirms-plan-for-12th-data-center-as-it-launches-the-first-ai-ready-hyperscale-facility-in-the-philippines" target="_blank" rel="noopener">lightreading.com</a></div></li>
+          <li><span class="ref-n">84</span><div>W.Media &mdash; &ldquo;VITRO, data center arm of PLDT, unveils the Philippines&rsquo; first AI-ready hyperscale data center&rdquo;<br><a href="https://w.media/vitro-data-center-arm-of-pldt-unveils-the-philippines-first-ai-ready-hyperscale-data-center/" target="_blank" rel="noopener">w.media</a></div></li>
+          <li><span class="ref-n">85</span><div>Tutorials Dojo &mdash; &ldquo;Availability of AWS Local Zones in Manila&rdquo;<br><a href="https://tutorialsdojo.com/availability-of-aws-local-zones-in-manila-what-this-means-for-the-philippines-tech-landscape/" target="_blank" rel="noopener">tutorialsdojo.com</a></div></li>
+          <li><span class="ref-n">86</span><div>The Sun (Malaysia) &mdash; &ldquo;Johor powers Asia-Pacific&rsquo;s record-breaking data centre boom&rdquo;<br><a href="https://thesun.my/business-news/johor-powers-asia-pacific-s-record-breaking-data-centre-boom-BK14969228" target="_blank" rel="noopener">thesun.my</a></div></li>
+        </ul>
+
+        <h4>Undersea Cables and Network Sovereignty</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">87</span><div>Submarine Networks &mdash; Philippines country stations directory<br><a href="https://www.submarinenetworks.com/en/stations/asia/philippines" target="_blank" rel="noopener">submarinenetworks.com</a></div></li>
+          <li><span class="ref-n">88</span><div>Inquirer Opinion &mdash; &ldquo;Underwater cable contest&rdquo;<br><a href="https://opinion.inquirer.net/163033/underwater-cable-contest" target="_blank" rel="noopener">opinion.inquirer.net</a></div></li>
+          <li><span class="ref-n">89</span><div>University of Hawai&lsquo;i at M&#257;noa CIPA &mdash; &ldquo;Entangled: Southeast Asia and the Geopolitics of Undersea Cables&rdquo;<br><a href="https://manoa.hawaii.edu/indopacificaffairs/article/entangled-southeast-asia-and-the-geopolitics-of-undersea-cables/" target="_blank" rel="noopener">manoa.hawaii.edu</a></div></li>
+          <li><span class="ref-n">90</span><div>Submarine Networks &mdash; Apricot cable system<br><a href="https://www.submarinenetworks.com/en/systems/intra-asia/apricot" target="_blank" rel="noopener">submarinenetworks.com</a></div></li>
+          <li><span class="ref-n">91</span><div>Baird Maritime &mdash; &ldquo;Philippine Navy to include undersea cable protection in mission profile&rdquo;<br><a href="https://www.bairdmaritime.com/security/naval/philippine-navy-to-include-undersea-cable-protection-in-mission-profile" target="_blank" rel="noopener">bairdmaritime.com</a></div></li>
+        </ul>
+
+        <h4>Governance, Institutions, and Public Policy</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">92</span><div>SSRN / Kaufmann &amp; Kraay &mdash; &ldquo;The Worldwide Governance Indicators: Methodology and 2024 Update&rdquo;<br><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5154675" target="_blank" rel="noopener">papers.ssrn.com</a></div></li>
+          <li><span class="ref-n">93</span><div>World Bank &mdash; &ldquo;The Worldwide Governance Indicators: 2025 Methodology Revision&rdquo;<br><a href="https://www.worldbank.org/content/dam/sites/govindicators/doc/The%20Worldwide%20Governance%20Indicators%202025%20Methodology%20Revision.pdf" target="_blank" rel="noopener">worldbank.org</a></div></li>
+          <li><span class="ref-n">94</span><div>Philippine Daily Inquirer &mdash; &ldquo;New chief seeks doubling of DICT 2026 budget&rdquo;<br><a href="https://business.inquirer.net/529056/new-chief-seeks-doubling-of-2026-dict-budget" target="_blank" rel="noopener">business.inquirer.net</a></div></li>
+          <li><span class="ref-n">95</span><div>CoinGeek &mdash; &ldquo;DICT seeks over $300M budget for Philippines 2026 digital agenda&rdquo;<br><a href="https://coingeek.com/dict-seeks-over-300m-budget-for-philippines-2026-digital-agenda/" target="_blank" rel="noopener">coingeek.com</a></div></li>
+          <li><span class="ref-n">96</span><div>NewsBytes Philippines &mdash; DICT-related budget coverage<br><a href="https://newsbytes.ph/?p=84892" target="_blank" rel="noopener">newsbytes.ph</a></div></li>
+        </ul>
+
+        <h4>Startup Ecosystem and AI Grants</h4>
+        <ul class="ref-list">
+          <li><span class="ref-n">97</span><div>DOST-PCIEERD &mdash; &ldquo;Call for Proposals for the PCIEERD Startup Grant Fund (SGF) Program&rdquo;<br><a href="https://pcieerd.dost.gov.ph/521-2023-call-for-proposals-for-the-pcieerd-startup-grant-fund-program-cycle-2" target="_blank" rel="noopener">pcieerd.dost.gov.ph</a></div></li>
+          <li><span class="ref-n">98</span><div>TNGlobal &mdash; &ldquo;Filipino startup Packworks bags $60k government funding to develop AI-powered marketing tool for &lsquo;sari-sari&rsquo; stores&rdquo;<br><a href="https://technode.global/2024/07/11/filipino-startup-packworks-secures-60000-govt-funding-to-develop-ai-powered-precision-marketing-tool-for-sari-sari-stores/" target="_blank" rel="noopener">technode.global</a></div></li>
+        </ul>
+
+        <h4>Institutional and Academic Sources (referenced by name)</h4>
+        <ul class="inst-list">
+          <li><strong>Bangko Sentral ng Pilipinas (BSP)</strong> &mdash; services exports, remittance flows, monetary policy statements, gross international reserves, peso intervention data.</li>
+          <li><strong>Philippine Statistics Authority (PSA)</strong> &mdash; labor force surveys (LFS), quarterly GDP accounts, OFW statistics, 2012 Census of Agriculture.</li>
+          <li><strong>National Economic and Development Authority (NEDA) / Department of Economy, Planning and Development (DEPDev)</strong> &mdash; Philippine Development Plan 2023&ndash;2028 macroeconomic projections.</li>
+          <li><strong>Department of Information and Communications Technology (DICT)</strong> &mdash; NAIS-PH (National AI Strategy) framework; data-center capacity projections.</li>
+          <li><strong>Department of Science and Technology (DOST)</strong> &mdash; PCIEERD startup grants; NAIS-PH 2025 strategy document.</li>
+          <li><strong>IBPAP (IT &amp; Business Process Association of the Philippines)</strong> &mdash; industry roadmap; Roadmap 2028 targets; annual membership surveys.</li>
+          <li><strong>World Bank, ADB, IMF, AMRO</strong> &mdash; macro surveillance reports, Article IV consultations, and fiscal assessments on the Philippines.</li>
+          <li><strong>Epoch AI</strong> &mdash; compute growth projections; inference cost curves; training run scaling data.</li>
+          <li><strong>METR</strong> &mdash; autonomy time-horizon doubling measurements; AI task benchmark progression.</li>
+          <li><strong>AI Futures Project</strong> &mdash; AI 2027 scenario and revised capability timelines.</li>
+          <li><strong>Metaculus and related forecasting aggregators</strong> &mdash; AGI and ASI community probability distributions across multiple question formulations.</li>
+          <li><strong>Goldman Sachs Research</strong> &mdash; humanoid robotics total addressable market; shipment forecasts; macro labor-displacement scenario analysis.</li>
+          <li><strong>Adamopoulos &amp; Restuccia (NBER / AEJ Macro)</strong> &mdash; quantitative work on CARP and Philippine agricultural productivity; TFP misallocation estimates.</li>
+          <li><strong>Kulveit et al., ICML 2025</strong> &mdash; &ldquo;Gradual Disempowerment&rdquo; framework for institutional erosion under advanced AI capabilities.</li>
+          <li><strong>Drago, L. Rudolf</strong> &mdash; &ldquo;The Intelligence Curse&rdquo;; labor-replacing AI and political economy of concentrated capital.</li>
+          <li><strong>OECD / PISA 2022</strong> &mdash; Philippine education outcomes; reading and mathematics proficiency benchmarks.</li>
+          <li><strong>EF English Proficiency Index</strong> &mdash; Philippine English proficiency rankings and regional comparison.</li>
+          <li><strong>IBON Foundation</strong> &mdash; informal-sector size and composition; household consumption analysis.</li>
+          <li><strong>Leechiu Property Consultants, Colliers Philippines</strong> &mdash; office vacancy rates; BPO real estate absorption and net take-up data.</li>
+          <li><strong>Department of Migrant Workers (DMW)</strong> &mdash; overseas worker deployment statistics, repatriation figures, Gulf corridor contract data. Formerly POEA (absorbed 2022 under RA 11641).</li>
+        </ul>
+
+      </div>
+    </section>
 
   </main>
 </div>
