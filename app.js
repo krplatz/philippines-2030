@@ -218,6 +218,7 @@
     ["chart-crossover", PhCharts.renderCrossover],
     ["chart-exposure", PhCharts.renderExposureBars],
     ["chart-scenarios", PhCharts.renderScenarioBars],
+    ["chart-mc", PhCharts.renderMCDistribution],
     ["chart-displacement", PhCharts.renderDisplacementWave],
   ];
   reg.forEach(([id, fn]) => {

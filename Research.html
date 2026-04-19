@@ -65,7 +65,7 @@
     <div class="scenario-toggle">
       <div class="label">Scenario Lens</div>
       <div class="scenario-btns">
-        <button class="scenario-btn active" data-scenario="base"><span class="dot"></span>Base<span class="prob">50%</span></button>
+        <button class="scenario-btn active" data-scenario="base"><span class="dot"></span>Optimistic<span class="prob">50%</span></button>
         <button class="scenario-btn" data-scenario="accel"><span class="dot"></span>Accelerated<span class="prob">35%</span></button>
         <button class="scenario-btn" data-scenario="crisis"><span class="dot"></span>Crisis<span class="prob">15%</span></button>
       </div>
@@ -78,14 +78,12 @@
     <!-- HERO -->
     <section class="hero" id="intro">
       <div class="col-wide">
-        <div class="eyebrow">The Research &middot; v0.2 &middot; April 2026</div>
+        <div class="eyebrow">The Research</div>
         <h1>The <em>structural argument</em><br>behind the narrative.</h1>
         <p class="dek">The Philippines faces the sharpest AI-exposure profile of any ASEAN economy, and the transition window is narrower than the official narrative admits. What follows is the research scaffold &mdash; the numbers, the mechanisms, the scenario math, and the full citation trail &mdash; that the front-facing <a href="index.html">narrative</a> draws from.</p>
         <div class="byline">
           <div><span class="k">Horizon</span>2026 &mdash; 2035</div>
           <div><span class="k">Scope</span>Economy &middot; Labor &middot; Infrastructure &middot; Politics</div>
-          <div><span class="k">Citations</span>98 URL-level sources + 20 institutional</div>
-          <div><span class="k">Status</span>Working draft</div>
         </div>
       </div>
     </section>
@@ -103,7 +101,7 @@
 
         <p>This dossier proceeds through eleven chapters. Chapters 02 through 04 document the displacement mechanisms for each major income engine &mdash; the precise timing, the wage-cost crossovers, and the structural feedback loops. Chapter 05 covers manufacturing&rsquo;s competitive position. Chapter 06 maps the energy and compute constraint that caps AI ambition. Chapter 07 examines the governance and social-protection architecture. Chapter 08 models the geopolitical pressure field. Chapter 09 builds three macroeconomic scenarios and traces their interactions through the peso, fiscal accounts, and political economy. Chapter 10 gives the decade as a dependency timeline. Chapter 11 derives national strategic implications. A full references section follows.</p>
 
-        <p>The timing question throughout is not whether the shocks arrive, but in what sequence and at what speed &mdash; and whether the gap between shock arrival and institutional response is measured in months or years. A <span class="gloss" data-gloss="bpo">service-export economy</span> of this scale and composition has never been asked to reskill this fast.<sup class="fn" data-fn="1">1</sup></p>
+        <p>The timing question throughout is not whether the shocks arrive, but in what sequence and at what speed &mdash; and whether the gap between shock arrival and institutional response is measured in months or years. A service-export economy of this scale and composition has never been asked to reskill this fast.<sup class="fn" data-fn="1">1</sup></p>
       </div>
 
       <div class="stats reveal-root">
@@ -151,7 +149,7 @@
 
         <p>A secondary political risk has opened on the US end. The &ldquo;Keep Call Centers in America Act,&rdquo; introduced in 2025, would require federal contractors to disclose and repatriate offshore call-center work. If enacted in any form, it would directly threaten the $12&ndash;15B of US federal and federally-adjacent contracts in the Philippine BPO base. The bill has not advanced to a floor vote, but its existence signals an emerging political constituency for domestic reshoring that does not require a Democratic or Republican supermajority to find expression in procurement rules.<sup class="fn" data-fn="7">7</sup></p>
 
-        <p data-scenario-text="base">Under the <span class="scenario-inline">Base</span> scenario, headcount drifts from 1.9M to around 1.71M by 2030. The transition is uncomfortable but not destabilizing &mdash; roughly the pace of a typical sector restructuring, and partially offset by GCC growth.</p>
+        <p data-scenario-text="base">Under the <span class="scenario-inline">Optimistic</span> scenario, headcount drifts from 1.9M to around 1.71M by 2030. The transition is uncomfortable but not destabilizing &mdash; roughly the pace of a typical sector restructuring, and partially offset by GCC growth.</p>
         <p data-scenario-text="accel">Under the <span class="scenario-inline">Accelerated</span> scenario, headcount falls to 1.42M by 2030 &mdash; a 25% contraction. Political stress becomes visible in the 2028 election cycle; GCC site-selection evaluations accelerate as policy uncertainty rises.</p>
         <p data-scenario-text="crisis">Under the <span class="scenario-inline">Crisis</span> scenario, headcount collapses to 1.15M by 2030 &mdash; a 40% reduction. The middle-class stabilizer for urban Luzon and Cebu is functionally destroyed. Informal-sector second-order losses (estimated at 0.8 indirect jobs per direct BPO seat) add a further 600,000&ndash;700,000 to the displacement count. The political consequences follow within two election cycles.</p>
       </div>
@@ -398,6 +396,16 @@
 
       <figure class="chart reveal-root">
         <div class="figure-head">
+          <span class="figure-num">FIG. 09</span>
+          <span class="figure-title">Monte Carlo distribution of 2030 BPO outcomes &mdash; 8,000 simulated paths</span>
+        </div>
+        <div id="chart-mc"></div>
+        <p class="figure-note">Each bar is a cluster of simulated 2030 BPO employment outcomes across 8,000 independent draws. Zone boundaries are set at economically meaningful thresholds — 1.60M (≤&nbsp;300K net displaced, historically manageable) and 1.20M (≥&nbsp;700K net displaced, consistent with IMF-adjacent fiscal stress onset) — not at midpoints of prior heuristic values. Probability labels are read directly from the simulation output and propagate to the scenario cards above.</p>
+        <div class="figure-source">Three-variable triangular model. (1)&nbsp;Gross BPO displacement 2025–2030: tri(8%, 22%, 55%) — min from contract lock-in friction; mode from Forrester/IDC 2024 BPO outlook and McKinsey GI (2023) automation-penetration lag; max from Klarna 18-month deployment pace. (2)&nbsp;Policy absorption fraction: tri(3%, 12%, 28%) — mode derived from TESDA throughput (~200K/yr) at 50% placement effectiveness against central-case displacement; min from IMF-constrained scenario; max from funded GCC-partnership placement. (3)&nbsp;AGI cascade: Bernoulli(22%) prior from Metaculus community aggregate for transformative capability arriving before 2029 (conditional on 40%-by-2030 median, first-half Epoch AI compute weighting); cascade adds tri(5%, 15%, 30%) above baseline. n&nbsp;=&nbsp;8,000 runs.</div>
+      </figure>
+
+      <figure class="chart reveal-root">
+        <div class="figure-head">
           <span class="figure-num">FIG. 07</span>
           <span class="figure-title">Six indicators, 2025 &rarr; 2030</span>
         </div>
@@ -420,7 +428,7 @@
 
         <p>Under the <strong>benign global path</strong> (25&ndash;35% probability on aggregated forecasts), Philippine BPO still contracts sharply in 2027&ndash;2029 because the sectoral disruption mechanism is not contingent on transformative AI; it is driven by outcome-based pricing that is already commercially viable at the 2025 capability level. The question under the benign path is only whether fiscal transfers and productivity gains compensate faster than displacement compounds.</p>
 
-        <p>Under the <strong>middling path</strong> (35&ndash;45%), the Philippines faces 2&ndash;4% growth through the adjustment decade with high political stress and eventual IMF-adjacent fiscal discipline. The Base scenario in this dossier corresponds to the middling global outcome combined with a moderate Philippine institutional response.</p>
+        <p>Under the <strong>middling path</strong> (35&ndash;45%), the Philippines faces 2&ndash;4% growth through the adjustment decade with high political stress and eventual IMF-adjacent fiscal discipline. The Optimistic scenario in this dossier corresponds to the middling global outcome combined with a moderate Philippine institutional response.</p>
 
         <p>Under the <strong>catastrophic path</strong> (20&ndash;30%), the &ldquo;Intelligence Curse&rdquo; dynamic &mdash; in which labour-replacing AI makes workers economically less valuable to elites who own the capital &mdash; is especially acute in a political economy where AI infrastructure is already concentrating in the hands of six to eight conglomerate families.<sup class="fn" data-fn="34">34</sup> The Kulveit et al. &ldquo;Gradual Disempowerment&rdquo; framework models precisely this failure mode: institutions that were never designed for a world in which citizens&rsquo; economic leverage over capital has been permanently degraded.</p>
 

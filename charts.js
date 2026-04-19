@@ -131,7 +131,7 @@ function renderBpoChart(container) {
     const endV = scenarios[s][years.length - 1];
     const endX = x(years.length - 1);
     const endY = y(endV);
-    const labelMap = { base: "BASE", accel: "ACCELERATED", crisis: "CRISIS" };
+    const labelMap = { base: "OPTIMISTIC", accel: "ACCELERATED", crisis: "CRISIS" };
     const lb = text(endX + 8, endY - 10, labelMap[s], "label");
     lb.setAttribute("fill", "var(--accent)");
     lb.setAttribute("font-weight", "600");
@@ -207,7 +207,7 @@ function renderRemitChart(container) {
   const pathGroup = svg("g");
   const scenarioPaths = {};
   const colors = { base: "var(--s-base)", accel: "var(--s-accel)", crisis: "var(--s-crisis)" };
-  const labels = { base: "Base", accel: "Accelerated", crisis: "Crisis" };
+  const labels = { base: "Optimistic", accel: "Accelerated", crisis: "Crisis" };
   for (const k of ["base", "accel", "crisis"]) {
     const d = proj[k].map((p, i) => (i === 0 ? "M" : "L") + xs(p[0]) + "," + ys(p[1])).join(" ");
     const p = svg("path", { d, fill: "none", stroke: colors[k], "stroke-width": 1.5 });
@@ -506,7 +506,7 @@ function renderEnergyMix(container) {
   root.appendChild(tB);
 
   const wrap = document.createElement("div");
-  wrap.style.cssText = "display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: center;";
+  wrap.className = "energy-wrap";
   const left = document.createElement("div");
   left.appendChild(root);
   wrap.appendChild(left);
@@ -728,12 +728,12 @@ function renderExposureBars(container) {
 // ---------- Chart 8: Probability distribution (scenarios) ----------
 function renderScenarioBars(container) {
   const data = [
-    { key: "base", name: "BASE",        p: 50, desc: "Managed erosion.\nGrowth-lite but stable." },
+    { key: "base", name: "OPTIMISTIC",  p: 50, desc: "Managed erosion.\nGrowth-lite but stable." },
     { key: "accel", name: "ACCELERATED", p: 35, desc: "Sharp adjustment.\nPolitical stress.\nFDI deters." },
     { key: "crisis", name: "CRISIS",     p: 15, desc: "Co-moving shocks.\nSovereign downgrade.\nCapital controls." },
   ];
   const wrap = document.createElement("div");
-  wrap.style.cssText = "display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule);";
+  wrap.className = "scenario-grid";
   const colors = { base: "var(--s-base)", accel: "var(--s-accel)", crisis: "var(--s-crisis)" };
 
   data.forEach(d => {
@@ -750,7 +750,7 @@ function renderScenarioBars(container) {
     card.innerHTML = `
       <div style="display:flex;justify-content:space-between;align-items:baseline;">
         <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; color: ${colors[d.key]}; font-weight: 600;">${d.name}</div>
-        <div style="font-family: var(--serif); font-size: 44px; font-weight: 500; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums;">${d.p}<span style="font-size:22px;color:var(--ink-muted);">%</span></div>
+        <div style="font-family: var(--serif); font-size: 44px; font-weight: 500; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums;"><span class="prob-num">${d.p}</span><span style="font-size:22px;color:var(--ink-muted);">%</span></div>
       </div>
       <div style="height:4px;background:var(--rule-soft);position:relative;">
         <div class="prob-fill" style="position:absolute;left:0;top:0;bottom:0;width:0;background:${colors[d.key]};transition:width 1s ease-out;"></div>
@@ -765,7 +765,9 @@ function renderScenarioBars(container) {
     const io = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
-          card.querySelector(".prob-fill").style.width = d.p + "%";
+          // Use MC-derived probability if already patched, else fall back to static value
+          const target = card.dataset.mcProb !== undefined ? card.dataset.mcProb : d.p;
+          card.querySelector(".prob-fill").style.width = target + "%";
           io.unobserve(e.target);
         }
       });
@@ -868,10 +870,201 @@ function renderDisplacementWave(container) {
   container.appendChild(root);
 }
 
+// ---------- Monte Carlo scenario simulation ----------
+let _mc = null;
+
+function runMC() {
+  if (_mc) return _mc;
+  const N = 8000;
+
+  function tri(a, mode, b) {
+    const u = Math.random(), fc = (mode - a) / (b - a);
+    return u < fc
+      ? a + Math.sqrt(u * (b - a) * (mode - a))
+      : b - Math.sqrt((1 - u) * (b - a) * (b - mode));
+  }
+
+  // --- Thresholds: economic consequence, not heuristic midpoints ---
+  // T_BASE  1.60M: ≤ 300K net displaced. Historical precedent (Irish manufacturing
+  //   1980s, UK coal relative scale) — manageable with intact social protection.
+  // T_ACCEL 1.20M: > 700K net displaced. Crosses the threshold where peso
+  //   stabilisation requires both remittance and BPO legs simultaneously, and
+  //   both are under pressure. Consistent with IMF-adjacent fiscal stress onset.
+  const T_BASE  = 1.60;
+  const T_ACCEL = 1.20;
+
+  const runs = [];
+  let nb = 0, na = 0, nc = 0;
+
+  for (let i = 0; i < N; i++) {
+
+    // --- Parameter 1: gross BPO displacement fraction, 2025–2030 ---
+    // Source: McKinsey Global Institute (2023) estimates 60–70% of customer-
+    // service work activities are automatable with current AI. Enterprise
+    // adoption lag at 5-year horizon: analyst consensus ~30–35% penetration
+    // of automatable capacity (long contracts, procurement cycles, quality risk).
+    // Combined with non-voice back-office (lower exposure), blended sector:
+    //   min 0.08 — regulatory friction, long-term contract lock-in
+    //   mode 0.22 — central analyst estimate (Forrester, IDC 2024 BPO outlook)
+    //   max 0.55 — Klarna-pace adoption (85% CS headcount cut in 18 months)
+    //             applied to aggressive-client cohort rotating on contract renewal
+    const baseDisplace = tri(0.08, 0.22, 0.55);
+
+    // --- Parameter 2: policy absorption fraction of displaced workers ---
+    // Source: TESDA historical throughput ~200K workers/year into skills programs;
+    // effective placement rate ~50% (PSA Labour Force Survey, 2022–2024).
+    // Against a central-case displacement of ~420K workers, TESDA absorbs
+    // ~100K → ~24% of displaced. Adjusted downward for IMF fiscal constraints
+    // (narrative mechanism) and upward for GCC growth absorbing displaced workers.
+    //   min 0.03 — IMF-constrained, programs defunded (as in crisis path)
+    //   mode 0.12 — TESDA throughput at 50% effectiveness vs central displacement
+    //   max 0.28 — well-funded TESDA + active GCC-partnership placements
+    const policyAbsorb = tri(0.03, 0.12, 0.28);
+
+    // --- Parameter 3: early AGI cascade ---
+    // Source: Metaculus community aggregate (accessed Q1 2026). Conditional
+    // probability of transformative AI capability arriving before 2029 — the
+    // threshold relevant to non-linear deployment acceleration — is approximately
+    // 20–25% (derived from the 40% by-2030 aggregate, adjusted for first-half
+    // weighting via Epoch AI compute-trajectory doubling rates).
+    // When cascade fires: additional 5–30% displacement above baseline, reflecting
+    // enterprise adoption friction disappearing when capability crosses an obvious
+    // threshold (voice AI indistinguishable from human across all CSAT metrics).
+    const agiBoost = Math.random() < 0.22
+                     ? tri(0.05, 0.15, 0.30) : 0;
+
+    // Net displacement: policy absorbs a fraction of gross; AGI adds on top
+    const netD  = Math.min(baseDisplace * (1 - policyAbsorb) + agiBoost, 0.82);
+    const bpo30 = Math.max(1.90 * (1 - netD), 0.55);
+    runs.push(bpo30);
+
+    if (bpo30 >= T_BASE) nb++;
+    else if (bpo30 >= T_ACCEL) na++;
+    else nc++;
+  }
+
+  _mc = {
+    runs,
+    probs: {
+      base:   Math.round(nb / N * 100),
+      accel:  Math.round(na / N * 100),
+      crisis: Math.round(nc / N * 100),
+    },
+    T_BASE, T_ACCEL,
+  };
+  return _mc;
+}
+
+function renderMCDistribution(container) {
+  const mc = runMC();
+
+  // Histogram
+  const LO = 0.78, HI = 2.08, STEP = 0.05;
+  const bins = [];
+  for (let v = LO; v < HI; v += STEP) bins.push({ lo: v, hi: v + STEP, count: 0 });
+  mc.runs.forEach(v => {
+    const idx = Math.min(Math.floor((v - LO) / STEP), bins.length - 1);
+    if (idx >= 0) bins[idx].count++;
+  });
+  const maxCount = Math.max(...bins.map(b => b.count));
+
+  const W = 900, H = 360, M = { t: 72, r: 48, b: 68, l: 60 };
+  const iw = W - M.l - M.r, ih = H - M.t - M.b;
+  const xS = v => M.l + ((v - LO) / (HI - LO)) * iw;
+  const yS = c => M.t + (1 - c / maxCount) * ih;
+  const bw = iw / bins.length;
+
+  const root = svg("svg", { viewBox: `0 0 ${W} ${H}` });
+
+  // Bars colored by scenario zone
+  bins.forEach((bin, i) => {
+    if (bin.count === 0) return;
+    const mid = (bin.lo + bin.hi) / 2;
+    const col = mid >= mc.T_BASE  ? "var(--s-base)"
+              : mid >= mc.T_ACCEL ? "var(--s-accel)"
+              :                     "var(--s-crisis)";
+    root.appendChild(svg("rect", {
+      x: M.l + i * bw, y: yS(bin.count),
+      width: Math.max(bw - 1, 1),
+      height: Math.max(ih - (yS(bin.count) - M.t), 0),
+      fill: col, opacity: 0.75,
+    }));
+  });
+
+  // Threshold dashed lines
+  [
+    { v: mc.T_BASE,  label: mc.T_BASE.toFixed(2) + "M" },
+    { v: mc.T_ACCEL, label: mc.T_ACCEL.toFixed(2) + "M" },
+  ].forEach(({ v, label }) => {
+    const x = xS(v);
+    root.appendChild(svg("line", {
+      x1: x, x2: x, y1: M.t, y2: H - M.b,
+      stroke: "var(--ink-muted)", "stroke-width": 1.5, "stroke-dasharray": "3 3",
+    }));
+    const tl = text(x + 5, M.t + 14, label, "label");
+    tl.setAttribute("fill", "var(--ink-faded)");
+    root.appendChild(tl);
+  });
+
+  // Zone probability labels (above bars)
+  [
+    { key: "base",   cx: (xS(HI) + xS(mc.T_BASE)) / 2,        col: "var(--s-base)"   },
+    { key: "accel",  cx: (xS(mc.T_BASE) + xS(mc.T_ACCEL)) / 2, col: "var(--s-accel)"  },
+    { key: "crisis", cx: (xS(mc.T_ACCEL) + xS(LO)) / 2,        col: "var(--s-crisis)" },
+  ].forEach(({ key, cx, col }) => {
+    const big = text(cx, 28, mc.probs[key] + "%", "");
+    big.setAttribute("text-anchor", "middle");
+    big.setAttribute("fill", col);
+    big.setAttribute("font-family", "var(--serif)");
+    big.setAttribute("font-size", "30");
+    big.setAttribute("font-weight", "500");
+    root.appendChild(big);
+    const nameMap = { base: "OPTIMISTIC", accel: "ACCELERATED", crisis: "CRISIS" };
+    const lbl = text(cx, 50, nameMap[key] || key.toUpperCase(), "label");
+    lbl.setAttribute("text-anchor", "middle");
+    lbl.setAttribute("fill", col);
+    root.appendChild(lbl);
+  });
+
+  // X axis
+  const xAx = svg("g", { class: "axis" });
+  xAx.appendChild(svg("line", { x1: M.l, x2: W - M.r, y1: H - M.b, y2: H - M.b }));
+  [0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0].forEach(v => {
+    const x = xS(v);
+    xAx.appendChild(svg("line", { x1: x, x2: x, y1: H - M.b, y2: H - M.b + 5 }));
+    const t = text(x, H - M.b + 18, v.toFixed(1) + "M", "");
+    t.setAttribute("text-anchor", "middle");
+    xAx.appendChild(t);
+  });
+  root.appendChild(xAx);
+
+  const axLbl = text(W / 2, H - 10, "BPO direct employment in 2030 (millions)", "axis-title");
+  axLbl.setAttribute("text-anchor", "middle");
+  root.appendChild(axLbl);
+
+  container.appendChild(root);
+
+  // Patch scenario cards and sidebar buttons with MC-derived probabilities
+  document.querySelectorAll(".scenario-btn .prob").forEach(el => {
+    const s = el.closest("[data-scenario]").getAttribute("data-scenario");
+    if (mc.probs[s] !== undefined) el.textContent = mc.probs[s] + "%";
+  });
+  document.querySelectorAll(".scenario-card").forEach(card => {
+    const s = card.getAttribute("data-scenario");
+    if (!mc.probs[s]) return;
+    card.dataset.mcProb = mc.probs[s]; // IO reads this so it never reverts to hardcoded value
+    const numEl = card.querySelector(".prob-num");
+    if (numEl) numEl.textContent = mc.probs[s];
+    const fill = card.querySelector(".prob-fill");
+    if (fill) fill.style.width = mc.probs[s] + "%";
+  });
+}
+
 // ---------- Export ----------
 window.PhCharts = {
   setScenario, onScenario,
   renderBpoChart, renderRemitChart, renderAgiChart,
   renderSectorMultiples, renderEnergyMix, renderCrossover,
   renderExposureBars, renderScenarioBars, renderDisplacementWave,
+  renderMCDistribution,
 };
