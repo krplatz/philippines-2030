@@ -100,7 +100,8 @@ function renderBpoChart(container) {
         opacity: 0.35,
       });
       ghostG.appendChild(p);
-      const lbl = text(x(years.length - 1) + 8, y(scenarios[k][years.length - 1]) + 4, k.toUpperCase(), "label");
+      const ghostLabelMap = { base: "OPTIMISTIC", accel: "ACCELERATED", crisis: "CRISIS" };
+      const lbl = text(x(years.length - 1) + 8, y(scenarios[k][years.length - 1]) + 4, ghostLabelMap[k], "label");
       lbl.setAttribute("fill", "var(--ink-faded)");
       ghostG.appendChild(lbl);
     });
@@ -1060,11 +1061,119 @@ function renderMCDistribution(container) {
   });
 }
 
+// ---------- Chart: GDP peer comparison 2020→2032 ----------
+function renderGdpPeers(container) {
+  const W = 900, H = 460;
+  const M = { t: 28, r: 128, b: 58, l: 72 };
+  const iw = W - M.l - M.r, ih = H - M.t - M.b;
+  const xMin = 2020, xMax = 2032, yMin = 200, yMax = 840;
+  const xs = v => M.l + ((v - xMin) / (xMax - xMin)) * iw;
+  const ys = v => M.t + (1 - (v - yMin) / (yMax - yMin)) * ih;
+
+  const allYrs = [2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032];
+  const scenYrs = [2025,2026,2027,2028,2029,2030,2031,2032];
+
+  const root = svg("svg", { viewBox: `0 0 ${W} ${H}`, role: "img" });
+
+  // Gridlines + y-axis labels
+  const gridG = svg("g", { class: "axis" });
+  [200,400,600,800].forEach(v => {
+    gridG.appendChild(svg("line", { class: "gridline", x1: M.l, x2: W - M.r, y1: ys(v), y2: ys(v) }));
+    const t = text(M.l - 10, ys(v) + 4, "$" + v + "B", "axis-label");
+    t.setAttribute("text-anchor", "end");
+    gridG.appendChild(t);
+  });
+  // x-axis ticks
+  [2020,2022,2024,2026,2028,2030,2032].forEach(yr => {
+    const t = text(xs(yr), H - M.b + 18, yr, "axis-label");
+    t.setAttribute("text-anchor", "middle");
+    gridG.appendChild(t);
+  });
+  root.appendChild(gridG);
+
+  // Axis title
+  root.appendChild(text(M.l, M.t - 12, "Nominal GDP (billions USD, current prices)", "axis-title"));
+
+  // Subtle divider at 2025 (actual → projected)
+  const divX = xs(2025);
+  root.appendChild(svg("line", {
+    x1: divX, x2: divX, y1: M.t + 20, y2: H - M.b,
+    stroke: "var(--rule)", "stroke-width": 1, "stroke-dasharray": "2 5", opacity: 0.5
+  }));
+
+  // Peer lines (2020–2032 all in one)
+  const peers = [
+    { name: "Vietnam",   col: "#4A7B5A",
+      data: [271,296,409,430,468,500,535,572,612,655,700,748,800] },
+    { name: "Thailand",  col: "#596882",
+      data: [499,506,495,514,530,545,559,573,587,602,617,632,648] },
+    { name: "Singapore", col: "#3E6E7A",
+      data: [345,397,467,502,510,525,536,547,558,569,580,592,604] },
+    { name: "Malaysia",  col: "#7A5E3A",
+      data: [337,373,407,399,416,435,452,470,489,508,529,550,572] },
+  ];
+  peers.forEach(p => {
+    const d = p.data.map((v,i) => (i===0?"M":"L")+xs(allYrs[i]).toFixed(1)+","+ys(v).toFixed(1)).join(" ");
+    root.appendChild(svg("path", { d, fill:"none", stroke: p.col, "stroke-width": 1.5, opacity: 0.52 }));
+    const lbl = text(xs(2032) + 8, ys(p.data[12]) + 4, p.name, "label");
+    lbl.setAttribute("fill", p.col);
+    lbl.setAttribute("opacity", "0.78");
+    root.appendChild(lbl);
+  });
+
+  // Philippines historical 2020–2025
+  const phHist     = [362,394,404,437,437,455];
+  const phHistYrs  = [2020,2021,2022,2023,2024,2025];
+  const phHistD = phHist.map((v,i)=>(i===0?"M":"L")+xs(phHistYrs[i]).toFixed(1)+","+ys(v).toFixed(1)).join(" ");
+  root.appendChild(svg("path", { d: phHistD, fill:"none", stroke:"var(--s-crisis)", "stroke-width": 2.5 }));
+
+  // Philippines pre-crisis projection 2025–2032 (dashed)
+  const phProj = [455,478,502,527,553,581,610,641];
+  const phProjD = phProj.map((v,i)=>(i===0?"M":"L")+xs(scenYrs[i]).toFixed(1)+","+ys(v).toFixed(1)).join(" ");
+  root.appendChild(svg("path", { d: phProjD, fill:"none", stroke:"var(--s-crisis)",
+    "stroke-width": 1.5, "stroke-dasharray": "5 4", opacity: 0.38 }));
+
+  // Philippines crisis scenario 2025–2032 (solid)
+  const phCrisis = [455,472,443,413,382,328,323,334];
+  const phCrisisD = phCrisis.map((v,i)=>(i===0?"M":"L")+xs(scenYrs[i]).toFixed(1)+","+ys(v).toFixed(1)).join(" ");
+  root.appendChild(svg("path", { d: phCrisisD, fill:"none", stroke:"var(--s-crisis)", "stroke-width": 2.5 }));
+
+  // Shaded gap between projection and crisis
+  const gapD = [
+    ...phProj.map((v,i) => (i===0?"M":"L") + xs(scenYrs[i]).toFixed(1) + "," + ys(v).toFixed(1)),
+    ...[...phCrisis].reverse().map((v,i,a) => "L" + xs(scenYrs[a.length-1-i]).toFixed(1) + "," + ys(v).toFixed(1)),
+    "Z"
+  ].join(" ");
+  root.appendChild(svg("path", { d: gapD, fill:"var(--s-crisis)", stroke:"none", opacity: 0.07 }));
+
+  // End label: crisis path
+  const phCL1 = text(xs(2032)+8, ys(334)+3, "Philippines", "label");
+  phCL1.setAttribute("fill", "var(--s-crisis)");
+  phCL1.setAttribute("font-weight", "600");
+  root.appendChild(phCL1);
+  const phCL2 = text(xs(2032)+8, ys(334)+16, "(crisis)", "label");
+  phCL2.setAttribute("fill", "var(--s-crisis)");
+  root.appendChild(phCL2);
+
+  // Projection label on dashed line
+  const pjL = text(xs(2028)+4, ys(527)-13, "2025 medium-term baseline", "label");
+  pjL.setAttribute("fill", "var(--s-crisis)");
+  pjL.setAttribute("opacity", "0.4");
+  root.appendChild(pjL);
+
+  // Dot marking Vietnam/PH crossover (~2022)
+  const vtX = xs(2022), vtY = ys(409);
+  root.appendChild(svg("circle", { cx: vtX.toFixed(1), cy: vtY.toFixed(1), r:3,
+    fill:"#4A7B5A", opacity:0.6 }));
+
+  container.appendChild(root);
+}
+
 // ---------- Export ----------
 window.PhCharts = {
   setScenario, onScenario,
   renderBpoChart, renderRemitChart, renderAgiChart,
   renderSectorMultiples, renderEnergyMix, renderCrossover,
   renderExposureBars, renderScenarioBars, renderDisplacementWave,
-  renderMCDistribution,
+  renderMCDistribution, renderGdpPeers,
 };
