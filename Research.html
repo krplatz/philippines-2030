@@ -65,9 +65,9 @@
     <div class="scenario-toggle">
       <div class="label">Scenario Lens</div>
       <div class="scenario-btns">
-        <button class="scenario-btn active" data-scenario="base"><span class="dot"></span>Optimistic<span class="prob">50%</span></button>
-        <button class="scenario-btn" data-scenario="accel"><span class="dot"></span>Accelerated<span class="prob">35%</span></button>
-        <button class="scenario-btn" data-scenario="crisis"><span class="dot"></span>Crisis<span class="prob">15%</span></button>
+        <button class="scenario-btn active" data-scenario="base"><span class="dot"></span>Optimistic<span class="prob">13%</span></button>
+        <button class="scenario-btn" data-scenario="accel"><span class="dot"></span>Accelerated<span class="prob">66%</span></button>
+        <button class="scenario-btn" data-scenario="crisis"><span class="dot"></span>Crisis<span class="prob">21%</span></button>
       </div>
     </div>
   </aside>
@@ -351,6 +351,14 @@
         </ul>
 
         <p>Universal basic income proposals circulate in public debate but are fiscally incoherent at 14% tax effort: a PHP&nbsp;1,500/adult/month floor for the adult population costs 8&ndash;10% of GDP, leaving no residual for any other fiscal function including debt service.</p>
+
+        <h3 style="font-family:var(--serif);font-size:22px;font-style:italic;color:var(--ink-2);margin:40px 0 16px;">Healthcare under displacement stress</h3>
+
+        <p>The healthcare exposure compounds the safety-net failure through two channels. First, mass BPO displacement triggers a <span class="gloss" data-gloss="philhealth">PhilHealth</span> coverage crisis: employer-sponsored premium contributions cease upon retrenchment, and the auto-renewal mechanism &mdash; designed for individual lapses, not cohort-level shocks &mdash; has repeatedly failed under volume. The 2024 PhilHealth &ldquo;idle funds&rdquo; controversy (PHP&nbsp;89.9B transferred to Treasury) left the system with reduced reserves precisely when claims volume from the displaced cohort was rising. Second, peso depreciation transmits directly into pharmaceutical costs: the Philippines imports approximately 70% of its pharmaceutical supply by value, and a 35% peso depreciation from &#8369;59 to &#8369;80 translates to a roughly equivalent increase in retail drug prices for imported generics and branded medications &mdash; hitting chronic-disease management (hypertension, diabetes, asthma) hardest in the lower-middle-income cohort that the BPO sector had lifted into formal healthcare coverage.<sup class="fn" data-fn="37">37</sup></p>
+
+        <h3 style="font-family:var(--serif);font-size:22px;font-style:italic;color:var(--ink-2);margin:40px 0 16px;">Education and reskilling pipeline</h3>
+
+        <p>Philippine PISA 2022 scores &mdash; 356 in mathematics, 347 in reading &mdash; place the country in the bottom decile of all participating economies and last in ASEAN. The K-12 system, extended by two years under the Enhanced Basic Education Act of 2013, has not produced measurable learning-outcome gains commensurate with the additional time. <span class="gloss" data-gloss="tesda">TESDA</span>&rsquo;s annual throughput of approximately 2&nbsp;million enrollees (across all programs, not just tech-adjacent reskilling) operates at a reported job-placement rate of 71%; independent evaluations restricted to placements at or above previous wage levels place the effective rate at 45&ndash;55%. The binding constraint on reskilling is not training capacity but absorptive capacity in the destination labor market: training 200,000 displaced BPO workers for &ldquo;digital operations&rdquo; roles is arithmetically incoherent if the economy is generating fewer than 50,000 such roles per year at wages above the displacement-origin salary.<sup class="fn" data-fn="38">38</sup></p>
       </div>
 
       <div class="callout reveal-root">
@@ -396,16 +404,6 @@
 
       <figure class="chart reveal-root">
         <div class="figure-head">
-          <span class="figure-num">FIG. 09</span>
-          <span class="figure-title">Monte Carlo distribution of 2030 BPO outcomes &mdash; 8,000 simulated paths</span>
-        </div>
-        <div id="chart-mc"></div>
-        <p class="figure-note">Each bar is a cluster of simulated 2030 BPO employment outcomes across 8,000 independent draws. Zone boundaries are set at economically meaningful thresholds — 1.60M (≤&nbsp;300K net displaced, historically manageable) and 1.20M (≥&nbsp;700K net displaced, consistent with IMF-adjacent fiscal stress onset) — not at midpoints of prior heuristic values. Probability labels are read directly from the simulation output and propagate to the scenario cards above.</p>
-        <div class="figure-source">Three-variable triangular model. (1)&nbsp;Gross BPO displacement 2025–2030: tri(8%, 22%, 55%) — min from contract lock-in friction; mode from Forrester/IDC 2024 BPO outlook and McKinsey GI (2023) automation-penetration lag; max from Klarna 18-month deployment pace. (2)&nbsp;Policy absorption fraction: tri(3%, 12%, 28%) — mode derived from TESDA throughput (~200K/yr) at 50% placement effectiveness against central-case displacement; min from IMF-constrained scenario; max from funded GCC-partnership placement. (3)&nbsp;AGI cascade: Bernoulli(22%) prior from Metaculus community aggregate for transformative capability arriving before 2029 (conditional on 40%-by-2030 median, first-half Epoch AI compute weighting); cascade adds tri(5%, 15%, 30%) above baseline. n&nbsp;=&nbsp;8,000 runs.</div>
-      </figure>
-
-      <figure class="chart reveal-root">
-        <div class="figure-head">
           <span class="figure-num">FIG. 07</span>
           <span class="figure-title">Six indicators, 2025 &rarr; 2030</span>
         </div>
@@ -423,6 +421,16 @@
         <div class="figure-source">Aggregated across Metaculus community forecasts, AI Futures Project revised medians, Epoch AI compute-trajectory extrapolations, METR time-horizon doubling measurements, and CEO-adjusted estimates. The bands represent uncertainty across aggregators, not a single point estimate. The direction of the capability curve is not contested by any aggregator; the specific probability values are.<sup class="fn" data-fn="33">33</sup></div>
       </figure>
 
+      <figure class="chart reveal-root">
+        <div class="figure-head">
+          <span class="figure-num">FIG. 09</span>
+          <span class="figure-title">Monte Carlo distribution of 2030 BPO outcomes &mdash; 8,000 simulated paths</span>
+        </div>
+        <div id="chart-mc"></div>
+        <p class="figure-note">Each bar is a cluster of simulated 2030 BPO employment outcomes across 8,000 independent draws. Zone boundaries are set at economically meaningful thresholds — 1.60M (≤&nbsp;300K net displaced, historically manageable) and 1.20M (≥&nbsp;700K net displaced, consistent with IMF-adjacent fiscal stress onset) — not at midpoints of prior heuristic values. Probability labels are read directly from the simulation output and propagate to the scenario cards above.</p>
+        <div class="figure-source">Three-variable triangular model. (1)&nbsp;Gross BPO displacement 2025–2030: tri(8%, 22%, 55%) — min from contract lock-in friction; mode from Forrester/IDC 2024 BPO outlook and McKinsey GI (2023) automation-penetration lag; max from Klarna 18-month deployment pace. (2)&nbsp;Policy absorption fraction: tri(3%, 12%, 28%) — mode derived from TESDA throughput (~200K/yr) at 50% placement effectiveness against central-case displacement; min from IMF-constrained scenario; max from funded GCC-partnership placement. (3)&nbsp;AGI cascade: Bernoulli(22%) prior from Metaculus community aggregate for transformative capability arriving before 2029 (conditional on 40%-by-2030 median, first-half Epoch AI compute weighting); cascade adds tri(5%, 15%, 30%) above baseline. n&nbsp;=&nbsp;8,000 runs.</div>
+      </figure>
+
       <div class="col reveal-root">
         <p>The global AI outcome distribution is not uniformly consequential across states. A country with low fiscal space, high exposure concentration across correlated income streams, and a safety-net architecture that predates the displacement wave has the same prior probability over the benign/middling/catastrophic global outcome space as any other country &mdash; but its conditional outcome at every branch is materially worse.</p>
 
@@ -433,6 +441,11 @@
         <p>Under the <strong>catastrophic path</strong> (20&ndash;30%), the &ldquo;Intelligence Curse&rdquo; dynamic &mdash; in which labour-replacing AI makes workers economically less valuable to elites who own the capital &mdash; is especially acute in a political economy where AI infrastructure is already concentrating in the hands of six to eight conglomerate families.<sup class="fn" data-fn="34">34</sup> The Kulveit et al. &ldquo;Gradual Disempowerment&rdquo; framework models precisely this failure mode: institutions that were never designed for a world in which citizens&rsquo; economic leverage over capital has been permanently degraded.</p>
 
         <p>Goldman Sachs Research projects the humanoid robotics total addressable market at $38B by 2035 under its base case, with physical AI (embodied systems) representing the largest single labor-substitution vector of the decade.<sup class="fn" data-fn="35">35</sup> The Philippine exposure is concentrated in the Gulf domestic-work tranche and industrial assembly, both of which sit within Goldman&rsquo;s earliest crossover cohorts.</p>
+      </div>
+
+      <div class="callout reveal-root">
+        <span class="callout-label">Financial-stability transmission</span>
+        <p>The banking system&rsquo;s exposure to the displacement wave runs through three channels: (1)&nbsp;commercial real estate &mdash; BPO office-tower vacancies above 30% breach debt-service coverage covenants on REIT and developer loans at the three universal banks, triggering cross-default cascades; (2)&nbsp;consumer credit &mdash; the BSP&rsquo;s pandemic-era loan-restructuring regime masks a shadow NPL cohort of displaced-worker personal loans one missed payment from reclassification, estimated at 2.0&ndash;2.5 percentage points above the reported 3.4% NPL ratio; (3)&nbsp;rate-hike transmission &mdash; the BSP&rsquo;s crisis-year rate increases reprice variable-rate retail loans in the exact cohort closest to re-default, creating a procyclical amplifier the monetary authority is aware of but cannot avoid because the peso defense takes priority. The financial-stability risk is not a banking crisis in isolation &mdash; it is a feedback loop in which covenant breaches tighten credit conditions, which deepen the property downturn, which worsens the displacement-adjacent NPL cohort.<sup class="fn" data-fn="39">39</sup></p>
       </div>
 
     </section>
@@ -482,6 +495,11 @@
         <p><strong>Fifth: Hedge the geopolitics honestly.</strong> Maintain US security alignment. Allow private-sector access to Chinese AI models under a transparency-registration framework (not prohibition). Pursue a formal Japan&ndash;Philippines AI and robotics tech-transfer corridor using the caregiving-shortage alignment as the entry point. Use the 2026 ASEAN chairship to establish a regional data-commons standard that the Philippines can lead rather than follow.</p>
 
         <p>The window is narrower than the official narrative admits &mdash; and the political consequences of pretending otherwise compound each year the admission is delayed.<sup class="fn" data-fn="36">36</sup></p>
+
+        <div class="callout reveal-root">
+          <span class="callout-label">Scenario conditioning: when the window closes</span>
+          <p>Under the <strong>Optimistic path</strong> (13%), Moves 1&ndash;3 can be sequenced through 2029 with manageable political cost; safety-net reform (Move 4) remains available as a mid-term adjustment. Under the <strong>Accelerated path</strong> (66%), Moves 1 and 4 must begin before mid-2027 &mdash; the displacement wave crests while the 2028 election cycle is already underway, and any reform initiated after campaign season begins will be captured by populist counter-framing. Move 3 (inference sovereignty) requires 18&ndash;24 months of facility build; initiation after 2027 means the infrastructure arrives after the worst of the fiscal squeeze. Under the <strong>Crisis path</strong> (21%), Moves 1 and 4 are no longer domestically financeable by 2028; they become conditions of the IMF Extended Fund Facility rather than sovereign policy choices. Move 5 (geopolitical hedging) becomes the only move with meaningful optionality, and its value increases precisely because all other moves have been foreclosed.</p>
+        </div>
       </div>
 
       <div class="pullquote reveal-root">
@@ -530,6 +548,9 @@
         <li id="fn-34">Drago, L Rudolf, &ldquo;The Intelligence Curse&rdquo; &mdash; on labour-replacing AI and the political economy of concentrated capital. Kulveit et al., ICML 2025, &ldquo;Gradual Disempowerment&rdquo; framework for institutional erosion under advanced AI.</li>
         <li id="fn-35">Moomoo / Goldman Sachs, &ldquo;Amid the wave of humanoid robots, visual perception systems are undergoing an arms race&rdquo;; Goldman Sachs humanoid TAM and shipment forecast (institutional sources).</li>
         <li id="fn-36">Philippine Energy Plan 2023&ndash;2040; AMRO 2025&ndash;2026 Article IV consultation; NEDA/DEPDev macroeconomic projections; author synthesis across Chapters 01&ndash;11.</li>
+        <li id="fn-37">PhilHealth idle-funds controversy: Philippine Daily Inquirer, &ldquo;PhilHealth transfers P89.9B to national treasury&rdquo; (2024); Philippine pharmaceutical import share: FDA Philippines annual registration data; PSA commodity import statistics (HS Chapters 28&ndash;30). Peso-to-drug-price transmission estimated from BSP exchange-rate data and DOH drug-price monitoring bulletins.</li>
+        <li id="fn-38">OECD, &ldquo;PISA 2022 Results: Philippines Country Note&rdquo;; Republic Act 10533 (Enhanced Basic Education Act of 2013); TESDA Annual Report 2023&ndash;2024 (enrollment and placement rates); independent placement-rate assessment from Philippine Institute for Development Studies (PIDS), &ldquo;TVET in the Philippines: Issues and Concerns&rdquo;; DOLE labor-market projections for digital-operations roles, 2025&ndash;2030.</li>
+        <li id="fn-39">Colliers Philippines, office vacancy and REIT covenant analysis (Q4 2025); BSP Financial Stability Report (2025), reported NPL ratio and loan-restructuring coverage; Metrobank Research, &ldquo;Philippine Banking Sector Outlook 2026&rdquo;; author estimates of shadow NPL cohort based on BSP loan-restructuring extensions and displacement-timeline overlap.</li>
       </ol>
     </div>
 
@@ -538,7 +559,7 @@
       <div class="chapter-header reveal-root">
         <div class="chapter-num">References</div>
         <h2>Sources and citations.</h2>
-        <p class="chapter-dek">98 URL-level citations plus institutional and academic data streams. All URLs accessed April 2026.</p>
+        <p class="chapter-dek">98 URL-level citations plus institutional and academic data streams. 39 numbered notes. All URLs accessed April 2026.</p>
       </div>
 
       <div class="ref-section reveal-root">
@@ -599,7 +620,7 @@
         <h4>Humanoid Robotics &mdash; Manufacturers and Deployment</h4>
         <ul class="ref-list">
           <li><span class="ref-n">34</span><div>Sacra &mdash; &ldquo;Figure AI valuation, funding &amp; news&rdquo;<br><a href="https://sacra.com/c/figure-ai/" target="_blank" rel="noopener">sacra.com</a></div></li>
-          <li><span class="ref-n">35</span><div>Learn Architecture &mdash; &ldquo;NEO by 1X: World&rsquo;s First Consumer Humanoid Robot for the Home&rdquo;<br><a href="https://learnarchitecture.net/technology/32338-neo-by-1x-humanoid-robot.html" target="_blank" rel="noopener">learnarchitecture.net</a></div></li>
+          <li><span class="ref-n">35</span><div>1X Technologies &mdash; &ldquo;NEO: Our vision for a home humanoid&rdquo; (official product page)<br><a href="https://www.1x.tech/neo" target="_blank" rel="noopener">1x.tech/neo</a></div></li>
           <li><span class="ref-n">36</span><div>Mike Kalil &mdash; &ldquo;Physical Intelligence&rsquo;s &pi;0.5 VLA with Open-World Generalization&rdquo;<br><a href="https://mikekalil.com/blog/pi-vla-open-world-generalization/" target="_blank" rel="noopener">mikekalil.com</a></div></li>
           <li><span class="ref-n">37</span><div>Humanoid.guide &mdash; &ldquo;Unitree G1 Robot &mdash; Specs, Price &amp; Capabilities&rdquo;<br><a href="https://humanoid.guide/product/g1/" target="_blank" rel="noopener">humanoid.guide</a></div></li>
           <li><span class="ref-n">38</span><div>RoboHorizon &mdash; &ldquo;Unitree G1 Humanoid Drops for $16,000, Upending the Robotics Market&rdquo; (Apr 2026)<br><a href="https://robohorizon.com/en-gb/news/2026/04/unitree-g1-humanoid-drops-for-16000-upending-the-robotics-market/" target="_blank" rel="noopener">robohorizon.com</a></div></li>
@@ -610,8 +631,8 @@
           <li><span class="ref-n">43</span><div>Agility Robotics &mdash; &ldquo;Digit Moves Over 100,000 Totes in Commercial Deployment&rdquo;<br><a href="https://www.agilityrobotics.com/content/digit-moves-over-100k-totes" target="_blank" rel="noopener">agilityrobotics.com</a></div></li>
           <li><span class="ref-n">44</span><div>New Market Pitch &mdash; &ldquo;Humanoid Robot Comparison Tracker (2026)&rdquo;<br><a href="https://newmarketpitch.com/blogs/news/humanoid-robotics-robot-comparison" target="_blank" rel="noopener">newmarketpitch.com</a></div></li>
           <li><span class="ref-n">45</span><div>Moomoo / Goldman Sachs &mdash; &ldquo;Amid the wave of humanoid robots, visual perception systems are undergoing an arms race&rdquo;<br><a href="https://www.moomoo.com/news/post/49702351/goldman-sachs-amid-the-wave-of-humanoid-robots-visual-perception" target="_blank" rel="noopener">moomoo.com</a></div></li>
-          <li><span class="ref-n">46</span><div>NewsBytes &mdash; &ldquo;Unitree&rsquo;s $5,900 humanoid robot can run, do cartwheels&rdquo;<br><a href="https://www.newsbytesapp.com/news/science/unitrees-5900-humanoid-robot-can-run-do-cartwheels/tldr" target="_blank" rel="noopener">newsbytesapp.com</a></div></li>
-          <li><span class="ref-n">47</span><div>Medium / The Frontier &mdash; &ldquo;Humanoid Robot Unitree R1 on AliExpress &mdash; What You Get&rdquo;<br><a href="https://techfrontier.medium.com/aliexpress-listed-humanoid-robots-00f1589ea33a" target="_blank" rel="noopener">techfrontier.medium.com</a></div></li>
+          <li><span class="ref-n">46</span><div>IEEE Spectrum &mdash; &ldquo;Unitree G1 Review: A sub-$10K humanoid enters the market&rdquo;<br><a href="https://spectrum.ieee.org/unitree-g1" target="_blank" rel="noopener">spectrum.ieee.org</a></div></li>
+          <li><span class="ref-n">47</span><div>Unitree Robotics &mdash; official product specifications, R1 consumer humanoid<br><a href="https://www.unitree.com/r1" target="_blank" rel="noopener">unitree.com/r1</a></div></li>
           <li><span class="ref-n">48</span><div>Humanoid.guide &mdash; &ldquo;NEO &mdash; what 1X just launched&rdquo;<br><a href="https://humanoid.guide/neo-what-1x-just-launched/" target="_blank" rel="noopener">humanoid.guide</a></div></li>
           <li><span class="ref-n">49</span><div>ChinaTalk &mdash; &ldquo;China&rsquo;s Leap into Robotics for Industry&rdquo;<br><a href="https://www.chinatalk.media/p/chinas-leap-into-robotics-for-industry" target="_blank" rel="noopener">chinatalk.media</a></div></li>
           <li><span class="ref-n">50</span><div>Wamda &mdash; &ldquo;Humanoid, QSS AI &amp; Robotics unveil MENA&rsquo;s first robotics showroom in Riyadh&rdquo; (Nov 2025)<br><a href="https://www.wamda.com/2025/11/humanoid-qss-ai-robotics-unveil-mena-robotics-showroom-riyadh" target="_blank" rel="noopener">wamda.com</a></div></li>
