@@ -31,6 +31,7 @@
 
   // ---------- Reveal on scroll ----------
   const reveals = document.querySelectorAll(".reveal-root");
+  const isMobile = window.innerWidth <= 1024;
   const revealIO = new IntersectionObserver(es => {
     es.forEach(e => {
       if (e.isIntersecting) {
@@ -38,8 +39,21 @@
         revealIO.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+  }, {
+    threshold: isMobile ? 0.01 : 0.12,
+    rootMargin: isMobile ? "0px 0px 0px 0px" : "0px 0px -60px 0px"
+  });
   reveals.forEach(r => revealIO.observe(r));
+
+  // Safety fallback: if any reveal-root is still hidden after 3s, show it.
+  // This catches edge cases where the IntersectionObserver fails on some mobile browsers.
+  setTimeout(() => {
+    reveals.forEach(r => {
+      if (!r.classList.contains("is-visible")) {
+        r.classList.add("is-visible");
+      }
+    });
+  }, 3000);
 
   // ---------- Scenario buttons in sidebar ----------
   document.querySelectorAll(".scenario-btn").forEach(btn => {

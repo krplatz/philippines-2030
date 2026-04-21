@@ -987,6 +987,19 @@ body[data-scenario="crisis"] .scenario-inline { background: var(--s-crisis-soft)
   .scenario-toggle { margin-top: 16px; }
   .scenario-btns { flex-direction: row; flex-wrap: wrap; }
   .scenario-btn { flex: 1; min-width: 120px; }
+
+  /* Hide the live scenario panel on mobile — it's designed for
+     the sticky desktop sidebar and adds bulk before the content. */
+  .scen-panel { display: none; }
+
+  /* Force all reveal-root content visible on mobile/tablet.
+     IntersectionObserver-based reveal is unreliable on actual
+     mobile devices (dynamic viewport, address-bar resize, etc.)
+     and can leave entire sections stuck at opacity:0. */
+  .reveal-root {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 768px) {
