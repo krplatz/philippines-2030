@@ -171,7 +171,7 @@
     "gcc": { term: "GCC", def: "Global Capability Centers — multinational-owned captive offices in-country; the empirically growing BPO segment." },
     "ibpap": { term: "IBPAP", def: "IT & Business Process Association of the Philippines — the industry body that represents the BPO sector." },
     "bsp": { term: "BSP", def: "Bangko Sentral ng Pilipinas — the Philippine central bank. Sets policy rate, manages the peso, and prints banknotes." },
-    "neda": { term: "NEDA / DEPDev", def: "National Economic and Development Authority — the government's central economic planning body, reorganized in 2028 into the Department of Economy, Planning, and Development (DEPDev)." },
+    "neda": { term: "NEDA / DEPDev", def: "National Economic and Development Authority — the government's central economic planning body, reorganized in 2025 into the Department of Economy, Planning, and Development (DEPDev)." },
     "dof": { term: "DOF", def: "Department of Finance — manages the national treasury, tax policy, and sovereign borrowing." },
     "dbm": { term: "DBM", def: "Department of Budget and Management — prepares and executes the national budget." },
     "dole": { term: "DOLE", def: "Department of Labor and Employment — processes illegal-dismissal complaints, overseas worker documentation, and labor-standards enforcement." },
