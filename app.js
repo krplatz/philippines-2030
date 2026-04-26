@@ -162,7 +162,7 @@
     "bliss": { term: "SSM", def: "State-space model — a neural architecture class well-suited to long-context streaming tasks like voice." },
     "agi": { term: "AGI", def: "Artificial general intelligence — AI that matches or exceeds human capability across most economically-valuable cognitive tasks." },
     "asi": { term: "ASI", def: "Artificial superintelligence — AI substantially more capable than humans on most tasks. Probability ~15–25% by 2030 on aggregated forecasts." },
-    "remit": { term: "OFW remittances", def: "Cash sent home by overseas Filipino workers. Hit $39.6B in 2025 (7.3% of GDP) but the share is eroding structurally." },
+    "remit": { term: "OFW remittances", def: "Cash sent home by overseas Filipino workers. Hit a record $35.6B in 2025 (7.3% of GDP) but the share is eroding structurally." },
     "carp": { term: "CARP", def: "Comprehensive Agrarian Reform Program — a 1988 land redistribution that fragmented farms to an average of ~1.3 ha, limiting mechanization." },
     "edca": { term: "EDCA", def: "Enhanced Defense Cooperation Agreement — US access to Philippine military bases; expanded from 5 to 9 sites in 2023." },
     "chips": { term: "CHIPS Act", def: "US semiconductor legislation. The Philippines is a designated ITSI partner country with a share of the $500M fund." },
