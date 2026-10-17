@@ -62,6 +62,7 @@
 <label for="substitution">Seat reduction per adopted task-equivalent <output id="out-substitution"></output></label><input id="substitution" type="range" min="0" max="100" step="1" value="84">
 <label for="newRoles">New or sustained roles by 2030 <output id="out-newRoles"></output></label><input id="newRoles" type="range" min="0" max="600" step="5" value="195">
 <label for="revenueGrowth">Annual sector revenue change <output id="out-revenueGrowth"></output></label><input id="revenueGrowth" type="range" min="-15" max="15" step="0.5" value="3">
+<label for="localCapture">Share of incremental AI margin retained locally <output id="out-localCapture"></output></label><input id="localCapture" type="range" min="0" max="100" step="1" value="35">
 <label for="realWageAnnual">Annual median real-wage change <output id="out-realWageAnnual"></output></label><input id="realWageAnnual" type="range" min="-15" max="10" step="0.5" value="-5">
 <p id="current-settings" role="status" aria-live="polite"></p>
 <button id="reset-model" type="button" class="future-button">Reset selected path</button>
@@ -73,6 +74,7 @@
 <div><span>Industry revenue</span><strong id="result-revenue">—</strong><span>US$ billions · modeled</span></div>
 <div><span>Revenue per worker</span><strong id="result-productivity">—</strong><span>US$ per FTE · not wages</span></div>
 </div>
+<p class="model-call" style="margin:0 0 20px"><strong>Value capture illustration:</strong> for every $100M of <em>additional AI service margin</em> generated, the assumed locally retained amount is <strong id="result-local-capture">—</strong>. This is a distribution illustration, <em>not</em> a calculated contribution to Philippine GDP, tax revenue or foreign investment.</p>
 <div class="chart-head">Employment path · Millions of direct IT-BPM employees</div>
 <svg id="employment-chart" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart-title chart-desc" viewBox="0 0 650 300">
 <title id="chart-title">Employment under current scenario</title><desc id="chart-desc">A line showing modeled employment levels between 2026 and 2032. The detailed numerical values are in the table below.</desc>
@@ -105,14 +107,14 @@
 <p><strong>E(2026)</strong> = 1.96 million, an industry projection used as the model's fixed initial condition; <strong>q = 0.58</strong>, an <em>author assumption</em> for the share of task-equivalent BPO work commercially vulnerable, not the ILO economy-wide occupational exposure estimate; <strong>a</strong> = adoption fraction; <strong>s</strong> = seat-substitution fraction when adopted; <strong>N</strong> = net new/sustained roles in millions. <strong>w(t)</strong> is an openly declared adoption-progress schedule: 2026=0, 2027=.07, 2028=.17, 2029=.50, 2030=1, 2031=1.18, 2032=1.36. It is deliberately heuristic; values after 2030 are continuations, not new calibrations.</p>
 <h3>2. Revenue and household indices</h3>
 <p>Sector revenue uses a compound annual change: <code>R(t) = 42.3 × (1 + g)^(t − 2026)</code> in billions of US dollars. Revenue per employee is <code>1000 × R(t)/E(t)</code> in dollars. <strong>It is not a worker salary, national welfare figure or productivity estimate of the entire economy.</strong></p>
-<p>The illustrative median real-wage index uses <code>100 × (1 + r)^(t − 2026)</code>. The remittance index follows a separate authored 2030 endpoint for each path, interpolated exponentially. We do not use these to invent an FX rate or mechanically infer GDP: doing so requires a coherent balance-of-payments, production and policy model that this site does not claim to have.</p>
+<p>The illustrative median real-wage index uses <code>100 × (1 + r)^(t − 2026)</code>. Local capture illustrates how a hypothetical $100M of incremental AI service margin could be split between domestic and external claimants; it is <strong>not</strong> computed from sector revenue. The remittance index follows a separate authored 2030 endpoint for each path, interpolated exponentially. We do not use these to invent an FX rate or mechanically infer GDP: doing so requires a coherent balance-of-payments, production and policy model that this site does not claim to have.</p>
 <h3>3. What remains uncertain</h3>
 <p>Enterprises automate tasks, not necessarily entire jobs. Savings depend on escalation, software integration, regulatory restrictions and customer tolerance. Labor supply responds through new roles, wage adjustments, migration, reduced hours and informal work. AI can also stimulate new service demand. Domestic value capture depends on ownership and import leakage. These are partly correlated outcomes, not independent dice rolls.</p>
 <p>The original dossier's <strong>13% / 66% / 21%</strong> labels resulted from assumed input distributions and threshold classifications. They cannot be interpreted as calibrated probabilities for a political-economic crisis with currency, robotics and financial shocks. This redesigned site therefore treats the three futures as **conditional narratives**, not as a weighted predictive distribution. See <a href="SCENARIO_NOTES.md">the independent review checklist and audit notes</a>.</p>
 <h3>4. Known limitations</h3>
 <ul>
 <li>2026 baseline is an IBPAP outlook, not a realized year-end count; 2025 values are rounded industry totals. The model is conditional from that start.</li>
-<li>q, adoption, substitution, job creation, the annual time weights, revenue growth and household indices are illustrative and not fitted to an econometric sample.</li>
+<li>q, adoption, substitution, job creation, local capture, the annual time weights, revenue growth and household indices are illustrative and not fitted to an econometric sample.</li>
 <li>The three scenarios are not a probability-weighted distribution. Slider outputs are counterfactual arithmetic, not central estimates.</li>
 <li>Indirect employment losses, wage distribution, occupation transition costs, import/export price elasticities, remittance composition, interest-rate responses and reserve management are <strong>not</strong> estimated here.</li>
 <li>Published IBPAP 2028 outlook forms an essential external reality check, not a mathematical constraint on future adverse scenarios.</li>
