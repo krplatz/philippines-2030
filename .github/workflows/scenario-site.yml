@@ -1,0 +1,47 @@
+name: Validate Philippines 2030
+on:
+  pull_request:
+    paths:
+      - '**.html'
+      - '**.css'
+      - '**.js'
+      - 'tests/**'
+      - '.github/workflows/scenario-site.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+      - '**.css'
+      - '**.js'
+      - 'tests/**'
+permissions:
+  contents: read
+jobs:
+  scenario-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check local scripts
+        run: |
+          node --check scenario-model.js
+          node --check scenario-lab.js
+          node --check three-futures.js
+      - name: Verify model, page structure and links
+        run: node --test tests/site.test.cjs
+      - name: Archive static site for PR review
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: philippines-2030-pr-preview
+          path: |
+            *.html
+            *.js
+            *.css
+            *.ico
+          if-no-files-found: error
+          retention-days: 14
