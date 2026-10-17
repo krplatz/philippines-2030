@@ -4,7 +4,7 @@
   if (!window.PH2030Model) return;
   const M = window.PH2030Model;
   const preset = document.getElementById("preset");
-  const controls = ["adoption","substitution","newRoles","revenueGrowth","realWageAnnual"];
+  const controls = ["adoption","substitution","newRoles","revenueGrowth","realWageAnnual","localCapture"];
   const el = id => document.getElementById(id);
   const current = {};
   const svgNS = "http://www.w3.org/2000/svg";
@@ -16,7 +16,7 @@
   }
   function valueFromUi(id) {
     const raw=Number(el(id).value);
-    return ["adoption","substitution","revenueGrowth","realWageAnnual"].includes(id)?raw/100:raw/1000;
+    return ["adoption","substitution","revenueGrowth","realWageAnnual","localCapture"].includes(id)?raw/100:raw/1000;
   }
   function uiFromValue(id,v) {
     return ["adoption","substitution","revenueGrowth","realWageAnnual"].includes(id)?v*100:v*1000;
@@ -64,6 +64,7 @@
     el("result-jobs-change").textContent=((r.headcount/M.BASE.observedEmployment-1)*100).toFixed(1)+"% versus 2025";
     el("result-revenue").textContent=M.formatB(r.revenue);
     el("result-productivity").textContent="$"+Math.round(r.revPerWorker).toLocaleString("en-US");
+    el("result-local-capture").textContent="$"+Math.round(100*custom.localCapture)+"M";
     el("model-tbody").replaceChildren(...result.rows.map(x=>{
       const tr=document.createElement("tr");
       for(const val of [x.year,x.headcount.toFixed(3),x.revenue.toFixed(2),x.realWageIndex.toFixed(1),x.remittanceIndex.toFixed(1)]){
